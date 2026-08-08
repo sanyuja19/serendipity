@@ -1936,3 +1936,825 @@ The Command Center is complete when:
 ✓ Accessibility baseline passes
 
 ✓ Performance targets are acceptable
+
+# 71. Research Workspace
+
+## 71.1 Purpose
+
+The Research Workspace is the primary environment where a researcher conducts an active research investigation.
+
+Unlike the Research Command Center, which provides a high-level overview, the Workspace provides a focused environment for deep research.
+
+The Workspace connects:
+
+- Research Mission
+- Research Assets
+- Knowledge Fabric
+- Research Copilot
+- Discoveries
+- Research Notebook
+- Evidence
+- Citations
+
+The Workspace should feel like a persistent research environment rather than a collection of independent pages.
+
+---
+
+# 72. Workspace Mental Model
+
+The Workspace follows the structure:
+
+Research Objective
+
+↓
+
+Research Assets
+
+↓
+
+Knowledge Fabric
+
+↓
+
+AI Analysis
+
+↓
+
+Discoveries
+
+↓
+
+Research Notebook
+
+↓
+
+Research Output
+
+The user should be able to move between these stages without losing context.
+
+---
+
+# 73. Workspace Layout
+
+Desktop:
+
+┌────────────────────────────────────────────────────────────────────┐
+│ Workspace Header                                                   │
+├──────────────┬─────────────────────────────────────────────────────┤
+│              │                                                     │
+│ Workspace    │ Research Mission                                   │
+│ Navigation   │                                                     │
+│              ├─────────────────────────────────────────────────────┤
+│ Overview     │                                                     │
+│ Papers       │                                                     │
+│ Knowledge    │ Active Research Area                               │
+│ Copilot      │                                                     │
+│ Discoveries  │                                                     │
+│ Notebook     │                                                     │
+│ Reports      │                                                     │
+│              │                                                     │
+│              ├───────────────────────────┬─────────────────────────┤
+│              │ Recent Research           │ AI Activity             │
+│              │                           │                         │
+│              ├───────────────────────────┴─────────────────────────┤
+│              │ Research Context / Selected Content                │
+└──────────────┴─────────────────────────────────────────────────────┘
+
+The exact layout may change depending on the selected workspace mode.
+74. Workspace Header
+
+The Workspace Header SHALL remain persistent while navigating within the workspace.
+
+It should display:
+
+Workspace name
+Research objective
+Workspace status
+Last updated time
+Workspace switcher
+Share action (future)
+Workspace settings
+
+Example:
+
+Graph Learning for Molecular Discovery
+
+Exploring graph-based approaches to molecular discovery
+
+Active
+
+Last updated 4 minutes ago
+
+Actions:
+
+Research Mission
+
+Workspace Settings
+
+75. Workspace Navigation
+
+The Workspace Navigation provides contextual navigation.
+
+Overview
+
+Papers
+
+Knowledge Fabric
+
+Research Copilot
+
+Discoveries
+
+Notebook
+
+Reports
+
+The active section should always be visually identifiable.
+
+Workspace navigation should not duplicate global navigation unnecessarily.
+76. Workspace Overview
+
+The Overview is the default workspace landing screen.
+
+It provides:
+
+Research objective
+Active mission
+Research asset summary
+Knowledge Fabric summary
+Recent discoveries
+AI activity
+Notebook activity
+
+The Overview should answer:
+
+"What is happening inside this research project?"
+
+77. Research Objective
+
+The research objective should remain visible near the top of the workspace.
+
+Example:
+
+Research Objective
+
+"Explore how graph neural networks can improve molecular discovery."
+
+Actions:
+
+Edit Objective
+
+Ask Copilot
+
+Start Mission
+
+The objective provides persistent context for AI workflows.
+
+78. Workspace Research Mission
+
+The workspace should prominently display the current Research Mission.
+
+Example:
+
+Research Mission
+
+Investigate graph-based molecular representations.
+
+Status:
+
+Running
+
+Progress:
+
+68%
+
+Current stage:
+
+Cross-domain reasoning
+
+Agents:
+
+✓ Planner
+✓ Literature
+✓ Concepts
+● Knowledge
+○ Reasoning
+○ Discovery
+
+Action:
+
+View Mission
+
+If no mission is active:
+
+Start Research Mission
+
+79. Research Asset Summary
+
+The workspace should display a compact summary of available research assets.
+
+Example:
+
+Research Assets
+
+24 Papers
+
+3 Datasets
+
+8 Technical Reports
+
+137 Extracted Concepts
+
+Action:
+
+View Research Assets
+
+The summary should communicate the scale of the workspace without becoming a KPI dashboard.
+
+80. Knowledge Fabric Summary
+
+The workspace should provide a compact Knowledge Fabric overview.
+
+Example:
+
+Knowledge Fabric
+
+1,284 entities
+
+3,842 relationships
+
+12 clusters
+
+Recent update:
+
+34 relationships added
+
+Action:
+
+Explore Knowledge Fabric
+
+The full visualization remains available through the Knowledge Fabric workspace section.
+
+81. Discovery Summary
+
+The workspace should surface recently generated discoveries.
+
+Example:
+
+Recent Discoveries
+
+3 New
+
+7 Saved
+
+2 Under Review
+
+Each discovery should display:
+
+Title
+Short description
+Evidence count
+Confidence
+Status
+
+Actions:
+
+Explore
+
+Save
+
+Reject
+
+82. AI Activity
+
+The workspace should display current and recent AI activity.
+
+Example:
+
+AI Activity
+
+Knowledge Agent
+
+Mapping relationships
+
+Running
+
+Literature Agent
+
+Analyzed 24 papers
+
+Completed
+
+Discovery Engine
+
+Waiting for reasoning results
+
+Queued
+
+Users should be able to open the full Research Mission for additional information.
+
+83. Workspace Context Panel
+
+A contextual panel may appear when the user selects an entity, paper, discovery, or AI result.
+
+Example:
+
+Selected:
+
+Graph Neural Networks
+
+Panel:
+
+Definition
+
+Related Papers
+
+Related Concepts
+
+Researchers
+
+Methods
+
+AI Insights
+
+Actions:
+
+Explore in Knowledge Fabric
+
+Ask Copilot
+
+Add to Notebook
+
+The context panel should preserve the user's current workspace location.
+
+84. Workspace Modes
+
+The Workspace SHALL support specialized research modes.
+
+Mode 1:
+
+Overview
+
+Mode 2:
+
+Reading
+
+Mode 3:
+
+Discovery
+
+Mode 4:
+
+AI Collaboration
+
+Mode 5:
+
+Writing
+
+These modes may alter the emphasis of the interface without changing the underlying workspace data.
+
+85. Reading Mode
+
+Reading Mode prioritizes research assets.
+
+Layout:
+
+Paper list
+
+↓
+
+Paper content
+
+↓
+
+Evidence / Citation panel
+
+Secondary UI should be minimized.
+
+The user should be able to:
+
+Read
+Highlight
+Save evidence
+Inspect citations
+Ask Copilot about selected content
+Add findings to Notebook
+86. Discovery Mode
+
+Discovery Mode prioritizes the Knowledge Fabric and potential research connections.
+
+Primary interface:
+
+Knowledge Fabric
+
+Secondary:
+
+Discovery Panel
+
+Supporting:
+
+Research Copilot
+
+The mode should emphasize exploration rather than document reading.
+
+87. AI Collaboration Mode
+
+AI Collaboration Mode prioritizes Research Copilot and Research Mission activity.
+
+Primary:
+
+Research Copilot
+
+Secondary:
+
+Agent Timeline
+
+Supporting:
+
+Evidence
+
+Knowledge Fabric
+
+The user should remain aware of which sources and workspace context the AI is using.
+
+88. Writing Mode
+
+Writing Mode prioritizes the Research Notebook and generated findings.
+
+Primary:
+
+Research Notebook
+
+Secondary:
+
+Evidence
+
+Supporting:
+
+Research Copilot
+
+The user should be able to move discoveries and evidence into structured research notes.
+
+89. Workspace State Persistence
+
+The system should preserve relevant workspace state.
+
+Possible persisted state:
+
+Last visited section
+Selected paper
+Selected concept
+Graph focus
+Copilot conversation
+Notebook position
+Active mission
+
+When the user returns to the workspace, the system should restore appropriate context.
+
+The system should avoid restoring temporary state that could create confusion.
+
+90. Workspace Search
+
+Workspace search SHALL prioritize content belonging to the current workspace.
+
+Searchable content:
+
+Papers
+Concepts
+Authors
+Datasets
+Discoveries
+Notebook entries
+AI results
+
+Search results should indicate the content type.
+
+Example:
+
+Paper
+
+Graph Neural Networks for Molecular Discovery
+
+Concept
+
+GraphSAGE
+
+Discovery
+
+Potential relationship between molecular graphs and protein interaction prediction
+
+91. Workspace Quick Actions
+
+The Workspace should provide contextual actions.
+
+Examples:
+
+Upload Research
+
+Start Research Mission
+
+Ask Copilot
+
+Explore Knowledge Fabric
+
+Create Notebook Entry
+
+Generate Discovery Report
+
+Quick actions should adapt to the current workspace state.
+
+Example:
+
+No papers:
+
+Upload Research becomes primary.
+
+Active mission:
+
+View Mission becomes primary.
+
+Completed analysis:
+
+Explore Discoveries becomes primary.
+
+92. Workspace Empty State
+
+A newly created workspace with no research assets should display:
+
+Headline:
+
+"Your research workspace is ready."
+
+Supporting text:
+
+"Bring in your first research materials and start building your Knowledge Fabric."
+
+Primary action:
+
+Upload Research
+
+Secondary:
+
+Ask Research Copilot
+
+The interface may also provide a brief three-step explanation:
+
+Upload
+
+↓
+
+Connect
+
+↓
+
+Discover
+
+93. Workspace Loading
+
+The workspace shell should load independently from workspace data.
+
+Recommended sequence:
+
+Render workspace shell
+Load workspace metadata
+Load research summary
+Load mission state
+Load discoveries
+Load Knowledge Fabric preview
+
+Heavy graph data should not block the initial workspace render.
+
+94. Workspace Error Handling
+
+The Workspace should support module-level failure.
+
+Example:
+
+Knowledge Fabric unavailable.
+
+The rest of the workspace remains functional.
+
+Display:
+
+"Knowledge Fabric couldn't be loaded."
+
+Action:
+
+Retry
+
+Similarly:
+
+Research Mission unavailable
+
+↓
+
+Workspace remains accessible.
+
+The system should never turn one service failure into a full workspace failure unless the underlying workspace itself is unavailable.
+
+95. Workspace Permissions
+
+Version 1 SHALL support workspace ownership.
+
+Future versions may support:
+
+Viewer
+Editor
+Researcher
+Administrator
+
+The UI architecture should be prepared for permission-based controls even if Version 1 has only owner permissions.
+
+96. Workspace Settings
+
+Workspace settings may include:
+
+Workspace name
+Description
+Research objective
+Research domains
+AI preferences
+Default model configuration
+Data retention preferences
+Delete workspace
+
+Destructive actions should require confirmation.
+
+97. Workspace AI Context
+
+AI interactions within a workspace should automatically receive relevant workspace context according to configured retrieval rules.
+
+Potential context:
+
+Research objective
+Relevant research assets
+Saved discoveries
+Accepted concepts
+Notebook entries
+Knowledge Fabric relationships
+Previous workspace interactions
+
+The AI SHALL NOT automatically receive unrelated information from other workspaces.
+
+98. Workspace Memory
+
+Each workspace maintains persistent research memory.
+
+Memory may contain:
+
+Research objectives
+Important concepts
+User-approved discoveries
+Rejected hypotheses
+Key evidence
+Open research questions
+Notebook references
+
+Memory should be inspectable and controllable by the user.
+
+Users should be able to remove or modify stored memory.
+
+99. Workspace Context Transparency
+
+When AI uses workspace context, the interface should provide an indication.
+
+Example:
+
+Research Copilot
+
+Using:
+
+Current Workspace
+
+24 research papers
+
+137 concepts
+
+12 saved discoveries
+
+This creates transparency without overwhelming the user.
+
+100. Workspace Responsive Behavior
+Desktop
+
+Use multi-panel layouts where useful.
+
+Tablet
+
+Collapse secondary panels.
+
+Mobile
+
+Use sequential navigation.
+
+For example:
+
+Workspace
+
+↓
+
+Papers
+
+↓
+
+Selected Paper
+
+↓
+
+Context
+
+Instead of displaying all panels simultaneously.
+
+101. Workspace Accessibility
+
+The Workspace SHALL support:
+
+Keyboard navigation
+Focus management
+Screen readers
+Accessible tabs
+Accessible panels
+Reduced motion
+High contrast
+Semantic landmarks
+
+Complex Knowledge Fabric interactions should provide an alternative accessible information view.
+
+102. Workspace Performance
+
+The Workspace should prioritize:
+
+Fast shell rendering
+Progressive data loading
+Lazy graph rendering
+Efficient polling or streaming for AI missions
+Cached workspace metadata
+Incremental updates
+
+Large research datasets should not be loaded entirely into the browser unnecessarily.
+
+103. Workspace Backend Dependencies
+
+The Workspace depends on:
+
+Workspace Service
+
+Document Intelligence Service
+
+Knowledge Fabric Service
+
+Research Intelligence Service
+
+Notebook Service
+
+Discovery Service
+
+Authentication Service
+
+The frontend should prefer aggregated workspace endpoints where possible.
+
+104. Workspace Definition of Done
+
+The Research Workspace is complete when:
+
+✓ Workspace identity is visible
+
+✓ Research objective is visible
+
+✓ Workspace navigation works
+
+✓ Research Mission is integrated
+
+✓ Research assets are represented
+
+✓ Knowledge Fabric summary works
+
+✓ Discoveries are represented
+
+✓ AI activity is visible
+
+✓ Context panel works
+
+✓ Workspace modes are defined
+
+✓ Search is workspace-aware
+
+✓ Quick actions adapt to state
+
+✓ Empty state works
+
+✓ Loading state works
+
+✓ Error state works
+
+✓ Module-level failure is handled
+
+✓ Workspace memory is represented
+
+✓ Workspace context is isolated
+
+✓ Responsive layouts work
+
+✓ Accessibility requirements pass
+
+✓ Performance requirements are acceptable
