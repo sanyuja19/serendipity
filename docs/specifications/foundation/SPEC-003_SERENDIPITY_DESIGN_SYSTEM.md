@@ -2700,3 +2700,846 @@ When reduced motion is enabled:
 - Preserve essential state feedback through color, icons, and text.
 
 The application must remain fully understandable without animation.
+# 5. Design Tokens & Implementation Rules
+
+## 5.1 Purpose
+
+Design tokens provide the implementation-level representation of the SERENDIPITY Design System.
+
+Tokens SHALL be the single source of truth for:
+
+- Colors
+- Typography
+- Spacing
+- Borders
+- Radius
+- Shadows
+- Motion
+- Breakpoints
+- Z-index
+- Component states
+
+Application components SHALL consume semantic tokens rather than hard-coded visual values.
+
+---
+
+# 5.2 Token Architecture
+
+SERENDIPITY SHALL use three levels of design tokens.
+
+Primitive Tokens
+
+↓
+
+Semantic Tokens
+
+↓
+
+Component Tokens
+
+Primitive tokens define raw values.
+
+Semantic tokens define meaning.
+
+Component tokens define component-specific usage.
+
+Example:
+
+Primitive:
+
+Primary 500
+
+↓
+
+Semantic:
+
+Color Action Primary
+
+↓
+
+Component:
+
+Button Primary Background
+
+This separation allows the visual system to evolve without rewriting application components.
+
+---
+
+# 5.3 Color Token Structure
+
+Color tokens SHALL follow semantic naming.
+
+Example structure:
+
+color.background.primary
+
+color.background.secondary
+
+color.surface.default
+
+color.surface.elevated
+
+color.border.default
+
+color.text.primary
+
+color.text.secondary
+
+color.text.muted
+
+color.action.primary
+
+color.action.primary-hover
+
+color.discovery
+
+color.success
+
+color.warning
+
+color.error
+
+color.info
+
+Components should never directly depend on raw hexadecimal values.
+
+---
+
+# 5.4 Theme Architecture
+
+SERENDIPITY SHALL support:
+
+Dark Theme
+
+Light Theme
+
+Themes should be implemented using semantic CSS variables.
+
+Example conceptual structure:
+
+--background
+
+--foreground
+
+--surface
+
+--surface-elevated
+
+--border
+
+--primary
+
+--primary-foreground
+
+--muted
+
+--muted-foreground
+
+--success
+
+--warning
+
+--error
+
+--discovery
+
+The exact implementation may evolve with the frontend framework.
+
+---
+
+# 5.5 Typography Tokens
+
+Typography SHALL be represented through semantic tokens.
+
+Examples:
+
+font-display
+
+font-heading-1
+
+font-heading-2
+
+font-heading-3
+
+font-body-large
+
+font-body
+
+font-caption
+
+font-code
+
+Each token should define:
+
+- Font family
+- Font size
+- Font weight
+- Line height
+- Letter spacing where appropriate
+
+Components should avoid independently defining typography unless required by a specific visualization.
+
+---
+
+# 5.6 Spacing Tokens
+
+The spacing system SHALL use the defined 8-point scale.
+
+Tokens:
+
+space-1: 4px
+
+space-2: 8px
+
+space-3: 12px
+
+space-4: 16px
+
+space-5: 24px
+
+space-6: 32px
+
+space-7: 40px
+
+space-8: 48px
+
+space-9: 64px
+
+space-10: 80px
+
+space-11: 96px
+
+These tokens should be used consistently across:
+
+- Layouts
+- Components
+- Panels
+- Forms
+- Cards
+- Navigation
+
+---
+
+# 5.7 Radius Tokens
+
+radius-sm: 6px
+
+radius-md: 8px
+
+radius-lg: 12px
+
+radius-xl: 16px
+
+radius-full: 9999px
+
+Components should use semantic radius tokens rather than arbitrary values.
+
+---
+
+# 5.8 Border Tokens
+
+Borders should remain subtle.
+
+Recommended semantic tokens:
+
+border-subtle
+
+border-default
+
+border-strong
+
+border-focus
+
+border-error
+
+border-success
+
+Borders should primarily establish structure and separation rather than decoration.
+
+---
+
+# 5.9 Shadow Tokens
+
+SERENDIPITY SHALL use restrained elevation.
+
+shadow-none
+
+shadow-sm
+
+shadow-md
+
+shadow-lg
+
+shadow-xl
+
+Shadows should primarily be used for:
+
+- Floating panels
+- Dropdowns
+- Dialogs
+- Command palette
+- Important overlays
+
+Dense research interfaces should generally rely more on surface contrast and borders than large shadows.
+
+---
+
+# 5.10 Motion Tokens
+
+Motion SHALL use centralized timing tokens.
+
+duration-micro: 100ms
+
+duration-fast: 150ms
+
+duration-standard: 200ms
+
+duration-medium: 300ms
+
+duration-large: 400ms
+
+duration-complex: 500-700ms
+
+Components should avoid arbitrary transition durations.
+
+---
+
+# 5.11 Easing Tokens
+
+ease-standard
+
+ease-out
+
+ease-in
+
+ease-in-out
+
+ease-linear
+
+The default UI interaction easing should be ease-out.
+
+---
+
+# 5.12 Breakpoint Tokens
+
+The responsive system SHALL use:
+
+sm: 640px
+
+md: 768px
+
+lg: 1024px
+
+xl: 1280px
+
+2xl: 1536px
+
+The frontend implementation should use framework-supported responsive utilities wherever possible.
+
+---
+
+# 5.13 Z-Index Layers
+
+SERENDIPITY SHALL maintain predictable stacking contexts.
+
+Suggested hierarchy:
+
+Base
+
+↓
+
+Content
+
+↓
+
+Sticky
+
+↓
+
+Navigation
+
+↓
+
+Dropdown
+
+↓
+
+Popover
+
+↓
+
+Modal
+
+↓
+
+Command Palette
+
+↓
+
+Critical Overlay
+
+Z-index values should be centralized rather than arbitrarily assigned throughout the application.
+
+---
+
+# 5.14 Component State Tokens
+
+Interactive components SHALL support semantic states.
+
+Default
+
+Hover
+
+Focus
+
+Active
+
+Selected
+
+Disabled
+
+Loading
+
+Success
+
+Warning
+
+Error
+
+Components should maintain consistent state behavior across the application.
+
+---
+
+# 5.15 Focus Tokens
+
+Keyboard focus SHALL use a highly visible focus indicator.
+
+Focus styles must not depend solely on subtle color changes.
+
+Recommended pattern:
+
+Visible outline
+
++
+
+Brand-color emphasis
+
+The focus indicator should remain visible against both dark and light themes.
+
+---
+
+# 5.16 Icon Tokens
+
+Icons should use consistent dimensions.
+
+Small:
+
+16px
+
+Default:
+
+20px
+
+Medium:
+
+24px
+
+Large:
+
+32px
+
+Icons larger than 32px should be reserved for prominent empty states, illustrations, or visualization contexts.
+
+---
+
+# 5.17 Avatar Tokens
+
+Small:
+
+24px
+
+Default:
+
+32px
+
+Medium:
+
+40px
+
+Large:
+
+48px
+
+Profile:
+
+64px
+
+Avatar sizing should remain consistent throughout the platform.
+
+---
+
+# 5.18 Research Visualization Tokens
+
+Knowledge Fabric visualizations require their own semantic tokens.
+
+Examples:
+
+node-paper
+
+node-concept
+
+node-author
+
+node-institution
+
+node-dataset
+
+node-hypothesis
+
+edge-citation
+
+edge-supports
+
+edge-contradicts
+
+edge-related
+
+edge-influences
+
+These tokens should remain separate from general UI colors.
+
+---
+
+# 5.19 AI State Tokens
+
+AI workflow states SHALL have semantic representations.
+
+ai-queued
+
+ai-running
+
+ai-completed
+
+ai-paused
+
+ai-failed
+
+ai-retrying
+
+The visual representation may use:
+
+- Color
+- Icon
+- Label
+- Animation
+
+Color alone must never communicate the state.
+
+---
+
+# 5.20 Discovery Tokens
+
+Discovery-specific elements SHALL use a dedicated visual vocabulary.
+
+discovery-primary
+
+discovery-highlight
+
+discovery-border
+
+discovery-background
+
+discovery-confidence
+
+Discovery visual treatment should distinguish potential discoveries from ordinary research information.
+
+---
+
+# 5.21 Implementation Rule: No Hard-Coded UI Colors
+
+Frontend components SHALL NOT contain arbitrary color values.
+
+Avoid:
+
+background: #6366F1
+
+Prefer:
+
+background: var(--primary)
+
+This ensures global theme changes remain manageable.
+
+---
+
+# 5.22 Implementation Rule: No Arbitrary Spacing
+
+Avoid arbitrary spacing wherever the token system provides an equivalent value.
+
+Prefer:
+
+space-4
+
+over:
+
+17px
+
+Exceptions may exist for specialized visualizations or third-party integrations.
+
+Such exceptions should be documented.
+
+---
+
+# 5.23 Implementation Rule: Component Ownership
+
+Every component SHALL have a clear ownership layer.
+
+Primitive UI
+
+↓
+
+Product UI
+
+↓
+
+Research UI
+
+↓
+
+AI UI
+
+↓
+
+Visualization UI
+
+Components should not import internal implementation details from unrelated feature domains.
+
+---
+
+# 5.24 Implementation Rule: Composition Over Duplication
+
+If multiple screens require similar behavior, create a reusable component.
+
+Example:
+
+Instead of:
+
+DashboardPaperCard
+
+WorkspacePaperCard
+
+LibraryPaperCard
+
+Create:
+
+ResearchAssetCard
+
+with configurable variants.
+
+---
+
+# 5.25 Implementation Rule: Variants Over Forks
+
+Components should support controlled variants.
+
+Example:
+
+ResearchCard
+
+Variants:
+
+compact
+
+default
+
+expanded
+
+featured
+
+Avoid creating separate components when the underlying behavior remains the same.
+
+---
+
+# 5.26 Implementation Rule: Accessibility by Default
+
+Reusable components SHALL be accessible by default.
+
+Accessibility should not be added later as a separate development phase.
+
+Components must consider:
+
+- Keyboard access
+- Focus management
+- Labels
+- Contrast
+- Screen readers
+- Reduced motion
+- Error communication
+
+---
+
+# 5.27 Implementation Rule: Responsive by Default
+
+Every component should define how it behaves across supported viewport sizes.
+
+A component is incomplete if it only works on desktop.
+
+---
+
+# 5.28 Implementation Rule: Loading and Error States
+
+Every asynchronous component SHALL define:
+
+Loading
+
+Success
+
+Empty
+
+Error
+
+Retry
+
+states where applicable.
+
+This prevents inconsistent UX across the platform.
+
+---
+
+# 5.29 Implementation Rule: AI Transparency
+
+Any component displaying AI-generated information SHALL provide sufficient context to distinguish:
+
+User content
+
+AI-generated content
+
+Source evidence
+
+System status
+
+AI uncertainty
+
+The interface must never make generated content appear indistinguishable from verified source material.
+
+---
+
+# 5.30 Implementation Rule: Evidence Traceability
+
+AI-generated claims should provide a route to their supporting evidence.
+
+A user should be able to move from:
+
+Discovery
+
+↓
+
+Claim
+
+↓
+
+Evidence
+
+↓
+
+Source
+
+↓
+
+Research Asset
+
+without losing their current research context.
+
+---
+
+# 5.31 Implementation Rule: Performance
+
+Visual polish must not compromise application performance.
+
+Animations should use GPU-friendly properties where appropriate.
+
+Avoid unnecessary:
+
+- Layout recalculation
+- Large DOM trees
+- Continuous animations
+- High-frequency state updates
+
+Knowledge Fabric rendering should be optimized independently from normal UI rendering.
+
+---
+
+# 5.32 Implementation Rule: Motion Accessibility
+
+If the user prefers reduced motion:
+
+- Decorative motion is disabled.
+- Non-essential transitions are removed.
+- Essential state changes remain understandable.
+- Graph transitions become immediate where appropriate.
+
+The product must remain fully functional without animation.
+
+---
+
+# 5.33 Implementation Rule: Token Documentation
+
+Every new token must have:
+
+Name
+
+Purpose
+
+Value
+
+Usage
+
+Theme behavior
+
+Component dependencies
+
+Tokens should not be introduced without a clear design reason.
+
+---
+
+# 5.34 Design Token Governance
+
+Design tokens are part of the product's public design contract.
+
+Changes to foundational tokens should be reviewed carefully because they can affect the entire application.
+
+A token change should be evaluated for:
+
+- Visual consistency
+- Accessibility
+- Component impact
+- Responsive behavior
+- Dark/light themes
+- Knowledge visualization
+- AI interfaces
+
+---
+
+# 5.35 Design System Source of Truth
+
+The following hierarchy defines the source of truth:
+
+SPEC-003
+
+↓
+
+Design Tokens
+
+↓
+
+Component Library
+
+↓
+
+Product Screens
+
+↓
+
+Feature Implementations
+
+Implementation SHALL NOT redefine the design system independently.
+
