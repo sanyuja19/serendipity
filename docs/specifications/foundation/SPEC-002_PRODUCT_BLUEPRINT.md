@@ -1069,3 +1069,502 @@ Complex AI workflows should feel simple.
 Rule 7
 
 The product should encourage curiosity rather than passive consumption.
+# 19. System Architecture Philosophy
+
+SERENDIPITY follows a modular service-oriented architecture.
+
+Every major capability exists as an independent module with clearly defined responsibilities.
+
+The objective is to maximize scalability, maintainability, testability, and future extensibility.
+
+No module should directly depend on internal implementation details of another module.
+
+All communication occurs through stable interfaces.
+# 20. High-Level Service Architecture
+
+The platform consists of eight major services.
+
+Client Applications
+
+↓
+
+API Gateway
+
+↓
+
+Authentication Service
+
+↓
+
+Workspace Service
+
+↓
+
+Document Intelligence Service
+
+↓
+
+Knowledge Fabric Service
+
+↓
+
+Research Intelligence Service
+
+↓
+
+Export Service
+
+↓
+
+Infrastructure Services
+
+Each service owns its own business logic and communicates through well-defined APIs.
+# 21. Backend Service Responsibilities
+
+## Authentication Service
+
+Responsibilities
+
+• User registration
+
+• Login
+
+• JWT authentication
+
+• Authorization
+
+• Session management
+
+• Password reset
+
+• Profile management
+
+---
+
+## Workspace Service
+
+Responsibilities
+
+• Workspace creation
+
+• Workspace metadata
+
+• Workspace permissions
+
+• Workspace history
+
+• Collections
+
+• Project organization
+
+---
+
+## Document Intelligence Service
+
+Responsibilities
+
+• PDF upload
+
+• Patent upload
+
+• Dataset upload
+
+• OCR (future)
+
+• Metadata extraction
+
+• Chunk generation
+
+• Embedding generation
+
+• File indexing
+
+---
+
+## Knowledge Fabric Service
+
+Responsibilities
+
+• Entity extraction
+
+• Relationship extraction
+
+• Knowledge Graph creation
+
+• Graph updates
+
+• Graph search
+
+• Graph visualization APIs
+
+• Semantic clustering
+
+---
+
+## Research Intelligence Service
+
+Responsibilities
+
+• AI orchestration
+
+• Multi-agent execution
+
+• Research reasoning
+
+• Discovery Engine
+
+• Hypothesis generation
+
+• Report generation
+
+---
+
+## Export Service
+
+Responsibilities
+
+• PDF export
+
+• Markdown export
+
+• Word export
+
+• JSON export
+
+• Citation export
+
+• Graph export
+
+---
+
+## Notification Service (Future)
+
+Responsibilities
+
+• AI completion
+
+• Research alerts
+
+• Scheduled analysis
+
+• Background jobs
+
+---
+
+## Administration Service
+
+Responsibilities
+
+• Monitoring
+
+• Logs
+
+• Analytics
+
+• AI metrics
+
+• System health
+
+• Usage reports
+# 22. AI System Architecture
+
+SERENDIPITY follows a specialized multi-agent architecture.
+
+Every agent performs one responsibility exceptionally well.
+
+Research Request
+
+↓
+
+Planner Agent
+
+↓
+
+Task Decomposition
+
+↓
+
+Parallel Execution
+
+↓
+
+Literature Agent
+
+↓
+
+Concept Extraction Agent
+
+↓
+
+Citation Agent
+
+↓
+
+Knowledge Graph Agent
+
+↓
+
+Semantic Search Agent
+
+↓
+
+Reasoning Agent
+
+↓
+
+Hypothesis Agent
+
+↓
+
+Report Generation Agent
+
+↓
+
+Research Copilot Response
+# 23. Agent Responsibilities
+
+Planner Agent
+
+• Understand user objective
+
+• Build execution plan
+
+• Assign tasks
+
+---
+
+Literature Agent
+
+• Read papers
+
+• Retrieve information
+
+• Rank relevance
+
+---
+
+Concept Agent
+
+• Extract entities
+
+• Identify concepts
+
+• Normalize terminology
+
+---
+
+Citation Agent
+
+• Parse references
+
+• Build citation network
+
+• Detect influential works
+
+---
+
+Knowledge Agent
+
+• Build Knowledge Fabric
+
+• Detect relationships
+
+• Merge duplicate entities
+
+---
+
+Semantic Search Agent
+
+• Similarity search
+
+• Context retrieval
+
+• Ranking
+
+---
+
+Reasoning Agent
+
+• Cross-domain analysis
+
+• Logical reasoning
+
+• Evidence validation
+
+---
+
+Hypothesis Agent
+
+• Generate research opportunities
+
+• Estimate novelty
+
+• Suggest future work
+
+---
+
+Report Agent
+
+• Produce structured reports
+
+• Build notebook entries
+
+• Prepare exports
+# 24. Data Storage Strategy
+
+SERENDIPITY intentionally separates different types of information.
+
+PostgreSQL
+
+Stores
+
+• Users
+
+• Workspaces
+
+• Metadata
+
+• Reports
+
+• Preferences
+
+---
+
+Neo4j
+
+Stores
+
+• Knowledge Fabric
+
+• Concepts
+
+• Relationships
+
+• Citations
+
+• Research graph
+
+---
+
+Vector Database
+
+Stores
+
+• Embeddings
+
+• Semantic chunks
+
+• Similarity indexes
+
+---
+
+Object Storage
+
+Stores
+
+• PDFs
+
+• Images
+
+• Datasets
+
+• Generated exports
+
+This separation improves scalability and performance.
+# 25. Event Flow
+
+Every major action generates events.
+
+Example
+
+Upload PDF
+
+↓
+
+Store File
+
+↓
+
+Extract Metadata
+
+↓
+
+Generate Chunks
+
+↓
+
+Generate Embeddings
+
+↓
+
+Extract Concepts
+
+↓
+
+Build Knowledge Fabric
+
+↓
+
+Run AI Agents
+
+↓
+
+Generate Report
+
+↓
+
+Update Dashboard
+
+↓
+
+Notify User
+
+The system is event-driven wherever possible.
+# 26. API Domains
+
+Version 1 exposes the following API groups.
+
+Authentication API
+
+Workspace API
+
+Document API
+
+Knowledge Fabric API
+
+Research Copilot API
+
+Discovery API
+
+Notebook API
+
+Search API
+
+Export API
+
+Administration API
+
+Every API shall follow REST conventions.
+
+Future versions may introduce GraphQL support.
+# 27. Architectural Principles
+
+Every backend component shall satisfy the following principles.
+
+Single Responsibility
+
+Loose Coupling
+
+High Cohesion
+
+API First
+
+Stateless Services
+
+Scalable Storage
+
+Observable Systems
+
+Independent Deployment
+
+These principles apply to every future module.
