@@ -5763,4 +5763,1284 @@ The AI Analysis Experience is complete when:
                      ▼
               HUMAN DECISION
 
-              
+
+# 223. Knowledge Fabric
+
+## 223.1 Purpose
+
+The Knowledge Fabric is the visual and interactive representation of connected research knowledge within SERENDIPITY.
+
+It represents relationships between:
+
+- Papers
+- Concepts
+- Authors
+- Institutions
+- Methods
+- Datasets
+- Research Areas
+- Hypotheses
+- Discoveries
+
+The Knowledge Fabric allows researchers to move from isolated research assets toward connected knowledge.
+
+The primary objective is exploration.
+
+The interface should help users answer:
+
+1. What is connected to this research?
+2. Why are these entities connected?
+3. Which relationships are strongest?
+4. Where are the knowledge clusters?
+5. What connections have recently appeared?
+6. Are there potentially interesting unexplored relationships?
+
+---
+
+# 224. Knowledge Fabric Mental Model
+
+The Knowledge Fabric follows:
+
+Entity
+
+↓
+
+Relationship
+
+↓
+
+Cluster
+
+↓
+
+Context
+
+↓
+
+Discovery
+
+The graph should encourage progressive exploration.
+
+Users should not be required to understand graph theory to use the interface.
+
+---
+
+# 225. Knowledge Fabric Layout
+
+Desktop:
+
+┌────────────────────────────────────────────────────────────────────┐
+│ Knowledge Fabric Header                                            │
+├──────────────┬───────────────────────────────────────┬─────────────┤
+│              │                                       │             │
+│ Graph        │                                       │ Context     │
+│ Controls     │              GRAPH                    │ Panel       │
+│              │                                       │             │
+│ Search       │                                       │ Entity      │
+│ Filters      │                                       │ Details     │
+│ Layers       │                                       │ Evidence    │
+│ Layout       │                                       │ Connections  │
+│              │                                       │             │
+├──────────────┴───────────────────────────────────────┴─────────────┤
+│ Graph Status / Legend / Actions                                   │
+└────────────────────────────────────────────────────────────────────┘
+
+The graph occupies the majority of the screen.
+
+The context panel remains secondary.
+
+---
+
+# 226. Graph Header
+
+The header should display:
+
+Knowledge Fabric
+
+Workspace name
+
+Entity count
+
+Relationship count
+
+Last updated
+
+Actions:
+
+Search
+
+Filter
+
+Focus Mode
+
+Reset View
+
+The header should remain compact.
+
+---
+
+# 227. Entity Types
+
+Version 1 SHALL support the following entity types:
+
+Paper
+
+Concept
+
+Author
+
+Institution
+
+Method
+
+Dataset
+
+Research Area
+
+Hypothesis
+
+Discovery
+
+Additional types may be introduced later.
+
+---
+
+# 228. Entity Visual Identity
+
+Each entity type SHALL have a distinct visual identity.
+
+Example:
+
+Paper
+
+Blue
+
+Concept
+
+Purple
+
+Author
+
+Amber
+
+Institution
+
+Teal
+
+Method
+
+Cyan
+
+Dataset
+
+Green
+
+Research Area
+
+Indigo
+
+Hypothesis
+
+Magenta
+
+Discovery
+
+Emerald
+
+Color SHALL NOT be the only distinction.
+
+Entity identity should also use:
+
+- Shape
+- Icon
+- Label
+- Interaction behavior
+
+---
+
+# 229. Node Size
+
+Node size may communicate a meaningful graph property.
+
+Possible properties:
+
+- Number of connections
+- Research relevance
+- Evidence strength
+- Importance within current workspace
+
+The meaning of node size must remain consistent within a given visualization.
+
+---
+
+# 230. Relationship Types
+
+Version 1 may support:
+
+Cites
+
+Supports
+
+Contradicts
+
+Related To
+
+Uses Method
+
+Written By
+
+Published By
+
+Uses Dataset
+
+Belongs To
+
+Derived From
+
+Potential Connection
+
+Discovered Through
+
+Each relationship type should have a defined semantic meaning.
+
+---
+
+# 231. Edge Visual Identity
+
+Relationships may be distinguished through:
+
+- Line style
+- Thickness
+- Direction
+- Iconography
+- Color
+
+Examples:
+
+Citation
+
+Solid thin line
+
+Supports
+
+Solid highlighted line
+
+Contradicts
+
+Dashed warning line
+
+Potential Connection
+
+Subtle discovery-colored line
+
+The visualization must remain readable at high graph density.
+
+---
+
+# 232. Graph Initial State
+
+When opening the Knowledge Fabric, the user should not immediately receive every entity in the workspace.
+
+The initial view should provide a meaningful overview.
+
+Possible initial visualization:
+
+Research clusters
+
+Major concepts
+
+Recent discoveries
+
+High-relevance entities
+
+The system may use an adaptive graph sampling strategy for large datasets.
+
+---
+
+# 233. Graph Navigation
+
+Users SHALL be able to:
+
+- Pan
+- Zoom
+- Select nodes
+- Select relationships
+- Focus on entities
+- Expand relationships
+- Search
+- Filter
+- Reset view
+
+Navigation should feel fluid but remain predictable.
+
+---
+
+# 234. Node Selection
+
+When a node is selected:
+
+Selected node
+
+↓
+
+Increase prominence
+
+↓
+
+Highlight direct relationships
+
+↓
+
+Reduce unrelated graph opacity
+
+↓
+
+Open context panel
+
+The graph should maintain surrounding context.
+
+---
+
+# 235. Context Panel
+
+The Context Panel displays information about the selected entity.
+
+Example:
+
+Concept
+
+Graph Neural Networks
+
+Definition
+
+Neural architectures operating directly on graph-structured data.
+
+Connections
+
+42 Papers
+
+18 Authors
+
+7 Methods
+
+5 Research Areas
+
+Actions:
+
+Explore
+
+Ask Copilot
+
+View Papers
+
+Add to Notebook
+
+---
+
+# 236. Relationship Inspection
+
+Selecting an edge should reveal:
+
+Relationship Type
+
+Source Entity
+
+Target Entity
+
+Evidence
+
+Confidence
+
+Source Papers
+
+Example:
+
+Relationship
+
+Supports
+
+Graph Neural Networks
+
+→
+
+Molecular Property Prediction
+
+Evidence:
+
+6 research papers
+
+Confidence:
+
+High
+
+Actions:
+
+View Evidence
+
+Open Sources
+
+Ask Copilot
+
+---
+
+# 237. Evidence Overlay
+
+Users should be able to inspect why a relationship exists.
+
+Example:
+
+Relationship Evidence
+
+Supporting Sources:
+
+Paper A
+
+Page 6
+
+Paper B
+
+Page 12
+
+Paper C
+
+Section: Experiments
+
+The evidence overlay should link directly to source locations where possible.
+
+---
+
+# 238. Search
+
+Knowledge Fabric search should support:
+
+- Entity name
+- Concept
+- Paper title
+- Author
+- Method
+- Dataset
+- Research area
+
+Search results should display entity type.
+
+Example:
+
+GraphSAGE
+
+Concept
+
+GraphSAGE: Inductive Representation Learning
+
+Paper
+
+---
+
+# 239. Search-to-Graph
+
+When the user searches for an entity:
+
+Search
+
+↓
+
+Select result
+
+↓
+
+Graph focuses on entity
+
+↓
+
+Connected entities become visible
+
+↓
+
+Context panel opens
+
+This creates a direct transition from search to exploration.
+
+---
+
+# 240. Filters
+
+Users SHALL be able to filter by:
+
+Entity Type
+
+Relationship Type
+
+Research Area
+
+Confidence
+
+Evidence Strength
+
+Date
+
+Workspace Source
+
+Discovery Status
+
+Filters should update the visualization without requiring a full page reload.
+
+---
+
+# 241. Layer Controls
+
+Users may toggle visualization layers.
+
+Example:
+
+☑ Papers
+
+☑ Concepts
+
+☑ Authors
+
+☑ Methods
+
+☐ Institutions
+
+☐ Datasets
+
+☑ Discoveries
+
+Layer controls should help reduce visual complexity.
+
+---
+
+# 242. Research Cluster View
+
+The graph may identify clusters of related knowledge.
+
+Example:
+
+Cluster A
+
+Molecular Graph Learning
+
+Cluster B
+
+Protein Interaction Networks
+
+Cluster C
+
+Graph Representation Learning
+
+Clusters may be labeled automatically.
+
+Cluster labels should be treated as generated interpretations rather than absolute scientific categories.
+
+---
+
+# 243. Cluster Interaction
+
+Selecting a cluster:
+
+↓
+
+Focus cluster
+
+↓
+
+Display member entities
+
+↓
+
+Display major concepts
+
+↓
+
+Display inter-cluster relationships
+
+Action:
+
+Explore Cluster
+
+The user should be able to return to the global graph.
+
+---
+
+# 244. Focus Mode
+
+Focus Mode provides concentrated exploration around an entity.
+
+Example:
+
+Selected:
+
+Graph Neural Networks
+
+Focus:
+
+2-hop neighborhood
+
+Display:
+
+Related Papers
+
+Concepts
+
+Methods
+
+Authors
+
+Datasets
+
+The user should be able to adjust exploration depth.
+
+Options:
+
+1 hop
+
+2 hops
+
+3 hops
+
+Custom
+
+---
+
+# 245. Expand Node
+
+A selected node may be expanded to reveal additional connections.
+
+Example:
+
+Graph Neural Networks
+
+↓
+
+Expand
+
+↓
+
++18 related papers
+
++7 methods
+
++12 concepts
+
+The graph should progressively reveal information rather than loading the entire network.
+
+---
+
+# 246. Graph Reset
+
+Users SHALL be able to reset the graph.
+
+Action:
+
+Reset View
+
+Result:
+
+Return to the workspace's default graph state.
+
+The reset action should be easily accessible.
+
+---
+
+# 247. Discovery Highlight
+
+Potential discoveries should receive a distinct visual treatment.
+
+Example:
+
+Normal relationship:
+
+Muted
+
+Potential connection:
+
+Discovery accent
+
+Selected discovery:
+
+Strong highlight
+
+Discovery highlights should never imply scientific validity.
+
+They indicate that the system has identified a relationship worth investigating.
+
+---
+
+# 248. Discovery Exploration
+
+Selecting a potential connection should open:
+
+Discovery
+
+Relationship Summary
+
+Supporting Evidence
+
+Source Papers
+
+Confidence
+
+Novelty Estimate
+
+Contradictory Evidence
+
+Actions:
+
+Explore
+
+Validate
+
+Save
+
+Reject
+
+Ask Copilot
+
+---
+
+# 249. Graph Timeline
+
+The Knowledge Fabric may support temporal exploration.
+
+Users can inspect:
+
+Knowledge at time T
+
+↓
+
+New papers
+
+↓
+
+New concepts
+
+↓
+
+New relationships
+
+↓
+
+New discoveries
+
+A timeline control may allow users to inspect how the workspace evolved.
+
+---
+
+# 250. Timeline States
+
+Example:
+
+January
+
+320 entities
+
+↓
+
+March
+
+620 entities
+
+↓
+
+June
+
+1,020 entities
+
+↓
+
+August
+
+1,284 entities
+
+The timeline should represent actual workspace data.
+
+---
+
+# 251. Graph Comparison
+
+Future versions may support:
+
+Before Analysis
+
+vs.
+
+After Analysis
+
+This can visually demonstrate how a Research Mission changed the Knowledge Fabric.
+
+Version 1 should prepare the architecture for this capability without requiring implementation.
+
+---
+
+# 252. Graph Layout
+
+The visualization may support multiple layout strategies.
+
+Possible layouts:
+
+Force Directed
+
+Clustered
+
+Hierarchical
+
+Radial
+
+Timeline
+
+The default should prioritize readability and exploration.
+
+The user may change layout where useful.
+
+---
+
+# 253. Layout Stability
+
+The graph should avoid excessive repositioning.
+
+Once a user has focused on an entity, unrelated graph changes should not cause the entire graph to jump unpredictably.
+
+New data should be incorporated progressively.
+
+---
+
+# 254. Graph Density
+
+When graph density becomes high, the system should use techniques such as:
+
+- Clustering
+- Level of detail
+- Filtering
+- Progressive expansion
+- Edge simplification
+- Viewport-based rendering
+
+The browser should not attempt to render an enormous graph indiscriminately.
+
+---
+
+# 255. Large Graph Strategy
+
+For very large Knowledge Fabrics:
+
+Initial:
+
+Cluster View
+
+↓
+
+User selects cluster
+
+↓
+
+Relevant subgraph loaded
+
+↓
+
+User selects entity
+
+↓
+
+Local neighborhood expanded
+
+This creates progressive exploration.
+
+---
+
+# 256. Graph Loading
+
+The graph should use staged loading.
+
+Stage 1:
+
+Graph shell
+
+Stage 2:
+
+Workspace summary
+
+Stage 3:
+
+Clusters
+
+Stage 4:
+
+Visible entities
+
+Stage 5:
+
+Relationships
+
+Stage 6:
+
+Additional entities on demand
+
+The interface should remain interactive throughout loading.
+
+---
+
+# 257. Graph Processing State
+
+If Knowledge Fabric construction is still occurring:
+
+Knowledge Fabric
+
+Processing
+
+"Adding 137 newly extracted concepts..."
+
+Progress:
+
+72%
+
+The graph may display the existing knowledge while new knowledge is processed.
+
+---
+
+# 258. Graph Empty State
+
+If the workspace has no knowledge:
+
+Your Knowledge Fabric starts here.
+
+Upload research to begin connecting:
+
+Papers
+
+Concepts
+
+Methods
+
+Researchers
+
+Primary action:
+
+Upload Research
+
+Secondary:
+
+Learn About Knowledge Fabric
+
+---
+
+# 259. Graph Partial State
+
+If some research assets are processed:
+
+Knowledge Fabric
+
+1,024 entities
+
+Processing 6 additional papers...
+
+The user can continue exploring existing knowledge.
+
+---
+
+# 260. Graph Error State
+
+If the graph service fails:
+
+Knowledge Fabric temporarily unavailable.
+
+Your research data remains safe.
+
+Actions:
+
+Retry
+
+View Research Assets
+
+The rest of the workspace remains available.
+
+---
+
+# 261. Graph Interaction with Papers
+
+Clicking a Paper node:
+
+↓
+
+Open Paper Viewer
+
+The selected paper should open while preserving graph context.
+
+Returning to Knowledge Fabric should restore the previous graph state where practical.
+
+---
+
+# 262. Graph Interaction with Copilot
+
+A selected entity can be sent to Research Copilot.
+
+Example:
+
+Selected:
+
+Graph Neural Networks
+
+Action:
+
+Ask Copilot
+
+Copilot context:
+
+Selected Concept
+
+Connected Papers
+
+Relevant Evidence
+
+Workspace Research Objective
+
+The user should not need to manually copy graph information.
+
+---
+
+# 263. Graph Interaction with Notebook
+
+Users can save graph discoveries to the Research Notebook.
+
+Example:
+
+Selected Relationship
+
+↓
+
+Add to Notebook
+
+↓
+
+Notebook entry includes:
+
+Source Entity
+
+Target Entity
+
+Relationship
+
+Evidence
+
+Date
+
+Optional researcher note
+
+---
+
+# 264. Graph Accessibility
+
+Complex graph visualization requires an alternative representation.
+
+Users should be able to access entity relationships through a structured list.
+
+Example:
+
+Graph Neural Networks
+
+Connected to:
+
+42 Papers
+
+18 Authors
+
+7 Methods
+
+12 Concepts
+
+The accessible representation should provide the same meaningful information as the visualization.
+
+---
+
+# 265. Keyboard Navigation
+
+Keyboard users should be able to:
+
+- Search
+- Navigate results
+- Select entities
+- Open context
+- Expand relationships
+- Move through accessible graph results
+
+The visual graph should not be the only interaction mechanism.
+
+---
+
+# 266. Mobile Knowledge Fabric
+
+Mobile should use a simplified experience.
+
+Recommended structure:
+
+Graph
+
+↓
+
+Selected Entity
+
+↓
+
+Context Drawer
+
+The graph should support:
+
+- Pan
+- Zoom
+- Select
+
+Advanced filtering may appear in a bottom sheet.
+
+The full desktop control system should not be compressed onto a small screen.
+
+---
+
+# 267. Graph Performance
+
+The Knowledge Fabric is expected to be one of the most computationally intensive frontend components.
+
+Requirements:
+
+- Progressive rendering
+- Viewport-aware rendering
+- Efficient node updates
+- Efficient edge updates
+- Avoid unnecessary React re-renders
+- Lazy-load graph modules
+- Use appropriate graph rendering technology
+- Maintain interaction responsiveness
+
+The visualization architecture should be isolated from normal UI rendering.
+
+---
+
+# 268. Graph Data API
+
+The frontend should consume graph data through defined APIs.
+
+Possible operations:
+
+Get Graph Summary
+
+Get Clusters
+
+Get Entity
+
+Get Entity Neighborhood
+
+Get Relationship
+
+Search Entities
+
+Filter Graph
+
+Get Evidence
+
+Get Graph Timeline
+
+The API should support pagination or progressive graph retrieval.
+
+---
+
+# 269. Knowledge Fabric Backend Dependencies
+
+The frontend depends on:
+
+Knowledge Graph Service
+
+Entity Service
+
+Relationship Service
+
+Evidence Service
+
+Search Service
+
+Research Asset Service
+
+Discovery Service
+
+Research Mission Service
+
+The frontend should not implement graph reasoning.
+
+Graph semantics belong to backend knowledge services.
+
+---
+
+# 270. Knowledge Fabric Definition of Done
+
+The Knowledge Fabric is complete when:
+
+✓ Graph renders
+
+✓ Entity types are distinguishable
+
+✓ Relationship types are represented
+
+✓ Node selection works
+
+✓ Relationship selection works
+
+✓ Context panel works
+
+✓ Evidence inspection works
+
+✓ Search works
+
+✓ Search-to-graph works
+
+✓ Filtering works
+
+✓ Layer controls work
+
+✓ Focus Mode works
+
+✓ Node expansion works
+
+✓ Graph reset works
+
+✓ Discovery highlighting works
+
+✓ Cluster exploration works
+
+✓ Empty state works
+
+✓ Processing state works
+
+✓ Error state works
+
+✓ Large graph strategy is implemented
+
+✓ Paper integration works
+
+✓ Copilot integration works
+
+✓ Notebook integration works
+
+✓ Accessible alternative exists
+
+✓ Mobile experience works
+
+✓ Performance requirements pass
+
+                    SERENDIPITY
+                         │
+              ┌──────────┴──────────┐
+              │                     │
+          RESEARCH               AI
+              │                     │
+         ┌────┴────┐          ┌─────┴─────┐
+         │         │          │           │
+       PAPERS   EVIDENCE    AGENTS     COPILOT
+         │         │          │           │
+         └────┬────┘          └─────┬─────┘
+              │                     │
+              └──────────┬──────────┘
+                         ▼
+                  KNOWLEDGE FABRIC
+                         │
+                 ┌───────┴───────┐
+                 ▼               ▼
+             DISCOVERY        NOTEBOOK
+
+             
+
