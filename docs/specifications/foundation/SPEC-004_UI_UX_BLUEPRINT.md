@@ -3751,3 +3751,958 @@ The Research Ingestion experience is complete when:
 ✓ Security requirements are implemented
 
 ✓ Processing does not block unrelated workspace activity
+# 140. Paper Viewer
+
+## 140.1 Purpose
+
+The Paper Viewer provides an immersive environment for reading and understanding research papers inside SERENDIPITY.
+
+The viewer combines:
+
+- Original research content
+- Document metadata
+- Concepts
+- Citations
+- Evidence
+- AI assistance
+- Knowledge Fabric context
+- Researcher annotations
+
+The primary objective is to help researchers understand a document without repeatedly switching between external tools.
+
+---
+
+# 141. Paper Viewer Layout
+
+Desktop:
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ Paper Header                                                        │
+├──────────────┬───────────────────────────────────┬──────────────────┤
+│              │                                   │                  │
+│ Document     │                                   │ Context Panel    │
+│ Navigation   │         Paper Content             │                  │
+│              │                                   │ Concepts         │
+│ Overview     │                                   │ Evidence         │
+│ Sections     │                                   │ Citations        │
+│ Figures      │                                   │ AI Insights      │
+│ References   │                                   │                  │
+│              │                                   │                  │
+├──────────────┴───────────────────────────────────┴──────────────────┤
+│ Optional Research / AI Action Bar                                  │
+└─────────────────────────────────────────────────────────────────────┘
+
+The center content area receives the highest visual priority.
+
+Side panels should remain secondary.
+142. Paper Header
+
+The Paper Header displays:
+
+Paper title
+Authors
+Publication information
+Source
+Processing status
+Workspace
+Actions
+
+Example:
+
+Graph Neural Networks for Molecular Discovery
+
+A. Researcher · B. Researcher · C. Researcher
+
+2026 · Research Journal
+
+Processed
+
+Actions:
+
+Ask Copilot
+
+Add to Notebook
+
+Open Knowledge Fabric
+
+More
+
+143. Paper Metadata
+
+The metadata panel may contain:
+
+Title
+
+Authors
+
+Publication
+
+Year
+
+DOI
+
+URL
+
+Abstract
+
+Keywords
+
+Research domains
+
+The metadata should remain compact and expandable.
+
+144. Document Navigation
+
+The left navigation panel provides structural navigation.
+
+Sections may include:
+
+Abstract
+Introduction
+Related Work
+Methodology
+Experiments
+Results
+Discussion
+Conclusion
+References
+
+If the document structure cannot be reliably extracted, the system should fall back to page-based navigation.
+
+145. Reading Area
+
+The central reading area displays the processed document.
+
+Requirements:
+
+Clear typography
+Comfortable line length
+Appropriate spacing
+Page or section navigation
+Search within document
+Zoom controls
+Citation interaction
+Highlighting
+
+The reading area should prioritize readability over information density.
+
+146. Document Rendering
+
+Version 1 SHALL support reliable rendering of machine-readable PDF content.
+
+The viewer may use:
+
+PDF rendering
+Extracted structured text
+Page references
+
+The original document should remain visually identifiable.
+
+The system must preserve page-level references where possible.
+
+147. Text Selection
+
+Users should be able to select text.
+
+Selecting text may expose contextual actions:
+
+Ask Copilot
+
+Explain
+
+Save Evidence
+
+Add to Notebook
+
+Search Knowledge Fabric
+
+Copy
+
+The contextual action menu should remain compact.
+
+148. Ask Copilot About Selection
+
+When a user selects a passage:
+
+Selected Passage
+
+↓
+
+Ask Copilot
+
+↓
+
+Research Copilot receives:
+
+Selected text
+Paper identity
+Relevant paper metadata
+Workspace context where appropriate
+
+Example:
+
+User selects:
+
+"A graph convolutional network was used to..."
+
+Copilot:
+
+"Explain this method."
+
+The response should remain linked to the selected passage.
+
+149. Evidence Highlighting
+
+SERENDIPITY may visually distinguish important extracted information.
+
+Potential highlights:
+
+Concept
+
+Entity
+
+Citation
+
+Evidence
+
+Method
+
+Research Finding
+
+Different information types should use subtle visual treatment.
+
+Highlights must not make the document difficult to read.
+
+Users should be able to disable or adjust highlighting.
+
+150. Concept Interaction
+
+When the user clicks an extracted concept:
+
+Example:
+
+Graph Neural Network
+
+↓
+
+Context panel opens
+
+Definition
+
+Related Papers
+
+Related Concepts
+
+Knowledge Fabric connections
+
+AI explanation
+
+Actions:
+
+Explore
+
+Ask Copilot
+
+Add to Notebook
+
+The user should remain on the same document position.
+
+151. Citation Interaction
+
+Citations should be interactive.
+
+Example:
+
+[12]
+
+Hover:
+
+Paper title
+
+Authors
+
+Year
+
+Click:
+
+Citation detail panel
+
+Actions:
+
+Open Paper
+
+Explore Citation Network
+
+Add to Library
+
+The interaction should avoid unexpectedly navigating away from the current document.
+
+152. Reference Navigation
+
+When a user opens a reference:
+
+The viewer may display a contextual reference panel.
+
+Example:
+
+Reference #12
+
+Graph Representation Learning
+
+Authors
+
+X. Researcher et al.
+
+2019
+
+Relationship:
+
+Cited by current paper
+
+Actions:
+
+Open Source
+
+Explore in Knowledge Fabric
+
+Add to Workspace
+
+153. Right Context Panel
+
+The right context panel dynamically displays information relevant to the user's current selection.
+
+Possible sections:
+
+Concepts
+
+Evidence
+
+Citations
+
+AI Insights
+
+Knowledge Connections
+
+Notebook Actions
+
+The panel should adapt based on context.
+
+154. Context Panel States
+
+No Selection:
+
+Show paper-level information.
+
+Selected Concept:
+
+Show concept information.
+
+Selected Citation:
+
+Show citation information.
+
+Selected Evidence:
+
+Show evidence details.
+
+Selected Discovery:
+
+Show discovery context.
+
+The panel should never display irrelevant information.
+
+155. AI Insights
+
+The Paper Viewer may display AI-generated observations.
+
+Example:
+
+AI Insight
+
+"This paper's methodology is closely related to approaches used in three other papers in your workspace."
+
+Evidence:
+
+3 related research assets
+
+Action:
+
+Explore Connection
+
+AI insights should remain clearly labeled as AI-generated.
+
+156. Paper-Level AI Analysis
+
+The user may request analysis of the complete paper.
+
+Available actions:
+
+Summarize
+
+Extract Concepts
+
+Identify Methodology
+
+Analyze Contributions
+
+Find Limitations
+
+Compare With Workspace
+
+Find Related Research
+
+These actions may launch specialized AI workflows.
+
+157. Analysis Scope
+
+Users should be able to choose analysis scope.
+
+Options:
+
+Selected Text
+
+Current Section
+
+Entire Paper
+
+Paper + Workspace
+
+Paper + Knowledge Fabric
+
+This makes AI behavior explicit.
+
+158. Analysis Progress
+
+When analysis is running:
+
+Research Mission
+
+Analyzing:
+
+Graph Neural Networks for Molecular Discovery
+
+Current task:
+
+Comparing methodology with workspace literature
+
+Progress:
+
+42%
+
+Agents:
+
+✓ Planner
+
+✓ Literature
+
+● Reasoning
+
+○ Discovery
+
+The user may continue reading while analysis runs.
+
+159. AI Analysis Result
+
+The result should use structured sections.
+
+Example:
+
+Summary
+
+Key Contributions
+
+Methodology
+
+Evidence
+
+Limitations
+
+Related Research
+
+Potential Connections
+
+Each generated section should provide supporting evidence where applicable.
+
+160. AI Evidence
+
+AI-generated claims should provide source references.
+
+Example:
+
+Claim:
+
+"The proposed representation improves molecular graph classification."
+
+Evidence:
+
+Page 7
+
+Section: Experiments
+
+Source:
+
+Current Paper
+
+Additional Sources:
+
+3 workspace papers
+
+The user should be able to jump directly to the source location.
+
+161. AI Confidence
+
+Where confidence is available:
+
+High Confidence
+
+92%
+
+Based on:
+
+8 supporting evidence items
+
+Confidence should be accompanied by context.
+
+It should never imply mathematical certainty.
+
+162. Research Copilot Integration
+
+The Paper Viewer should provide persistent access to Research Copilot.
+
+Possible interaction:
+
+Ask about this paper
+
+The Copilot automatically receives relevant context according to workspace and retrieval rules.
+
+Example:
+
+User:
+
+"What are the limitations of this approach?"
+
+Copilot:
+
+Analyzes relevant sections and provides evidence-linked findings.
+
+163. Copilot Context Indicator
+
+The interface should indicate what context is being used.
+
+Example:
+
+Research Copilot is using:
+
+Current Paper
+
+Current Section
+
+24 Workspace Papers
+
+Knowledge Fabric
+
+This provides transparency.
+
+164. Notebook Integration
+
+Users should be able to save research findings directly to the Research Notebook.
+
+Actions:
+
+Save Summary
+
+Save Evidence
+
+Save Concept
+
+Save Citation
+
+Save AI Insight
+
+Create Note
+
+The saved item should preserve its source reference.
+
+165. Highlight to Notebook
+
+Users may select text:
+
+Selected Text
+
+↓
+
+Add to Notebook
+
+↓
+
+Create Note
+
+The resulting notebook entry should include:
+
+Selected text
+Source paper
+Page
+Section
+Timestamp
+Optional user note
+166. Research Asset Status
+
+The Paper Viewer should communicate processing state.
+
+Statuses:
+
+Processing
+
+Analyzed
+
+Partially Analyzed
+
+Analysis Failed
+
+Updated
+
+Example:
+
+Analyzed
+
+137 concepts
+
+42 entities
+
+68 relationships
+
+167. Paper Search
+
+Users should be able to search within the paper.
+
+Search should support:
+
+Exact text
+Concepts
+Sections
+Citations
+
+Search results should display:
+
+Matching text
+Page
+Section
+Result count
+168. Paper Reading Progress
+
+The viewer may optionally remember reading position.
+
+When the user returns:
+
+"Continue where you left off?"
+
+Actions:
+
+Continue
+
+Start from Beginning
+
+The reading position should be workspace/user-specific.
+
+169. Paper Annotations
+
+Version 1 may support lightweight annotations.
+
+Users can:
+
+Highlight text
+Add note
+Save evidence
+
+Future versions may introduce advanced collaborative annotation.
+
+170. Paper Viewer Modes
+
+The viewer supports:
+
+Reading Mode
+
+Analysis Mode
+
+Evidence Mode
+
+Citation Mode
+
+Each mode changes contextual emphasis without destroying document context.
+
+171. Reading Mode
+
+Focus:
+
+Document content.
+
+Secondary:
+
+Metadata.
+
+Minimal:
+
+AI and graph information.
+
+172. Analysis Mode
+
+Focus:
+
+AI analysis.
+
+Secondary:
+
+Evidence.
+
+Supporting:
+
+Document content.
+
+173. Evidence Mode
+
+Focus:
+
+Claims and supporting evidence.
+
+Users can move between:
+
+Claim
+
+↓
+
+Evidence
+
+↓
+
+Source
+
+↓
+
+Document Location
+
+174. Citation Mode
+
+Focus:
+
+Citation relationships.
+
+Users can inspect:
+
+References
+Cited-by relationships
+Citation clusters
+Related papers
+175. Paper Viewer Empty State
+
+If a document has been uploaded but not processed:
+
+Document processing is still underway.
+
+"SERENDIPITY is preparing this research paper."
+
+Action:
+
+View Processing Status
+
+The user should not receive an empty reader with no explanation.
+
+176. Paper Viewer Error State
+
+If the document cannot be rendered:
+
+"Unable to display this document."
+
+Possible causes:
+
+Corrupted PDF
+Unsupported structure
+Rendering failure
+
+Actions:
+
+Retry
+
+Download Original
+
+View Extracted Text
+
+Report Issue
+
+177. Paper Viewer Mobile
+
+Mobile should prioritize reading.
+
+Recommended structure:
+
+Paper Header
+
+↓
+
+Document Content
+
+↓
+
+Contextual Action Bar
+
+↓
+
+Context Panel as Drawer
+
+The document should occupy the majority of the screen.
+
+AI and evidence panels should open as bottom sheets or drawers.
+
+178. Paper Viewer Accessibility
+
+The viewer SHALL support:
+
+Keyboard navigation
+Accessible headings
+Screen-reader-compatible document structure where possible
+Text selection
+Visible focus
+High contrast
+Reduced motion
+Accessible citation controls
+
+Important extracted information should not rely exclusively on color.
+
+179. Paper Viewer Performance
+
+Requirements:
+
+Lazy-load document pages where possible
+Avoid rendering the entire document unnecessarily
+Cache processed document content
+Virtualize long extracted-text views where appropriate
+Lazy-load Knowledge Fabric visualizations
+Avoid blocking reading while AI analysis runs
+
+The user should be able to begin reading before all secondary intelligence has loaded.
+
+180. Paper Viewer Backend Dependencies
+
+The Paper Viewer depends on:
+
+Document Service
+
+PDF metadata
+Extracted content
+Sections
+Pages
+
+Knowledge Fabric Service
+
+Concepts
+Entities
+Relationships
+
+Research Intelligence Service
+
+AI analysis
+Insights
+Summaries
+
+Citation Service
+
+References
+Citation relationships
+
+Notebook Service
+
+Saved evidence
+Notes
+
+Search Service
+
+Document search
+181. Paper Viewer Definition of Done
+
+The Paper Viewer is complete when:
+
+✓ Paper renders
+
+✓ Metadata is visible
+
+✓ Document navigation works
+
+✓ Text search works
+
+✓ Text selection works
+
+✓ Concept interaction works
+
+✓ Citation interaction works
+
+✓ Evidence interaction works
+
+✓ AI analysis can be initiated
+
+✓ Analysis progress is visible
+
+✓ AI results are structured
+
+✓ Evidence is traceable
+
+✓ Copilot integration works
+
+✓ Notebook integration works
+
+✓ Reading position can be preserved
+
+✓ Error states work
+
+✓ Processing states work
+
+✓ Mobile reading works
+
+✓ Accessibility requirements pass
+
+✓ Performance requirements are acceptable
+
+---
+
+# 🧠 Why this screen matters so much
+
+This is where SERENDIPITY's philosophy becomes tangible.
+
+A normal research workflow looks like:
+
+```text
+Read PDF
+   ↓
+Open Google
+   ↓
+Search concept
+   ↓
+Open another paper
+   ↓
+Copy citation
+   ↓
+Open ChatGPT
+   ↓
+Paste context
+   ↓
+Go back to PDF
+   ↓
+Write notes
+
+SERENDIPITY:-
+                 PAPER
+                   │
+       ┌───────────┼───────────┐
+       ▼           ▼           ▼
+   CONCEPTS     CITATIONS    EVIDENCE
+       │           │           │
+       └───────────┼───────────┘
+                   ▼
+            RESEARCH COPILOT
+                   │
+                   ▼
+             KNOWLEDGE FABRIC
+                   │
+                   ▼
+               NOTEBOOK
+
+
+
