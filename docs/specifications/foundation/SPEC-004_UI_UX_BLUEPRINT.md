@@ -1224,3 +1224,715 @@ Authentication is complete when:
 ✓ New users can complete onboarding
 
 ✓ Existing users can bypass onboarding
+# 44. Research Command Center
+
+## 44.1 Purpose
+
+The Research Command Center is the primary landing experience for authenticated users.
+
+It provides a high-level overview of the researcher's current work and provides immediate access to active research workflows.
+
+The Command Center should answer:
+
+1. What am I currently researching?
+2. What has changed since I last visited?
+3. What discoveries are available?
+4. What is the AI currently doing?
+5. What should I do next?
+
+The Command Center is an operational interface rather than a traditional analytics dashboard.
+
+---
+
+# 45. Command Center Layout
+
+Desktop structure:
+
+┌─────────────────────────────────────────────────────────────────┐
+│ Top Bar                                                         │
+├──────────────┬──────────────────────────────────────────────────┤
+│              │                                                  │
+│ Global       │ Greeting / Research Context                      │
+│ Navigation   │                                                  │
+│              ├──────────────────────────────────────────────────┤
+│              │ Active Research Mission                          │
+│              │                                                  │
+│              ├───────────────────────┬──────────────────────────┤
+│              │ Recent Research       │ Knowledge Fabric Preview │
+│              │                       │                          │
+│              ├───────────────────────┼──────────────────────────┤
+│              │ Discoveries           │ AI Insights              │
+│              │                       │                          │
+│              ├───────────────────────┴──────────────────────────┤
+│              │ Recent Activity                                  │
+└──────────────┴──────────────────────────────────────────────────┘
+
+The layout should remain adaptive.
+
+The active research mission receives the highest visual priority.
+## 46.1 Header
+
+The header should contain:
+
+Greeting
+
+Current Workspace
+
+Research status
+
+Quick action
+
+Example:
+
+Good evening, Sanyuja.
+
+Continue exploring your research.
+
+Workspace:
+
+Graph Learning for Molecular Discovery
+
+Primary action:
+
++ New Research
+
+Secondary:
+
+Upload Research
+
+---
+
+# 47. Quick Actions
+
+```markdown
+## 47.1 Quick Actions
+
+The Command Center should expose the most common actions.
+
+Primary actions:
+
+- New Research Workspace
+- Upload Research
+- Ask Research Copilot
+- Explore Knowledge Fabric
+
+Secondary actions:
+
+- Open Notebook
+- Search Research Library
+- View Discovery Reports
+
+Quick actions should remain accessible without forcing the user through navigation.
+## 48.1 Purpose
+
+The Active Research Mission represents ongoing AI work.
+
+Example:
+
+Research Mission
+
+"Explore graph neural networks for molecular discovery"
+
+Status:
+
+Analyzing
+
+Progress:
+
+67%
+
+Current Activity:
+
+Mapping relationships between molecular representations and graph-learning methods.
+
+Agents:
+
+✓ Planner
+
+✓ Literature
+
+✓ Concept
+
+● Knowledge
+
+○ Reasoning
+
+○ Discovery
+
+Primary action:
+
+View Mission
+
+Secondary:
+
+Pause
+
+The mission card should be the most visually prominent component when an active mission exists.
+## 49.1 Mission States
+
+No Active Mission
+
+Display:
+
+"Ready for your next research question."
+
+Action:
+
+Start Research Mission
+
+---
+
+Queued
+
+Display:
+
+"Preparing research workflow..."
+
+---
+
+Running
+
+Display:
+
+Current agent and progress.
+
+---
+
+Paused
+
+Display:
+
+"Research Mission paused."
+
+Action:
+
+Resume
+
+---
+
+Completed
+
+Display:
+
+"Discovery Report ready."
+
+Action:
+
+Explore Discoveries
+
+---
+
+Failed
+
+Display:
+
+"Research Mission couldn't complete."
+
+Actions:
+
+View Details
+
+Retry
+
+The UI should clearly distinguish failure from incomplete work.
+## 50.1 Purpose
+
+Recent Research provides quick access to the user's latest work.
+
+Each item may display:
+
+- Workspace name
+- Research objective
+- Last activity
+- Asset count
+- Discovery count
+- Mission status
+
+Example:
+
+Graph Learning for Molecular Discovery
+
+Last active:
+
+12 minutes ago
+
+24 papers
+
+7 discoveries
+
+Status:
+
+Active
+
+Action:
+
+Continue Research
+
+---
+
+# 51. Knowledge Fabric Preview
+
+```markdown
+## 51.1 Purpose
+
+The Command Center includes a compact preview of the user's Knowledge Fabric.
+
+The preview communicates:
+
+- Number of entities
+- Number of relationships
+- Research clusters
+- Recently added concepts
+- Recent graph changes
+
+Example:
+
+Knowledge Fabric
+
+1,284 entities
+
+3,842 relationships
+
+12 research clusters
+
+Action:
+
+Explore Knowledge Fabric
+
+The graph preview should remain interactive but intentionally limited.
+
+The full graph belongs to the dedicated Knowledge Fabric experience.
+## 52.1 Interaction
+
+Hover:
+
+Display entity information.
+
+Click:
+
+Open entity context.
+
+Expand:
+
+Open full Knowledge Fabric.
+
+The preview should not allow unrestricted graph exploration because that belongs to the dedicated graph experience.
+## 53.1 Purpose
+
+The Discovery Feed presents recent AI-generated research opportunities.
+
+Each discovery should display:
+
+- Discovery title
+- Short explanation
+- Related concepts
+- Evidence count
+- Confidence
+- Discovery timestamp
+
+Example:
+
+Potential Connection
+
+Graph-based molecular representations may share structural similarities with methods used in protein interaction prediction.
+
+Evidence:
+
+8 research sources
+
+Confidence:
+
+High
+
+Actions:
+
+Explore
+
+Save
+
+Reject
+
+---
+
+# 55. AI Insights
+
+```markdown
+## 55.1 Purpose
+
+AI Insights provide concise observations generated from the researcher's current workspace.
+
+Examples:
+
+"Three papers in your workspace use the same molecular representation."
+
+"Two research clusters appear weakly connected."
+
+"Five papers cite a method you haven't explored yet."
+
+Insights should be actionable where possible.
+
+Each insight should provide:
+
+- Observation
+- Evidence
+- Suggested action
+
+Example:
+
+Observation:
+
+"Your workspace contains 5 papers using GraphSAGE."
+
+Action:
+
+Explore GraphSAGE literature
+## 56.1 Purpose
+
+Recent Activity provides a chronological view of meaningful workspace events.
+
+Examples:
+
+Research paper uploaded
+
+Knowledge Fabric updated
+
+Discovery saved
+
+AI analysis completed
+
+Notebook entry created
+
+Report exported
+
+Activity should prioritize meaningful research events.
+
+Low-value technical events should not appear here.
+## 57.1 Structure
+
+Each activity item contains:
+
+Icon
+
+Event description
+
+Timestamp
+
+Workspace context
+
+Optional action
+
+Example:
+
+Knowledge Fabric updated
+
++34 new relationships discovered
+
+18 minutes ago
+
+Action:
+
+Explore
+## 58.1 New User State
+
+A new user without a workspace should see an intentional onboarding state.
+
+Headline:
+
+"Your research canvas is empty."
+
+Supporting text:
+
+"Create a workspace and bring your first research question into SERENDIPITY."
+
+Primary action:
+
+Create Research Workspace
+
+Secondary action:
+
+Explore Demo Workspace
+
+---
+
+# 59. Empty Research Workspace
+
+```markdown
+## 59.1 Empty Workspace State
+
+When a workspace exists but contains no research assets:
+
+Headline:
+
+"Start building your Knowledge Fabric."
+
+Supporting text:
+
+"Upload research papers to extract concepts, map relationships, and begin discovering connections."
+
+Primary action:
+
+Upload Research
+
+Secondary:
+
+Ask Research Copilot
+## 60.1 Returning User
+
+Returning users should see personalized context immediately.
+
+Example:
+
+"Welcome back."
+
+"Your Molecular Discovery workspace has changed since your last visit."
+
+Changes may include:
+
+- New discoveries
+- Completed missions
+- New relationships
+- New research assets
+- Notebook updates
+
+Primary action:
+
+Continue Research
+## 61.1 Purpose
+
+Users with multiple research workspaces should be able to switch context without returning to the workspace list.
+
+The switcher should display:
+
+- Workspace name
+- Status
+- Last activity
+- Optional icon/color
+
+Example:
+
+Current:
+
+Graph Learning for Molecular Discovery
+
+Other:
+
+P2P Emergency Communication
+
+Scientific Serendipity Analysis
+
+Switching workspaces SHALL update all workspace-scoped information.
+## 62.1 Rule
+
+Workspace-specific information SHALL never appear in another workspace unless explicitly shared.
+
+This includes:
+
+- Papers
+- Knowledge Fabric entities
+- AI memory
+- Discoveries
+- Notebook entries
+- Research missions
+- Reports
+
+Workspace isolation is both a UX and security requirement.
+## 63.1 Notification Types
+
+Notifications may include:
+
+Research Mission completed
+
+Discovery generated
+
+Document processing completed
+
+Export ready
+
+System warning
+
+Security event
+
+Notifications should be categorized by importance.
+
+Informational events should not interrupt the user's workflow.
+64. Command Center Responsive Design
+Desktop
+
+Use:
+
+Multi-column dashboard
+Persistent sidebar
+Mission card
+Graph preview
+Discovery feed
+Tablet
+
+Use:
+
+Reduced columns
+Stacked secondary cards
+Collapsible sidebar
+Mobile
+
+Use:
+
+Header
+Active Mission
+Quick Actions
+Discoveries
+Recent Research
+AI Insights
+Activity
+
+The Knowledge Fabric preview should become a compact summary with an explicit "Explore" action.
+## 65.1 Loading
+
+The Command Center should use structured skeletons.
+
+Skeleton regions:
+
+- Header
+- Mission
+- Recent Research
+- Knowledge Fabric
+- Discoveries
+- AI Insights
+- Activity
+
+The skeleton should preserve the final layout.
+## 66.1 Error
+
+If dashboard data cannot be loaded:
+
+Headline:
+
+"Your research workspace couldn't be loaded."
+
+Supporting text:
+
+"Something went wrong while retrieving your research activity."
+
+Actions:
+
+Retry
+
+Open Workspace
+
+The failure of one secondary module should not necessarily prevent the rest of the Command Center from rendering.
+## 67.1 Partial Failure
+
+SERENDIPITY SHALL support independent module failure.
+
+Example:
+
+Knowledge Fabric unavailable
+
+↓
+
+Command Center still displays:
+
+- Recent Research
+- Discoveries
+- Activity
+- AI Insights
+
+The unavailable module displays:
+
+"Knowledge Fabric temporarily unavailable."
+
+Action:
+
+Retry
+
+This prevents a single service failure from destroying the entire dashboard experience.
+68. Command Center Backend Dependencies
+
+The Command Center requires data from:
+
+Workspace Service
+
+Current workspace
+Recent workspaces
+
+Research Service
+
+Active missions
+Mission status
+
+Document Service
+
+Asset counts
+Recent assets
+
+Knowledge Fabric Service
+
+Entity count
+Relationship count
+Graph preview
+
+Research Intelligence Service
+
+Discoveries
+AI insights
+
+Notification Service
+
+Notifications
+
+The frontend should consume aggregated dashboard APIs rather than making excessive independent requests.
+
+---
+
+# 69. Command Center Performance
+
+The Command Center SHALL prioritize fast initial rendering.
+
+Requirements:
+
+- Render shell immediately.
+- Load secondary widgets progressively.
+- Avoid blocking page rendering on graph visualization.
+- Lazy-load heavy visualizations.
+- Cache stable workspace metadata.
+- Update active mission status efficiently.
+
+The full Knowledge Fabric visualization should not be loaded until requested.
+70. Command Center Definition of Done
+
+The Command Center is complete when:
+
+✓ Current workspace is visible
+
+✓ User can switch workspaces
+
+✓ Quick actions work
+
+✓ Active Research Mission is visible
+
+✓ Mission states are represented
+
+✓ Recent research is displayed
+
+✓ Discoveries are displayed
+
+✓ AI insights are displayed
+
+✓ Knowledge Fabric preview works
+
+✓ Activity feed works
+
+✓ Empty state works
+
+✓ Loading state works
+
+✓ Error state works
+
+✓ Partial failure is handled
+
+✓ Responsive layouts work
+
+✓ Dark and light themes work
+
+✓ Accessibility baseline passes
+
+✓ Performance targets are acceptable
