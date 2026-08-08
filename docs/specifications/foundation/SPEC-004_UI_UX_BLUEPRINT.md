@@ -4705,4 +4705,1062 @@ SERENDIPITY:-
                NOTEBOOK
 
 
+# 182. AI Analysis Experience
 
+## 182.1 Purpose
+
+The AI Analysis Experience provides a transparent interface for executing and reviewing SERENDIPITY's AI-powered research workflows.
+
+The interface represents AI work as an orchestrated research process rather than a single chatbot interaction.
+
+The experience SHALL communicate:
+
+- Research objective
+- Active workflow
+- Agent activity
+- Retrieved evidence
+- Research sources
+- Analysis progress
+- User-facing reasoning summary
+- Confidence
+- Generated discoveries
+- Human approval points
+
+The interface SHALL NOT expose private model chain-of-thought.
+
+Instead, it SHALL provide concise, auditable explanations of system activity and evidence.
+
+---
+
+# 183. AI Analysis Entry Points
+
+AI Analysis may be initiated from:
+
+- Research Command Center
+- Research Workspace
+- Paper Viewer
+- Research Copilot
+- Knowledge Fabric
+- Discovery
+- Command Palette
+
+Possible actions:
+
+Analyze Paper
+
+Analyze Workspace
+
+Compare Research
+
+Find Connections
+
+Generate Discovery
+
+Investigate Hypothesis
+
+Ask Research Question
+
+---
+
+# 184. Research Objective
+
+Every AI workflow SHALL begin with a clearly defined objective.
+
+Example:
+
+Research Objective
+
+"Identify potential connections between graph neural networks and molecular property prediction."
+
+The objective should remain visible throughout the analysis.
+
+Users should be able to modify the objective before execution.
+
+---
+
+# 185. Analysis Configuration
+
+Before execution, users may configure:
+
+Scope
+
+- Selected Paper
+- Workspace
+- Selected Papers
+- Knowledge Fabric
+- Custom Sources
+
+Analysis Type
+
+- Summarization
+- Comparison
+- Concept Extraction
+- Relationship Discovery
+- Hypothesis Generation
+- Literature Analysis
+
+Optional:
+
+Depth
+
+- Quick
+- Standard
+- Deep
+
+The interface should communicate the expected cost/time implications where applicable.
+
+---
+
+# 186. Start Analysis
+
+Primary action:
+
+Start Analysis
+
+Before execution, the interface should show a concise summary.
+
+Example:
+
+Analyze:
+
+24 Papers
+
+Knowledge Fabric:
+
+1,284 entities
+
+Research Objective:
+
+Identify cross-domain relationships.
+
+Estimated complexity:
+
+Deep
+
+Action:
+
+Start Research Mission
+
+The user must explicitly start expensive or consequential AI workflows.
+
+---
+
+# 187. Research Mission
+
+Once started, the analysis becomes a Research Mission.
+
+Example:
+
+Research Mission
+
+"Find potential connections between graph learning and molecular discovery"
+
+Status:
+
+Running
+
+Progress:
+
+46%
+
+Current Stage:
+
+Cross-domain reasoning
+
+The Research Mission remains visible throughout execution.
+
+---
+
+# 188. Agent Architecture
+
+The interface SHALL represent the orchestration of specialized agents.
+
+Example:
+
+Planner Agent
+
+✓ Complete
+
+Literature Agent
+
+✓ Complete
+
+Retrieval Agent
+
+✓ Complete
+
+Knowledge Agent
+
+● Running
+
+Reasoning Agent
+
+○ Waiting
+
+Discovery Agent
+
+○ Waiting
+
+Validation Agent
+
+○ Waiting
+
+The exact number and names of agents may evolve with implementation.
+
+The interface should represent capabilities rather than hard-code an architecture that cannot evolve.
+
+---
+
+# 189. Agent Timeline
+
+The Agent Timeline is the primary visualization of AI workflow execution.
+
+Each agent should display:
+
+- Name
+- Purpose
+- Status
+- Start time
+- Duration
+- Inputs
+- Outputs
+- Evidence count
+- Warnings
+
+Example:
+
+Knowledge Agent
+
+Mapping relationships between extracted concepts.
+
+Status:
+
+Running
+
+Sources:
+
+24 papers
+
+Entities:
+
+137
+
+Relationships:
+
+482
+
+---
+
+# 190. Agent Status
+
+Supported states:
+
+Queued
+
+Running
+
+Completed
+
+Paused
+
+Failed
+
+Retrying
+
+Cancelled
+
+Visual indicators SHALL combine:
+
+- Icon
+- Text
+- Color
+- Motion where appropriate
+
+Color alone SHALL NOT communicate status.
+
+---
+
+# 191. Agent Expansion
+
+Users can expand an agent.
+
+Collapsed:
+
+Knowledge Agent
+
+Running
+
+Expanded:
+
+Knowledge Agent
+
+Task:
+
+Map relationships between extracted concepts.
+
+Input:
+
+137 concepts
+
+24 papers
+
+Output:
+
+482 candidate relationships
+
+Evidence:
+
+312 supporting references
+
+Duration:
+
+18.4 seconds
+
+Warnings:
+
+3 low-confidence relationships
+
+The information should remain user-facing and understandable.
+
+---
+
+# 192. Agent Output
+
+Agent outputs may include:
+
+- Extracted concepts
+- Retrieved documents
+- Evidence
+- Relationships
+- Classifications
+- Summaries
+- Candidate discoveries
+
+Each output should have an appropriate visualization.
+
+---
+
+# 193. Retrieval Activity
+
+The Retrieval Agent should expose high-level retrieval information.
+
+Example:
+
+Retrieving evidence...
+
+Search space:
+
+24 workspace papers
+
+Query:
+
+"molecular graph representation"
+
+Retrieved:
+
+18 relevant passages
+
+After filtering:
+
+8 evidence items
+
+The system should communicate retrieval without exposing implementation-specific internals unnecessarily.
+
+---
+
+# 194. Retrieval Evidence
+
+Each retrieved evidence item may display:
+
+Source
+
+Paper title
+
+Section
+
+Page
+
+Relevant excerpt
+
+Relevance
+
+Citation
+
+Action:
+
+Open Source
+
+The evidence should remain traceable to the original research asset.
+
+---
+
+# 195. Evidence Aggregation
+
+The AI workflow should visually show evidence moving toward analysis.
+
+Example:
+
+24 Papers
+
+↓
+
+137 Relevant Passages
+
+↓
+
+32 Evidence Items
+
+↓
+
+8 Strong Evidence Groups
+
+↓
+
+3 Candidate Connections
+
+This creates a visible relationship between source material and generated results.
+
+---
+
+# 196. Analysis Stage
+
+The analysis stage may communicate:
+
+Comparing evidence...
+
+Evaluating relationships...
+
+Checking consistency...
+
+Identifying cross-domain patterns...
+
+The interface should use meaningful system language.
+
+Avoid generic:
+
+"AI is thinking..."
+
+---
+
+# 197. Reasoning Summary
+
+The system may provide a concise reasoning summary.
+
+Example:
+
+Reasoning Summary
+
+"Three research clusters share a common graph-based representation. The strongest overlap occurs between molecular property prediction and protein interaction modeling."
+
+The summary should explain the basis of the result without exposing private chain-of-thought.
+
+---
+
+# 198. Hypothesis Generation
+
+If the workflow produces a hypothesis:
+
+Candidate Hypothesis
+
+"Graph representations used for protein interaction prediction may improve molecular property prediction when adapted to multi-relational molecular structures."
+
+Supporting Evidence:
+
+6 sources
+
+Confidence:
+
+Moderate
+
+Novelty:
+
+Potentially High
+
+Actions:
+
+Explore
+
+Save
+
+Reject
+
+Validate
+
+The system SHALL clearly label hypotheses as candidates rather than established facts.
+
+---
+
+# 199. Human Review
+
+Research discoveries SHALL support human review.
+
+Possible states:
+
+New
+
+Under Review
+
+Accepted
+
+Rejected
+
+Saved
+
+Needs Validation
+
+The researcher remains the final decision-maker.
+
+---
+
+# 200. Discovery Approval
+
+When the AI generates a potential discovery:
+
+Potential Discovery
+
+↓
+
+Researcher Review
+
+↓
+
+Accept
+
+or
+
+Reject
+
+or
+
+Save for Later
+
+If accepted, the discovery may become part of workspace memory.
+
+The system should not automatically treat generated hypotheses as validated scientific conclusions.
+
+---
+
+# 201. Confidence
+
+AI results may display:
+
+Confidence
+
+High
+
+92%
+
+Evidence:
+
+8 supporting sources
+
+Confidence should be based on the system's defined confidence methodology.
+
+The UI should provide access to the supporting evidence.
+
+---
+
+# 202. Novelty Indicator
+
+Potential discoveries may include a novelty indicator.
+
+Example:
+
+Potential Novelty
+
+High
+
+This indicates that the relationship appears less represented in the retrieved research corpus.
+
+It SHALL NOT claim that the relationship is scientifically novel unless that has been appropriately verified.
+
+---
+
+# 203. Contradictory Evidence
+
+The system should surface conflicting evidence.
+
+Example:
+
+Evidence Conflict
+
+3 sources support this relationship.
+
+2 sources report contradictory findings.
+
+Action:
+
+Review Evidence
+
+This is preferable to hiding disagreement.
+
+---
+
+# 204. Source Coverage
+
+AI results should communicate source coverage.
+
+Example:
+
+Analysis Coverage
+
+24 papers analyzed
+
+18 directly relevant
+
+6 indirectly relevant
+
+Coverage:
+
+High
+
+This helps researchers understand the scope of the result.
+
+---
+
+# 205. Analysis Result Structure
+
+A completed analysis should use structured sections.
+
+Example:
+
+Research Question
+
+Evidence Summary
+
+Key Findings
+
+Related Concepts
+
+Potential Connections
+
+Candidate Hypotheses
+
+Contradictory Evidence
+
+Confidence
+
+Sources
+
+Recommended Next Steps
+
+---
+
+# 206. Recommended Next Steps
+
+The AI may suggest actions.
+
+Examples:
+
+Explore related papers
+
+Investigate contradictory evidence
+
+Add discovery to notebook
+
+Expand Knowledge Fabric
+
+Run deeper analysis
+
+Search external literature
+
+Suggestions should remain optional.
+
+The researcher retains control.
+
+---
+
+# 207. AI Analysis History
+
+The workspace should maintain a history of AI runs.
+
+Each run should display:
+
+- Research objective
+- Date
+- Scope
+- Analysis type
+- Status
+- Duration
+- Result count
+
+Example:
+
+Cross-domain Discovery
+
+August 9, 2026
+
+24 papers
+
+Completed
+
+3 candidate discoveries
+
+Action:
+
+Open Analysis
+
+---
+
+# 208. Analysis Run Details
+
+Opening a historical run should restore:
+
+- Research objective
+- Agent timeline
+- Sources
+- Evidence
+- Findings
+- Discoveries
+- Confidence
+- User decisions
+
+Historical runs should remain read-only unless explicitly duplicated as a new analysis.
+
+---
+
+# 209. Long-Running Analysis
+
+For analyses that take significant time:
+
+The user may leave the screen.
+
+The mission continues in the background.
+
+When returning:
+
+"Research Mission completed while you were away."
+
+Actions:
+
+View Results
+
+Review Discoveries
+
+---
+
+# 210. Analysis Cancellation
+
+Users may cancel an active analysis.
+
+Action:
+
+Cancel Research Mission
+
+Confirmation:
+
+"Canceling will stop the current analysis. Completed results will remain available."
+
+Actions:
+
+Cancel Mission
+
+Continue
+
+The system should not discard completed work unnecessarily.
+
+---
+
+# 211. Analysis Pause
+
+Where technically supported, a Research Mission may be paused.
+
+Paused state:
+
+Research Mission Paused
+
+Current Stage:
+
+Knowledge Analysis
+
+Actions:
+
+Resume
+
+Cancel
+
+The UI should clearly distinguish pause from failure.
+
+---
+
+# 212. Agent Failure
+
+If an individual agent fails:
+
+Knowledge Agent
+
+Failed
+
+"Unable to retrieve the required knowledge graph context."
+
+Actions:
+
+Retry Agent
+
+Continue Without Agent
+
+Cancel Mission
+
+The system should support graceful degradation where possible.
+
+---
+
+# 213. Mission Failure
+
+If the entire mission cannot complete:
+
+Research Mission Failed
+
+"SERENDIPITY could not complete this analysis."
+
+Show:
+
+Completed stages
+
+Failed stage
+
+Failure reason
+
+Available results
+
+Actions:
+
+Retry
+
+Modify Objective
+
+Start New Mission
+
+---
+
+# 214. Partial Results
+
+Partial results should remain available when meaningful.
+
+Example:
+
+Analysis interrupted.
+
+Available results:
+
+24 papers processed
+
+137 concepts extracted
+
+312 relationships identified
+
+Discovery generation incomplete
+
+Action:
+
+Continue Analysis
+
+This avoids throwing away useful work.
+
+---
+
+# 215. Streaming Updates
+
+Agent status may update in real time.
+
+The interface may use:
+
+- WebSockets
+- Server-sent events
+- Polling
+
+The final implementation should select the mechanism appropriate to system architecture and infrastructure.
+
+The UI should not assume that updates arrive continuously.
+
+---
+
+# 216. AI Activity Notifications
+
+The system may notify users when:
+
+- Mission completes
+- Mission fails
+- Discovery is generated
+- Human review is required
+- Evidence conflict is detected
+
+Notifications should not interrupt active reading unnecessarily.
+
+---
+
+# 217. AI Transparency
+
+The AI interface SHALL clearly distinguish:
+
+User Input
+
+Source Material
+
+Retrieved Evidence
+
+AI Analysis
+
+AI Hypothesis
+
+Validated Research
+
+This distinction is foundational to trust.
+
+---
+
+# 218. AI Safety and Reliability
+
+The system should:
+
+- Avoid presenting generated claims as verified facts
+- Surface uncertainty
+- Preserve source references
+- Identify contradictory evidence
+- Allow human review
+- Avoid silent source substitution
+- Preserve workspace boundaries
+
+AI output should remain traceable.
+
+---
+
+# 219. AI Analysis Mobile
+
+Mobile should prioritize:
+
+1. Research Objective
+2. Mission Status
+3. Current Agent
+4. Findings
+5. Evidence
+6. Discoveries
+
+The Agent Timeline may become a vertical timeline.
+
+Detailed agent information should open in expandable sections.
+
+---
+
+# 220. AI Analysis Accessibility
+
+The interface SHALL support:
+
+- Keyboard navigation
+- Accessible timeline semantics
+- Screen-reader status announcements
+- Reduced motion
+- Non-color status indicators
+- Accessible evidence links
+- Accessible expandable sections
+
+Live status updates should avoid overwhelming screen-reader users with excessive announcements.
+
+---
+
+# 221. AI Analysis Backend Dependencies
+
+The AI Analysis Experience depends on:
+
+Research Mission Service
+
+Agent Orchestration Layer
+
+Retrieval Service
+
+Embedding Service
+
+Knowledge Fabric Service
+
+LLM Service
+
+Evidence Service
+
+Discovery Service
+
+Notification Service
+
+Persistence Layer
+
+The frontend should consume a stable mission API rather than depending directly on individual agent implementations.
+
+---
+
+# 222. AI Analysis Definition of Done
+
+The AI Analysis Experience is complete when:
+
+✓ Analysis can be configured
+
+✓ Research Mission can start
+
+✓ Mission status is visible
+
+✓ Agent Timeline works
+
+✓ Agent states are represented
+
+✓ Agent details are expandable
+
+✓ Retrieval activity is visible
+
+✓ Evidence is traceable
+
+✓ Analysis results are structured
+
+✓ Reasoning summary is available
+
+✓ Hypotheses are clearly labeled
+
+✓ Confidence is represented
+
+✓ Contradictory evidence is surfaced
+
+✓ Human review works
+
+✓ Discoveries can be accepted/rejected
+
+✓ Long-running missions work
+
+✓ Cancellation works
+
+✓ Failure recovery works
+
+✓ Partial results are preserved
+
+✓ Analysis history works
+
+✓ Mobile experience works
+
+✓ Accessibility requirements pass
+
+✓ AI transparency requirements pass
+
+             RESEARCH QUESTION
+                     │
+                     ▼
+                ┌─────────┐
+                │ PLANNER │
+                └────┬────┘
+                     │
+          ┌──────────┼──────────┐
+          ▼          ▼          ▼
+     RETRIEVAL    LITERATURE   CONCEPT
+          │          │          │
+          └──────────┼──────────┘
+                     ▼
+              KNOWLEDGE FABRIC
+                     │
+                     ▼
+                 REASONING
+                     │
+                     ▼
+                DISCOVERY
+                     │
+                     ▼
+                 VALIDATION
+                     │
+                     ▼
+              HUMAN DECISION
+
+              
