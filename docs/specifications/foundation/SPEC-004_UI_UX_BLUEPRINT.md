@@ -638,3 +638,589 @@ The Landing Page is complete when:
 ✓ Page can be deployed independently
 
 ✓ Page visually matches approved design
+# 24. Authentication Experience
+
+## 24.1 Purpose
+
+The Authentication Experience provides secure access to SERENDIPITY while introducing the user to the product's research-first philosophy.
+
+Authentication SHALL remain simple and fast.
+
+The product should not overwhelm users with unnecessary setup before they can begin researching.
+
+---
+
+# 24.2 Authentication Screens
+
+The authentication experience consists of:
+
+1. Sign In
+2. Create Account
+3. Email Verification
+4. Forgot Password
+5. Password Reset
+6. Initial Profile Setup
+7. Research Interest Setup
+8. First Workspace Creation
+
+The final three screens form the onboarding journey.
+
+---
+
+# 25. Authentication Layout
+
+Desktop:
+
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   SERENDIPITY                                               │
+│                                                             │
+│                    Authentication Card                      │
+│                                                             │
+│                    Email                                    │
+│                    Password                                  │
+│                                                             │
+│                    Sign In                                  │
+│                                                             │
+│                    Supporting Actions                       │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+The authentication experience should use a focused layout with minimal distractions.
+
+The brand should remain visible without competing with the form.
+
+---
+
+# 26. Sign In
+
+## 26.1 Purpose
+
+Allow returning researchers to securely access their SERENDIPITY account.
+
+Primary fields:
+
+- Email
+- Password
+
+Primary action:
+
+Sign In
+
+Secondary actions:
+
+- Forgot Password
+- Create Account
+
+Optional future authentication:
+
+- Google
+- Microsoft
+- GitHub
+
+Social authentication should not be required for Version 1.
+
+---
+
+# 26.2 Sign In States
+
+Default:
+
+Form ready.
+
+Loading:
+
+Signing in...
+
+Success:
+
+Transition to Research Command Center.
+
+Invalid credentials:
+
+"Email or password is incorrect."
+
+Network failure:
+
+"We couldn't connect to SERENDIPITY. Try again."
+
+The interface SHALL avoid revealing whether a specific email address exists in the system.
+
+---
+
+# 27. Create Account
+
+## 27.1 Purpose
+
+Create a new SERENDIPITY researcher account.
+
+Fields:
+
+- Full Name
+- Email
+- Password
+- Confirm Password
+
+Primary action:
+
+Create Account
+
+Supporting text:
+
+"By continuing, you agree to the SERENDIPITY Terms and Privacy Policy."
+
+The registration form should remain short.
+
+Additional profile information is collected later during onboarding.
+
+---
+
+# 27.2 Password Requirements
+
+Password requirements should be communicated before submission.
+
+The interface SHALL provide clear validation for:
+
+- Minimum length
+- Required character categories where applicable
+- Password confirmation
+
+Validation should occur progressively rather than only after form submission.
+
+---
+
+# 28. Email Verification
+
+After registration:
+
+Create Account
+
+↓
+
+Verification Required
+
+↓
+
+Email Sent
+
+↓
+
+Verify Email
+
+↓
+
+Continue
+
+The verification screen should provide:
+
+- Confirmation message
+- Masked email address
+- Resend option
+- Change email option
+
+The resend action should have rate limiting.
+
+---
+
+# 29. Forgot Password
+
+The user enters their email address.
+
+System:
+
+↓
+
+Validates request
+
+↓
+
+Sends reset email
+
+↓
+
+Displays confirmation
+
+The interface should not reveal whether the email exists.
+
+Example:
+
+"If an account is associated with this email, you'll receive instructions to reset your password."
+
+---
+
+# 30. Password Reset
+
+The reset screen SHALL provide:
+
+- New password
+- Confirm password
+- Password requirements
+
+Successful reset:
+
+↓
+
+Confirmation
+
+↓
+
+Return to Sign In
+
+Expired or invalid token:
+
+↓
+
+Explain the issue
+
+↓
+
+Provide option to request a new reset link
+
+---
+
+# 31. Initial Profile Setup
+
+After authentication, first-time users enter a lightweight profile setup.
+
+The purpose is personalization, not bureaucracy.
+
+Fields:
+
+Name
+
+Role
+
+Research interests
+
+Optional organization
+
+Optional academic field
+
+Example roles:
+
+- Student
+- Researcher
+- Research Engineer
+- Faculty
+- Industry Professional
+- Independent Researcher
+
+The user should be able to skip optional fields.
+
+---
+
+# 32. Research Interest Setup
+
+This is the first distinctly SERENDIPITY-specific onboarding experience.
+
+Headline:
+
+"What are you curious about?"
+
+The user selects research domains.
+
+Examples:
+
+- Artificial Intelligence
+- Machine Learning
+- Computer Science
+- Healthcare
+- Biotechnology
+- Physics
+- Astronomy
+- Materials Science
+- Climate Science
+- Robotics
+- Economics
+- Neuroscience
+
+The user may select multiple domains.
+
+The system may also allow custom research interests.
+
+Example:
+
+"Graph neural networks for drug discovery"
+
+Selected interests should influence:
+
+- Suggested research areas
+- Initial dashboard content
+- Semantic search
+- Discovery recommendations
+
+They should NOT restrict the user's future exploration.
+
+---
+
+# 33. Curiosity Prompt
+
+The onboarding should optionally ask:
+
+"What are you currently trying to understand?"
+
+This is a free-form research objective.
+
+Example:
+
+"I want to explore how graph neural networks can be applied to molecular discovery."
+
+This becomes the seed for the user's first Research Workspace.
+
+The user may skip this step.
+
+---
+
+# 34. First Workspace Creation
+
+After research interests are selected:
+
+Create your first Research Workspace.
+
+Fields:
+
+Workspace Name
+
+Research Objective
+
+Research Domains
+
+Optional Description
+
+Example:
+
+Workspace:
+
+"Graph Learning for Molecular Discovery"
+
+Objective:
+
+"Explore how graph-based learning methods can improve molecular discovery."
+
+Primary action:
+
+Create Workspace
+
+Secondary action:
+
+Skip for Now
+
+---
+
+# 35. Onboarding Progress
+
+Onboarding should communicate progress without feeling like a lengthy setup wizard.
+
+Example:
+
+Profile
+
+✓
+
+Research Interests
+
+✓
+
+Research Objective
+
+●
+
+Workspace
+
+○
+
+The entire onboarding experience should ideally take less than three minutes.
+
+---
+
+# 36. First Workspace Transition
+
+After workspace creation:
+
+Workspace Created
+
+↓
+
+Research Command Center
+
+↓
+
+Welcome State
+
+The dashboard should immediately recognize the newly created workspace.
+
+Example:
+
+"Your research workspace is ready."
+
+"Let's discover what is already known."
+
+Primary action:
+
+Upload Research
+
+Secondary:
+
+Explore Knowledge Fabric
+
+---
+
+# 37. First Research Mission
+
+If the user entered a research objective during onboarding, SERENDIPITY may offer:
+
+"Start your first Research Mission?"
+
+Research Objective:
+
+Graph learning for molecular discovery
+
+Actions:
+
+Start Mission
+
+Explore Workspace
+
+Skip
+
+The mission should NOT begin automatically without explicit user confirmation.
+
+---
+
+# 38. Onboarding Principles
+
+The onboarding experience SHALL follow:
+
+## Principle 1
+
+Minimum Required Input
+
+Collect only what is necessary.
+
+---
+
+## Principle 2
+
+Progressive Personalization
+
+Collect deeper information only when it becomes useful.
+
+---
+
+## Principle 3
+
+Research First
+
+Introduce the user to research workflows rather than generic application settings.
+
+---
+
+## Principle 4
+
+Immediate Value
+
+The user should reach a meaningful research action quickly.
+
+---
+
+## Principle 5
+
+User Control
+
+Users should be able to skip optional onboarding steps.
+
+---
+
+# 39. Authentication Accessibility
+
+Authentication SHALL support:
+
+- Keyboard navigation
+- Visible focus states
+- Accessible labels
+- Password visibility controls
+- Screen-reader compatible validation
+- Error announcements
+- Mobile-friendly forms
+
+Form errors should appear next to the relevant field.
+
+---
+
+# 40. Mobile Authentication
+
+Mobile authentication should use a single-column layout.
+
+The form should:
+
+- Fit within the viewport
+- Avoid unnecessary scrolling
+- Use appropriately sized touch targets
+- Support password managers
+- Support browser autofill
+
+---
+
+# 41. Authentication Security Requirements
+
+Authentication implementation SHALL follow secure engineering practices.
+
+Requirements include:
+
+- Secure password hashing
+- Secure session management
+- Token expiration
+- Rate limiting
+- CSRF protection where applicable
+- Secure cookie configuration
+- Input validation
+- Account enumeration protection
+- Audit logging for security-sensitive events
+
+Authentication secrets SHALL never be exposed to the frontend.
+
+---
+
+# 42. Authentication Backend Dependencies
+
+Authentication requires:
+
+- User service
+- Authentication service
+- Database
+- Email verification service
+- Session/token management
+
+The frontend SHALL communicate through defined authentication APIs.
+
+---
+
+# 43. Authentication Definition of Done
+
+Authentication is complete when:
+
+✓ Sign in works
+
+✓ Registration works
+
+✓ Email verification works
+
+✓ Password reset works
+
+✓ Validation works
+
+✓ Error states work
+
+✓ Loading states work
+
+✓ Mobile layout works
+
+✓ Accessibility baseline passes
+
+✓ Security requirements are implemented
+
+✓ Successful authentication leads to the correct workspace
+
+✓ New users can complete onboarding
+
+✓ Existing users can bypass onboarding
