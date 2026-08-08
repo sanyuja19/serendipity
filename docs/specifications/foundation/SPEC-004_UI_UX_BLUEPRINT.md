@@ -2758,3 +2758,996 @@ The Research Workspace is complete when:
 ✓ Accessibility requirements pass
 
 ✓ Performance requirements are acceptable
+
+# 105. Research Ingestion Experience
+
+## 105.1 Purpose
+
+The Research Ingestion Experience allows researchers to introduce external research material into a SERENDIPITY workspace.
+
+Supported Version 1 asset:
+
+- PDF Research Papers
+
+Future asset types:
+
+- Patents
+- Technical Reports
+- Datasets
+- Presentations
+- Web Sources
+
+The ingestion experience SHALL make the transformation from raw document to structured research knowledge visible to the user.
+
+---
+
+# 106. Ingestion Entry Points
+
+Research ingestion may be initiated from:
+
+- Research Command Center
+- Research Workspace
+- Research Library
+- Empty Workspace
+- Research Mission
+- Command Palette
+
+Primary action:
+
+Upload Research
+
+---
+
+# 107. Upload Interface
+
+The primary upload interface should provide:
+
+- Drag and drop area
+- File browser selection
+- Supported file information
+- Upload limits
+- Processing explanation
+
+Example:
+
+Add research to your workspace.
+
+Drop PDF files here
+
+or
+
+Browse Files
+
+Supported:
+
+PDF
+
+Maximum file size:
+
+50 MB
+
+The interface should clearly communicate supported formats before the user selects a file.
+
+---
+
+# 108. Multi-File Upload
+
+Version 1 SHOULD support multiple PDF uploads.
+
+Example:
+
+Selected Research
+
+24 files
+
+Actions:
+
+Upload All
+
+Remove All
+
+The interface should display each file individually.
+
+Example:
+
+GraphNeuralNetworks.pdf
+
+12.4 MB
+
+Ready
+
+MolecularGraphLearning.pdf
+
+8.7 MB
+
+Ready
+
+ProteinPrediction.pdf
+
+14.2 MB
+
+Ready
+
+---
+
+# 109. File Validation
+
+Validation SHALL occur before processing begins.
+
+Validation checks include:
+
+- File type
+- File size
+- File integrity
+- Duplicate detection
+- Basic PDF readability
+
+Possible states:
+
+Valid
+
+Invalid Type
+
+Too Large
+
+Corrupted
+
+Duplicate
+
+Unsupported
+
+---
+
+# 110. Validation Feedback
+
+Invalid files should provide actionable feedback.
+
+Example:
+
+Unsupported file
+
+"This file is not a supported PDF."
+
+Action:
+
+Remove
+
+---
+
+Too Large
+
+"This file exceeds the 50 MB upload limit."
+
+Action:
+
+Remove
+
+---
+
+Corrupted
+
+"This PDF could not be opened."
+
+Action:
+
+Try Another File
+
+---
+
+Duplicate
+
+"This research paper already exists in this workspace."
+
+Actions:
+
+Keep Existing
+
+Replace
+
+Cancel
+
+The user should never receive only a generic "Upload failed" message.
+
+---
+
+# 111. Upload Progress
+
+Each file should display upload progress.
+
+Example:
+
+MolecularGraphLearning.pdf
+
+Uploading
+
+████████████░░░
+
+82%
+
+The progress indicator should update smoothly.
+
+For multiple files, users should be able to distinguish:
+
+- Uploading
+- Waiting
+- Completed
+- Failed
+
+---
+
+# 112. Upload Completion
+
+After successful upload:
+
+Upload Complete
+
+↓
+
+Processing Begins
+
+The interface should not immediately redirect the user.
+
+Instead, the user should see the transition from file upload to document intelligence.
+
+---
+
+# 113. Document Processing Pipeline
+
+Once uploaded, the system SHALL process each research asset.
+
+Pipeline:
+
+File Stored
+
+↓
+
+Document Validation
+
+↓
+
+Metadata Extraction
+
+↓
+
+Text Extraction
+
+↓
+
+Document Structuring
+
+↓
+
+Chunk Generation
+
+↓
+
+Embedding Generation
+
+↓
+
+Concept Extraction
+
+↓
+
+Entity Extraction
+
+↓
+
+Relationship Extraction
+
+↓
+
+Knowledge Fabric Update
+
+↓
+
+AI Analysis
+
+The UI should expose meaningful progress from this pipeline.
+
+---
+
+# 114. Processing Mission
+
+Document processing should be represented as a Research Mission or specialized ingestion workflow.
+
+Example:
+
+Processing Research
+
+"Molecular Graph Learning.pdf"
+
+Current Stage:
+
+Extracting concepts
+
+Progress:
+
+64%
+
+Stages:
+
+✓ File Validation
+
+✓ Metadata Extraction
+
+✓ Text Extraction
+
+✓ Chunking
+
+● Concept Extraction
+
+○ Embeddings
+
+○ Knowledge Fabric
+
+○ AI Analysis
+
+This provides continuity between ingestion and the broader AI architecture.
+
+---
+
+# 115. Processing Stages
+
+## Stage 1
+
+File Validation
+
+Verify that the uploaded document can be processed.
+
+---
+
+## Stage 2
+
+Metadata Extraction
+
+Extract:
+
+- Title
+- Authors
+- Publication date
+- DOI where available
+- Abstract
+- Keywords
+- Source
+
+---
+
+## Stage 3
+
+Text Extraction
+
+Extract readable document text.
+
+---
+
+## Stage 4
+
+Document Structuring
+
+Identify:
+
+- Sections
+- Headings
+- Paragraphs
+- References
+- Tables where supported
+
+---
+
+## Stage 5
+
+Chunk Generation
+
+Divide extracted content into semantically useful retrieval units.
+
+---
+
+## Stage 6
+
+Embedding Generation
+
+Generate vector representations for semantic retrieval.
+
+---
+
+## Stage 7
+
+Concept Extraction
+
+Identify scientific concepts and terminology.
+
+---
+
+## Stage 8
+
+Entity Extraction
+
+Identify:
+
+- Authors
+- Institutions
+- Methods
+- Datasets
+- Research areas
+
+---
+
+## Stage 9
+
+Relationship Extraction
+
+Identify relationships between extracted entities.
+
+---
+
+## Stage 10
+
+Knowledge Fabric Update
+
+Add validated entities and relationships to the workspace Knowledge Fabric.
+
+---
+
+## Stage 11
+
+AI Analysis
+
+Run relevant research analysis workflows.
+
+---
+
+# 116. Processing Transparency
+
+The system should provide enough information to explain what is happening without overwhelming the user with implementation details.
+
+Prefer:
+
+"Extracting scientific concepts..."
+
+instead of:
+
+"Running NLP pipeline stage 4."
+
+Technical information may be available through an expandable details view.
+
+---
+
+# 117. Processing Details
+
+Advanced users may expand processing details.
+
+Example:
+
+Concept Extraction
+
+Status:
+
+Completed
+
+Concepts extracted:
+
+137
+
+Average confidence:
+
+91%
+
+Processing time:
+
+4.2 seconds
+
+This information is useful for debugging and research transparency.
+
+---
+
+# 118. Processing Results
+
+After processing completes, the user should receive a summary.
+
+Example:
+
+Research Processing Complete
+
+MolecularGraphLearning.pdf
+
+Extracted:
+
+137 Concepts
+
+42 Entities
+
+68 Relationships
+
+24 Citations
+
+1 Research Cluster
+
+Actions:
+
+Explore Knowledge Fabric
+
+View Paper
+
+Run AI Analysis
+
+Add to Notebook
+
+---
+
+# 119. Batch Processing Results
+
+For multiple files, provide a batch summary.
+
+Example:
+
+24 research papers processed.
+
+Successful:
+
+22
+
+Warnings:
+
+1
+
+Failed:
+
+1
+
+Actions:
+
+View Results
+
+Retry Failed
+
+Explore Knowledge Fabric
+
+The system should allow users to continue working while non-critical background processing completes.
+
+---
+
+# 120. Processing Queue
+
+Large ingestion jobs SHALL support a queue.
+
+Example:
+
+Processing Queue
+
+1. MolecularGraphLearning.pdf
+
+   ● Extracting concepts
+
+2. ProteinPrediction.pdf
+
+   ○ Waiting
+
+3. GraphAttention.pdf
+
+   ○ Waiting
+
+Users should understand that queued documents have not failed.
+
+---
+
+# 121. Background Processing
+
+Document processing may continue after the user leaves the ingestion screen.
+
+The workspace should preserve processing state.
+
+When the user returns:
+
+"3 research assets finished processing while you were away."
+
+Action:
+
+View Results
+
+---
+
+# 122. Processing Notifications
+
+Notifications may be generated when:
+
+- Processing completes
+- Processing fails
+- A document requires attention
+- Knowledge Fabric is updated
+- AI analysis completes
+
+Notifications should remain non-intrusive.
+
+---
+
+# 123. Duplicate Detection
+
+SERENDIPITY SHOULD detect likely duplicate research assets.
+
+Duplicate signals may include:
+
+- File hash
+- DOI
+- Title similarity
+- Metadata similarity
+
+If a duplicate is detected:
+
+Potential Duplicate
+
+"This paper may already exist in this workspace."
+
+Actions:
+
+Use Existing
+
+Upload Anyway
+
+Cancel
+
+The system should never silently discard a user-selected file.
+
+---
+
+# 124. Document Metadata Review
+
+After metadata extraction, the user may review extracted information.
+
+Example:
+
+Title
+
+Graph Neural Networks for Molecular Discovery
+
+Authors
+
+A. Researcher
+
+B. Researcher
+
+Publication
+
+2026
+
+DOI
+
+10.xxxx/example
+
+The user should be able to correct metadata when extraction is incomplete or incorrect.
+
+Action:
+
+Save Metadata
+
+---
+
+# 125. Processing Warnings
+
+Warnings should be distinct from failures.
+
+Example:
+
+Processing completed with warnings.
+
+"References could not be fully extracted from this document."
+
+Actions:
+
+View Details
+
+Continue
+
+Warnings should not block successful processing unless they materially affect downstream analysis.
+
+---
+
+# 126. Processing Failure
+
+If processing fails:
+
+Processing Failed
+
+"MolecularGraphLearning.pdf could not be processed."
+
+Reason:
+
+"The document contains no machine-readable text."
+
+Actions:
+
+Retry
+
+Replace File
+
+Remove
+
+The user should be able to continue working with other successfully processed documents.
+
+---
+
+# 127. OCR Future State
+
+OCR is not required for Version 1.
+
+If a scanned PDF is detected, the system may display:
+
+"This document appears to contain scanned pages."
+
+Future option:
+
+Process with OCR
+
+For Version 1, the user should receive a clear explanation and alternative action.
+
+---
+
+# 128. Ingestion Context
+
+All uploaded assets SHALL belong to the currently selected workspace.
+
+The UI should explicitly display:
+
+Workspace:
+
+Graph Learning for Molecular Discovery
+
+This prevents accidental ingestion into the wrong research project.
+
+---
+
+# 129. Ingestion from Research Mission
+
+If ingestion is initiated during an active Research Mission:
+
+The system should ask whether the new research assets should be incorporated into the current mission.
+
+Example:
+
+"Add these papers to the active research mission?"
+
+Actions:
+
+Add to Mission
+
+Add to Workspace Only
+
+Cancel
+
+This preserves researcher control.
+
+---
+
+# 130. Ingestion and Knowledge Fabric
+
+After successful processing, the user should be able to observe how new material affects the Knowledge Fabric.
+
+Example:
+
+Before:
+
+1,284 entities
+
+3,842 relationships
+
+↓
+
+New research processed
+
+↓
+
+After:
+
+1,421 entities
+
+4,113 relationships
+
+The change should be visually explainable.
+
+---
+
+# 131. Knowledge Fabric Update Animation
+
+When newly extracted knowledge enters the graph:
+
+New entities appear
+
+↓
+
+Relationships form
+
+↓
+
+Relevant clusters update
+
+↓
+
+Recently added knowledge is highlighted
+
+The animation should correspond to actual processed data.
+
+It must not fabricate relationships for visual effect.
+
+---
+
+# 132. Ingestion Empty State
+
+The upload screen should communicate value when no files have been selected.
+
+Example:
+
+Bring your research together.
+
+Upload papers and let SERENDIPITY transform them into connected research knowledge.
+
+Primary action:
+
+Browse Files
+
+Secondary:
+
+Learn How It Works
+
+---
+
+# 133. Drag and Drop Interaction
+
+The drop zone should respond when a user drags a file over it.
+
+Default:
+
+Drop research here
+
+Drag Active:
+
+Release to add research
+
+Invalid file:
+
+Unsupported file type
+
+The interaction should use clear visual feedback without excessive animation.
+
+---
+
+# 134. Mobile Upload
+
+Mobile users should be able to:
+
+- Select files
+- Upload multiple documents where supported
+- View processing status
+- Review errors
+- Retry failures
+
+Drag and drop is not required on mobile.
+
+---
+
+# 135. Upload Security
+
+Uploaded files SHALL be treated as untrusted input.
+
+Backend requirements include:
+
+- File type validation
+- Size limits
+- Malware/security scanning where appropriate
+- Safe storage
+- Access control
+- Filename sanitization
+- Content validation
+- Secure object storage
+
+The frontend SHALL never assume a file is safe merely because it has a PDF extension.
+
+---
+
+# 136. Ingestion Backend Dependencies
+
+The ingestion experience depends on:
+
+Object Storage
+
+Document Service
+
+Metadata Extraction Service
+
+Text Extraction Service
+
+Embedding Service
+
+Knowledge Fabric Service
+
+Research Intelligence Service
+
+Job Queue
+
+Notification Service
+
+---
+
+# 137. Ingestion API Requirements
+
+The frontend should communicate with APIs supporting:
+
+Create Upload
+
+Upload File
+
+Get Upload Status
+
+Get Processing Status
+
+Get Processing Results
+
+Retry Processing
+
+Cancel Processing
+
+Update Metadata
+
+Get Asset Details
+
+The API should support asynchronous processing.
+
+---
+
+# 138. Ingestion Performance
+
+Large files SHALL be uploaded efficiently.
+
+Future implementation may support:
+
+- Chunked uploads
+- Resumable uploads
+- Parallel uploads
+- Background processing
+
+Version 1 should prioritize reliable uploads over aggressive optimization.
+
+---
+
+# 139. Ingestion Definition of Done
+
+The Research Ingestion experience is complete when:
+
+✓ PDF upload works
+
+✓ Drag and drop works
+
+✓ Multiple files can be selected
+
+✓ Validation works
+
+✓ Duplicate detection works
+
+✓ Upload progress works
+
+✓ Processing status works
+
+✓ Metadata extraction is represented
+
+✓ Processing stages are represented
+
+✓ Successful processing is represented
+
+✓ Processing failures are handled
+
+✓ Warnings are handled
+
+✓ Retry works
+
+✓ Background processing is represented
+
+✓ Workspace context is preserved
+
+✓ Knowledge Fabric update is represented
+
+✓ Mobile upload works
+
+✓ Accessibility requirements pass
+
+✓ Security requirements are implemented
+
+✓ Processing does not block unrelated workspace activity
