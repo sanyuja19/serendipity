@@ -1925,3 +1925,778 @@ Thing
 Panel2
 
 Naming should communicate domain responsibility.
+# 4. Motion & Interaction Language
+
+## 4.1 Motion Philosophy
+
+SERENDIPITY SHALL use purposeful motion.
+
+Animation exists to communicate:
+
+- State
+- Progress
+- Relationships
+- Hierarchy
+- Feedback
+- Discovery
+
+Motion SHALL NOT exist purely for visual decoration.
+
+Every animation should answer at least one question:
+
+What changed?
+
+What is happening?
+
+Where should the user look?
+
+What can the user do next?
+
+---
+
+# 4.2 Motion Personality
+
+SERENDIPITY motion should feel:
+
+- Calm
+- Precise
+- Fluid
+- Intelligent
+- Responsive
+- Subtle
+
+Motion should never feel:
+
+- Hyperactive
+- Game-like
+- Distracting
+- Excessively elastic
+- Slow
+
+The interface should feel alive without appearing animated for the sake of animation.
+
+---
+
+# 4.3 Motion Duration
+
+Standard durations:
+
+Micro:
+
+100ms
+
+Fast:
+
+150ms
+
+Standard:
+
+200ms
+
+Medium:
+
+300ms
+
+Large:
+
+400ms
+
+Complex:
+
+500-700ms
+
+Animations longer than 700ms should be rare and reserved for meaningful system transitions.
+
+---
+
+# 4.4 Easing
+
+Default UI easing:
+
+ease-out
+
+Used for:
+
+- Opening panels
+- Hover states
+- Navigation
+- Element entrance
+
+Emphasis transitions may use:
+
+ease-in-out
+
+Continuous system animations should use linear or carefully controlled easing.
+
+---
+
+# 4.5 Micro-Interactions
+
+Micro-interactions SHALL provide immediate feedback.
+
+Examples:
+
+Button
+
+Hover
+
+↓
+
+Subtle color transition
+
+---
+
+Card
+
+Hover
+
+↓
+
+Slight elevation
+
+---
+
+Saved Discovery
+
+↓
+
+Check animation
+
+---
+
+Copied Citation
+
+↓
+
+Confirmation indicator
+
+---
+
+Selected Node
+
+↓
+
+Focused highlight
+
+Micro-interactions should remain subtle enough that users do not consciously notice them unless necessary.
+
+---
+
+# 4.6 Page Transitions
+
+Page transitions SHALL be minimal.
+
+Preferred behavior:
+
+Current View
+
+↓
+
+Subtle opacity transition
+
+↓
+
+New View
+
+Large sliding page transitions should be avoided.
+
+Research users frequently move between related views and should not feel like they are navigating between separate applications.
+
+---
+
+# 4.7 Panel Transitions
+
+Panels should enter from the direction associated with their context.
+
+Examples:
+
+Sidebar
+
+↓
+
+Slide horizontally
+
+---
+
+Context Panel
+
+↓
+
+Slide from right
+
+---
+
+Bottom Action Panel
+
+↓
+
+Slide from bottom
+
+---
+
+Modal
+
+↓
+
+Fade + slight scale
+
+Transitions should remain under approximately 300ms for normal interactions.
+
+---
+
+# 4.8 Loading Philosophy
+
+SERENDIPITY SHALL avoid generic loading indicators whenever meaningful progress information is available.
+
+Instead of:
+
+Loading...
+
+Use contextual status.
+
+Examples:
+
+"Reading research papers..."
+
+"Extracting concepts..."
+
+"Mapping citation relationships..."
+
+"Building Knowledge Fabric..."
+
+"Searching for cross-domain connections..."
+
+"Generating Discovery Report..."
+
+The interface should communicate what the system is actually doing.
+
+---
+
+# 4.9 Research Mission Animation
+
+The Research Mission is a signature interaction.
+
+When a research workflow begins:
+
+Research Mission Created
+
+↓
+
+Mission Card appears
+
+↓
+
+Planner Agent activates
+
+↓
+
+Agent Timeline begins
+
+↓
+
+Progress updates continuously
+
+↓
+
+Knowledge Fabric begins forming
+
+↓
+
+Discovery Engine activates
+
+↓
+
+Discovery Report becomes available
+
+The animation should visually communicate that multiple processes are occurring as part of one coordinated mission.
+
+---
+
+# 4.10 Agent Status Language
+
+Every agent has one of the following states:
+
+Queued
+
+Running
+
+Completed
+
+Paused
+
+Failed
+
+Cancelled
+
+Retrying
+
+The interface SHALL visually distinguish these states.
+
+Example:
+
+Queued
+
+○
+
+Running
+
+●
+
+Completed
+
+✓
+
+Failed
+
+×
+
+Retrying
+
+↻
+
+The system should also provide textual labels for accessibility.
+
+---
+
+# 4.11 Agent Activity
+
+When an agent is running, the interface may display a subtle activity indicator.
+
+Example:
+
+Knowledge Agent
+
+● Analyzing relationships
+
+The activity indicator should use restrained motion.
+
+Avoid aggressive spinners or rapidly flashing elements.
+
+---
+
+# 4.12 Agent Expansion
+
+Users should be able to expand an agent to inspect user-facing execution information.
+
+Expanded view:
+
+Agent Name
+
+Task
+
+Status
+
+Duration
+
+Sources Used
+
+Output
+
+Warnings
+
+The system SHALL NOT expose hidden chain-of-thought or private model reasoning.
+
+Instead, it should provide a concise explanation of what the agent accomplished and what evidence it used.
+
+---
+
+# 4.13 Research Mission Completion
+
+When a mission completes:
+
+Research Mission
+
+↓
+
+Progress reaches 100%
+
+↓
+
+Final agent completes
+
+↓
+
+Subtle completion animation
+
+↓
+
+Discovery Report becomes available
+
+↓
+
+Knowledge Fabric updates
+
+↓
+
+User receives completion notification
+
+The completion state should feel rewarding without becoming celebratory or distracting.
+
+---
+
+# 4.14 Discovery Animation
+
+When SERENDIPITY identifies a potentially interesting relationship:
+
+A subtle visual emphasis should occur.
+
+Example:
+
+Concept A
+
+↓
+
+Relationship discovered
+
+↓
+
+Connection becomes highlighted
+
+↓
+
+Related Concept B becomes emphasized
+
+↓
+
+Discovery Card appears
+
+The goal is to create a feeling of discovery while maintaining scientific seriousness.
+
+---
+
+# 4.15 Discovery Highlight
+
+Discovery highlights SHALL use the Discovery accent.
+
+Recommended:
+
+Emerald / Teal
+
+The highlight should be temporary.
+
+After the user acknowledges the discovery, the graph should return to its normal visual state.
+
+---
+
+# 4.16 Knowledge Fabric Motion Philosophy
+
+The Knowledge Fabric should feel like a living representation of knowledge.
+
+However, it SHALL NOT behave like a decorative screensaver.
+
+Motion should represent real relationships or state changes.
+
+Examples:
+
+New Node
+
+↓
+
+Node appears
+
+↓
+
+Relationship forms
+
+↓
+
+Cluster updates
+
+---
+
+New Evidence
+
+↓
+
+Relationship strengthens
+
+↓
+
+Confidence indicator updates
+
+---
+
+New Discovery
+
+↓
+
+Relevant subgraph highlights
+
+Motion must correspond to actual data.
+
+---
+
+# 4.17 Graph Node Entrance
+
+When a new node enters the Knowledge Fabric:
+
+1. Node position is calculated.
+
+2. Node fades into visibility.
+
+3. Node scales from approximately 95% to 100%.
+
+4. Relevant edges appear.
+
+5. The graph stabilizes.
+
+The animation should remain short enough to preserve usability.
+
+---
+
+# 4.18 Graph Relationship Animation
+
+Relationships may animate when they are:
+
+- Newly created
+- Selected
+- Highlighted
+- Strengthened
+- Investigated
+
+Relationships should never continuously animate without a meaningful reason.
+
+---
+
+# 4.19 Graph Selection
+
+When a node is selected:
+
+Selected Node
+
+↓
+
+Increase visual prominence
+
+↓
+
+Connected nodes remain visible
+
+↓
+
+Unrelated nodes reduce visual emphasis
+
+↓
+
+Context Panel opens
+
+This creates a focused exploration state without removing surrounding context.
+
+---
+
+# 4.20 Graph Focus Mode
+
+Users SHALL be able to focus on a selected entity.
+
+Example:
+
+Select:
+
+"Graph Neural Networks"
+
+↓
+
+Focus Mode
+
+↓
+
+Show:
+
+Related Papers
+
+Related Concepts
+
+Authors
+
+Methods
+
+Datasets
+
+Research Areas
+
+The rest of the graph becomes visually subdued.
+
+---
+
+# 4.21 Graph Exploration
+
+Users should be able to progressively explore knowledge.
+
+Node
+
+↓
+
+Select
+
+↓
+
+Inspect
+
+↓
+
+Focus
+
+↓
+
+Expand
+
+↓
+
+Discover
+
+This progressive exploration model prevents overwhelming the researcher with all available information at once.
+
+---
+
+# 4.22 AI Streaming
+
+Research Copilot responses may stream progressively.
+
+The interface should communicate that the system is actively producing a response.
+
+However, streaming should never reveal incomplete reasoning as if it were a final conclusion.
+
+Evidence and final claims should be presented only after validation.
+
+---
+
+# 4.23 AI Response States
+
+Research Copilot responses may have:
+
+Thinking
+
+Retrieving
+
+Analyzing
+
+Validating
+
+Ready
+
+Error
+
+The UI should distinguish system activity from the final response.
+
+---
+
+# 4.24 Evidence Reveal
+
+When a Copilot response contains evidence:
+
+Claim
+
+↓
+
+Evidence indicator
+
+↓
+
+Supporting sources
+
+↓
+
+Expandable Evidence Panel
+
+Users should be able to inspect evidence without leaving the current research context.
+
+---
+
+# 4.25 Citation Interaction
+
+Citations should provide immediate context.
+
+Hover:
+
+Show compact citation preview.
+
+Click:
+
+Open citation details.
+
+Secondary action:
+
+Open source.
+
+The user should not lose their current research position when inspecting a citation.
+
+---
+
+# 4.26 AI Confidence Interaction
+
+Confidence indicators should support progressive disclosure.
+
+Example:
+
+High Confidence
+
+92%
+
+↓
+
+Click
+
+↓
+
+24 supporting sources
+
+↓
+
+Evidence distribution
+
+↓
+
+Source details
+
+The interface should avoid presenting confidence as absolute truth.
+
+---
+
+# 4.27 Error Motion
+
+Errors should receive immediate but restrained feedback.
+
+Examples:
+
+Invalid input
+
+↓
+
+Field highlight
+
+↓
+
+Error message
+
+---
+
+Failed AI task
+
+↓
+
+Agent status changes
+
+↓
+
+Error explanation appears
+
+↓
+
+Retry action
+
+Errors should never trigger aggressive screen-wide animations.
+
+---
+
+# 4.28 Reduced Motion
+
+SERENDIPITY SHALL respect the user's reduced-motion preference.
+
+When reduced motion is enabled:
+
+- Disable non-essential animations.
+- Replace graph transitions with instant state changes where appropriate.
+- Remove decorative motion.
+- Preserve essential state feedback through color, icons, and text.
+
+The application must remain fully understandable without animation.
