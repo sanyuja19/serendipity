@@ -564,3 +564,508 @@ Users should always know:
 • What the AI is doing
 
 • What they can do next
+# 9. Product Workflow Philosophy
+
+SERENDIPITY is designed around research workflows rather than isolated features.
+
+Users should never feel they are switching between unrelated tools.
+
+Instead, every action naturally leads to the next stage of research.
+
+Research is treated as a continuous process rather than disconnected tasks.
+
+Every workflow follows the same philosophy:
+
+Understand
+
+↓
+
+Organize
+
+↓
+
+Connect
+
+↓
+
+Reason
+
+↓
+
+Discover
+
+↓
+
+Document
+
+↓
+
+Export
+# 10. First-Time User Journey
+
+The first-time experience is critical.
+
+A new user should understand the product within five minutes.
+
+---
+
+Step 1
+
+Visit Landing Page
+
+↓
+
+Learn what SERENDIPITY does
+
+↓
+
+Sign Up
+
+---
+
+Step 2
+
+Complete Profile
+
+↓
+
+Choose research interests
+
+↓
+
+Select preferred domains
+
+↓
+
+Create first workspace
+
+---
+
+Step 3
+
+Guided Product Tour
+
+Introduce:
+
+• Research Workspace
+
+• Knowledge Fabric
+
+• Research Copilot
+
+• Notebook
+
+• Discovery Reports
+
+The tour should remain under three minutes.
+
+Users may skip the tour at any time.
+
+---
+
+Step 4
+
+Upload First Papers
+
+The user uploads:
+
+PDF
+
+Patent
+
+Dataset
+
+Technical Report
+
+The platform immediately begins intelligent analysis.
+
+---
+
+Step 5
+
+Watch AI Work
+
+Instead of displaying a loading spinner,
+
+SERENDIPITY visualizes the AI workflow.
+
+Users see every research agent working in real time.
+
+This creates transparency and confidence.
+
+---
+
+Step 6
+
+Explore Results
+
+Knowledge Fabric appears.
+
+Research Copilot becomes available.
+
+Discovery Report is generated.
+
+Notebook begins filling automatically.
+
+The user is now inside the primary workflow.
+
+# 11. Returning User Journey
+
+Returning users should resume work immediately.
+
+Dashboard
+
+↓
+
+Recent Workspaces
+
+↓
+
+Continue Previous Session
+
+↓
+
+Resume AI Analysis
+
+↓
+
+Continue Research
+
+The platform should always remember where the researcher left off.
+
+# 12. Primary Research Workflow
+
+The core workflow defines the heart of SERENDIPITY.
+
+Research Question
+
+↓
+
+Create Workspace
+
+↓
+
+Upload Research Material
+
+↓
+
+Document Processing
+
+↓
+
+Concept Extraction
+
+↓
+
+Entity Recognition
+
+↓
+
+Knowledge Fabric Construction
+
+↓
+
+Semantic Linking
+
+↓
+
+AI Reasoning
+
+↓
+
+Evidence Validation
+
+↓
+
+Hypothesis Generation
+
+↓
+
+Discovery Report
+
+↓
+
+Research Notebook
+
+↓
+
+Export
+
+# 13. AI Orchestration Workflow
+
+SERENDIPITY follows a multi-agent architecture.
+
+Rather than one large model performing every task,
+
+specialized agents collaborate.
+
+Workflow
+
+Research Request
+
+↓
+
+Planner Agent
+
+↓
+
+Task Breakdown
+
+↓
+
+Parallel Execution
+
+↓
+
+Literature Agent
+
+Concept Agent
+
+Citation Agent
+
+Knowledge Agent
+
+Reasoning Agent
+
+↓
+
+Evidence Aggregation
+
+↓
+
+Validation
+
+↓
+
+Discovery Engine
+
+↓
+
+Final Research Report
+
+The user should perceive the system as one intelligent collaborator rather than multiple disconnected agents.
+# 14. Live AI Activity Timeline
+
+Whenever AI performs work,
+
+the interface displays a live timeline.
+
+Example
+
+Planner Agent
+
+✓ Understanding research goal
+
+↓
+
+Literature Agent
+
+✓ Reading uploaded papers
+
+↓
+
+Concept Agent
+
+✓ Extracting concepts
+
+↓
+
+Knowledge Agent
+
+✓ Building Knowledge Fabric
+
+↓
+
+Citation Agent
+
+✓ Mapping references
+
+↓
+
+Reasoning Agent
+
+✓ Identifying relationships
+
+↓
+
+Discovery Engine
+
+✓ Generating hypotheses
+
+↓
+
+Research Report Ready
+
+This timeline provides transparency and improves user trust.
+# 15. Knowledge Discovery Workflow
+
+Knowledge discovery represents the primary competitive advantage of SERENDIPITY.
+
+Workflow
+
+Documents
+
+↓
+
+Entities
+
+↓
+
+Concepts
+
+↓
+
+Relationships
+
+↓
+
+Knowledge Fabric
+
+↓
+
+Semantic Clusters
+
+↓
+
+Cross-Domain Connections
+
+↓
+
+Potential Research Opportunities
+
+↓
+
+Evidence Validation
+
+↓
+
+Research Insights
+
+The system prioritizes discovery over retrieval.
+# 16. User Decision Points
+
+The platform intentionally pauses at important moments.
+
+AI suggests.
+
+Researchers decide.
+
+Decision Point 1
+
+Accept extracted concepts?
+
+Decision Point 2
+
+Merge duplicated entities?
+
+Decision Point 3
+
+Approve generated hypotheses?
+
+Decision Point 4
+
+Save discoveries?
+
+Decision Point 5
+
+Export report?
+
+This preserves human control throughout the research process.
+# 17. Error Recovery Journey
+
+Research workflows should never fail silently.
+
+If an error occurs,
+
+the platform explains:
+
+• What happened
+
+• Why it happened
+
+• How to resolve it
+
+Examples
+
+Unsupported PDF
+
+↓
+
+Suggest conversion
+
+Incomplete upload
+
+↓
+
+Resume upload
+
+Missing metadata
+
+↓
+
+Allow manual entry
+
+LLM unavailable
+
+↓
+
+Retry
+
+↓
+
+Fallback model
+
+↓
+
+Offline queue
+
+Users should never encounter unexplained failures.
+# 18. Product Workflow Principles
+
+Every workflow inside SERENDIPITY shall follow these rules.
+
+Rule 1
+
+Never interrupt researcher focus.
+
+---
+
+Rule 2
+
+Always preserve user context.
+
+---
+
+Rule 3
+
+AI work should remain visible.
+
+---
+
+Rule 4
+
+Every generated insight should remain traceable.
+
+---
+
+Rule 5
+
+Users should always know:
+
+• What is happening
+
+• Why it is happening
+
+• What happens next
+
+---
+
+Rule 6
+
+Complex AI workflows should feel simple.
+
+---
+
+Rule 7
+
+The product should encourage curiosity rather than passive consumption.
