@@ -9500,5 +9500,975 @@ The Research Copilot is complete when:
 
 ✓ Performance requirements are acceptable
 
+# 318. Discovery Report
+
+## 318.1 Purpose
+
+The Discovery Report presents a potential research connection, hypothesis, or insight identified by SERENDIPITY.
+
+The report transforms an AI-generated result into a structured, evidence-backed research artifact.
+
+A Discovery Report SHALL communicate:
+
+- Research question
+- Discovery
+- Relationship identified
+- Supporting evidence
+- Source research
+- Contradictory evidence
+- Confidence
+- Potential novelty
+- Reasoning summary
+- Limitations
+- Recommended next steps
+- Researcher decision
+
+The report SHALL clearly distinguish potential discoveries from established scientific findings.
+
+---
+
+# 319. Discovery Report Entry Points
+
+A Discovery Report may be opened from:
+
+- Discovery Feed
+- Research Command Center
+- Research Workspace
+- Research Copilot
+- Knowledge Fabric
+- Research Mission
+- Notification
+- Discovery History
+
+---
+
+# 320. Discovery Report Layout
+
+Desktop:
+
+┌──────────────────────────────────────────────────────────────────┐
+│ Report Header                                                    │
+├──────────────────────────────────────┬───────────────────────────┤
+│                                      │                           │
+│ Discovery                            │ Discovery Context        │
+│                                      │                           │
+│ Summary                              │ Knowledge Fabric         │
+│                                      │ Relationship             │
+│ Evidence                             │                           │
+│                                      │ Confidence               │
+│ Sources                              │                           │
+│                                      │                           │
+│ Contradictions                       │                           │
+│                                      │                           │
+│ Next Steps                           │                           │
+├──────────────────────────────────────┴───────────────────────────┤
+│ Researcher Decision / Actions                                    │
+└──────────────────────────────────────────────────────────────────┘
+
+The discovery itself receives the highest visual priority.
+
+Supporting evidence remains immediately accessible.
+
+---
+
+# 321. Report Header
+
+The header should display:
+
+Discovery title
+
+Workspace
+
+Status
+
+Created date
+
+Research Mission
+
+Example:
+
+Potential Connection Between Molecular Graphs and Protein Interaction Modeling
+
+Workspace:
+
+Graph Learning for Molecular Discovery
+
+Status:
+
+Under Review
+
+Generated:
+
+August 9, 2026
+
+Research Mission:
+
+Cross-Domain Discovery #014
+
+Actions:
+
+Save
+
+Export
+
+Share
+
+More
+
+---
+
+# 322. Discovery Classification
+
+Every discovery SHALL display its current classification.
+
+Possible states:
+
+Candidate
+
+Under Review
+
+Saved
+
+Accepted
+
+Rejected
+
+Needs Validation
+
+The interface should clearly distinguish:
+
+AI-generated candidate
+
+from
+
+Researcher-validated finding
+
+---
+
+# 323. Discovery Summary
+
+The report begins with a concise summary.
+
+Example:
+
+Discovery Summary
+
+SERENDIPITY identified a potential methodological relationship between graph representations used in molecular property prediction and graph architectures used for protein interaction modeling.
+
+The relationship was identified across 8 supporting research sources.
+
+Confidence:
+
+Moderate
+
+Potential Novelty:
+
+High
+
+The summary should remain concise enough to understand quickly.
+
+---
+
+# 324. Research Question
+
+The report should show the research question that led to the discovery.
+
+Example:
+
+Research Question
+
+"Are there transferable graph-learning approaches between molecular property prediction and protein interaction modeling?"
+
+This provides context for why the discovery was generated.
+
+---
+
+# 325. Discovery Statement
+
+The primary discovery statement should be clearly distinguished from surrounding information.
+
+Example:
+
+Potential Discovery
+
+"Graph representations used for protein interaction prediction may be adaptable to multi-relational molecular property prediction."
+
+This statement is a candidate hypothesis, not a verified scientific conclusion.
+
+---
+
+# 326. Relationship Visualization
+
+The report should provide a compact visual representation of the discovered relationship.
+
+Example:
+
+Molecular Graph Learning
+
+        │
+        │ Potential Connection
+        ▼
+
+Protein Interaction Prediction
+
+The visualization may show:
+
+- Source concept
+- Target concept
+- Relationship type
+- Evidence strength
+- Number of supporting sources
+
+Action:
+
+Explore in Knowledge Fabric
+
+---
+
+# 327. Evidence Summary
+
+The report should summarize the evidence supporting the discovery.
+
+Example:
+
+Evidence Summary
+
+8 supporting sources
+
+17 relevant passages
+
+3 independent research clusters
+
+Evidence strength:
+
+Moderate
+
+The evidence summary should remain linked to detailed evidence.
+
+---
+
+# 328. Evidence Items
+
+Each evidence item should display:
+
+Source
+
+Paper title
+
+Authors
+
+Page
+
+Section
+
+Relevant excerpt
+
+Relationship to discovery
+
+Evidence strength
+
+Actions:
+
+Open Paper
+
+View Passage
+
+Add to Notebook
+
+---
+
+# 329. Evidence Grouping
+
+Evidence may be grouped by:
+
+- Supporting
+- Contradictory
+- Contextual
+- Indirect
+
+This prevents all retrieved material from appearing equally strong.
+
+---
+
+# 330. Supporting Evidence
+
+Supporting evidence indicates research material that strengthens the candidate relationship.
+
+Example:
+
+Supporting Evidence
+
+Paper A
+
+Page 7
+
+"Relevant extracted passage..."
+
+Why it matters:
+
+Demonstrates the use of graph representations for molecular structure modeling.
+
+---
+
+# 331. Contradictory Evidence
+
+Contradictory evidence should be prominently represented.
+
+Example:
+
+Contradictory Evidence
+
+Paper B
+
+Page 12
+
+Finding:
+
+The reported architecture did not outperform baseline methods under the tested conditions.
+
+Impact:
+
+Moderates confidence in the proposed transferability.
+
+Action:
+
+Inspect Source
+
+The system should never hide contradictory evidence simply because it weakens the discovery.
+
+---
+
+# 332. Evidence Strength
+
+Evidence strength may be represented as:
+
+Strong
+
+Moderate
+
+Weak
+
+Insufficient
+
+The classification should be accompanied by explanation.
+
+Example:
+
+Moderate
+
+"Supported by multiple independent sources, but direct experimental validation is limited."
+
+---
+
+# 333. Source Coverage
+
+The report should display:
+
+Papers analyzed:
+
+24
+
+Directly relevant:
+
+8
+
+Evidence passages:
+
+17
+
+Research clusters:
+
+3
+
+This provides context for the discovery.
+
+---
+
+# 334. Confidence
+
+The report should display confidence prominently.
+
+Example:
+
+Confidence
+
+Moderate
+
+78%
+
+Based on:
+
+8 supporting sources
+
+2 contradictory sources
+
+17 evidence passages
+
+Confidence should be inspectable.
+
+---
+
+# 335. Confidence Explanation
+
+Selecting confidence should reveal:
+
+Evidence coverage
+
+Source diversity
+
+Relationship consistency
+
+Contradictory evidence
+
+Retrieval quality
+
+The system should explain what influenced the confidence.
+
+---
+
+# 336. Potential Novelty
+
+The report may display a potential novelty estimate.
+
+Example:
+
+Potential Novelty
+
+High
+
+Explanation:
+
+"The relationship appears relatively uncommon within the analyzed research corpus."
+
+This is not a claim of scientific novelty.
+
+The UI SHALL use language such as:
+
+Potential Novelty
+
+rather than:
+
+Novel Discovery
+
+unless independently validated.
+
+---
+
+# 337. Novelty Explanation
+
+The user may inspect:
+
+Research corpus analyzed
+
+Related literature
+
+Known relationships
+
+Search coverage
+
+Date range
+
+The system should communicate limitations of the novelty estimate.
+
+---
+
+# 338. Knowledge Fabric Context
+
+The report should include a compact Knowledge Fabric visualization.
+
+Example:
+
+Concept A
+
+↓
+
+Potential Relationship
+
+↓
+
+Concept B
+
+Nearby entities may include:
+
+Related Papers
+
+Related Methods
+
+Authors
+
+Research Areas
+
+Action:
+
+Explore Full Knowledge Fabric
+
+---
+
+# 339. Reasoning Summary
+
+The report should provide a concise explanation of how the discovery emerged.
+
+Example:
+
+Reasoning Summary
+
+1. Literature retrieval identified overlapping graph-based methodologies.
+
+2. Concept extraction identified shared structural representations.
+
+3. Knowledge Fabric analysis revealed a cross-domain relationship.
+
+4. Evidence aggregation found supporting examples across 8 papers.
+
+5. Contradictory evidence reduced confidence from High to Moderate.
+
+This is a user-facing explanation.
+
+It SHALL NOT expose private model chain-of-thought.
+
+---
+
+# 340. Limitations
+
+Every Discovery Report SHALL include limitations where applicable.
+
+Examples:
+
+- Limited research corpus
+- Insufficient direct evidence
+- Conflicting results
+- Incomplete metadata
+- Domain mismatch
+- Retrieval limitations
+- Lack of experimental validation
+
+Example:
+
+Limitations
+
+"This candidate relationship has not been experimentally validated."
+
+This section is mandatory for candidate discoveries.
+
+---
+
+# 341. Recommended Next Steps
+
+The report should provide actionable next steps.
+
+Examples:
+
+Explore supporting papers
+
+Investigate contradictory evidence
+
+Search additional literature
+
+Run deeper analysis
+
+Design validation experiment
+
+Compare methodologies
+
+Add to Notebook
+
+The system should avoid presenting recommendations as mandatory.
+
+---
+
+# 342. Researcher Decision
+
+The researcher SHALL control the final state.
+
+Actions:
+
+Accept
+
+Save for Later
+
+Reject
+
+Needs Validation
+
+The selected decision should be recorded.
+
+---
+
+# 343. Accepting a Discovery
+
+When accepted:
+
+Discovery
+
+↓
+
+Accepted
+
+The system may add the discovery to workspace memory.
+
+The user should be informed:
+
+"This discovery has been added to your workspace."
+
+The system should preserve the original evidence and analysis.
+
+---
+
+# 344. Rejecting a Discovery
+
+When rejected:
+
+Discovery
+
+↓
+
+Rejected
+
+Optional reason:
+
+Not relevant
+
+Insufficient evidence
+
+Incorrect relationship
+
+Already known
+
+Other
+
+The rejection may improve future ranking or personalization if the user permits such learning.
+
+---
+
+# 345. Needs Validation
+
+The researcher may mark:
+
+Needs Validation
+
+This indicates:
+
+"The relationship is interesting but requires additional investigation."
+
+This state should remain distinct from both accepted and rejected.
+
+---
+
+# 346. Save for Later
+
+Saved discoveries appear in:
+
+- Discovery Library
+- Workspace
+- Command Center
+
+Saving does not imply scientific validation.
+
+---
+
+# 347. Discovery Comments
+
+Future versions may allow researcher comments.
+
+Version 1 may support a simple researcher note.
+
+Example:
+
+Researcher Note
+
+"Investigate whether this relationship extends to heterogeneous molecular graphs."
+
+The note should remain clearly separated from AI-generated content.
+
+---
+
+# 348. Discovery History
+
+The report should preserve important history.
+
+Example:
+
+Generated
+
+August 9
+
+Reviewed
+
+August 9
+
+Status changed:
+
+Candidate → Needs Validation
+
+The history should communicate important decisions without exposing unnecessary system logs.
+
+---
+
+# 349. Discovery Versioning
+
+If the discovery is regenerated after additional research:
+
+Original Discovery
+
+↓
+
+Updated Evidence
+
+↓
+
+New Analysis
+
+The system should preserve previous results where appropriate.
+
+This prevents silently replacing previous research conclusions.
+
+---
+
+# 350. Export
+
+Users should be able to export a Discovery Report.
+
+Possible Version 1 formats:
+
+- PDF
+- Markdown
+
+Future:
+
+- DOCX
+- BibTeX references
+- Research report formats
+
+The exported report should include:
+
+- Discovery statement
+- Evidence
+- Sources
+- Confidence
+- Limitations
+- Researcher decision
+
+---
+
+# 351. Citation Export
+
+The report should preserve citations.
+
+Sources should contain enough metadata to identify the original research asset.
+
+Future support may include:
+
+- BibTeX
+- APA
+- IEEE
+- MLA
+
+Version 1 may support one or more selected formats depending on implementation scope.
+
+---
+
+# 352. Share
+
+Future versions may support sharing a Discovery Report with collaborators.
+
+Sharing SHALL respect workspace permissions.
+
+Version 1 may keep reports private to the workspace owner.
+
+---
+
+# 353. Discovery Report Mobile
+
+Mobile layout:
+
+Discovery Header
+
+↓
+
+Discovery Statement
+
+↓
+
+Confidence
+
+↓
+
+Evidence
+
+↓
+
+Contradictions
+
+↓
+
+Knowledge Fabric Context
+
+↓
+
+Reasoning Summary
+
+↓
+
+Next Steps
+
+↓
+
+Researcher Decision
+
+The Knowledge Fabric visualization should become a compact interactive preview.
+
+---
+
+# 354. Discovery Report Loading
+
+Loading should use structured skeletons for:
+
+- Discovery header
+- Summary
+- Evidence
+- Knowledge Fabric
+- Confidence
+- Reasoning
+- Next steps
+
+The page should render progressively.
+
+---
+
+# 355. Discovery Report Error
+
+If the report cannot be loaded:
+
+"Discovery Report unavailable."
+
+Actions:
+
+Retry
+
+Return to Discoveries
+
+The underlying discovery should remain preserved.
+
+---
+
+# 356. Missing Evidence
+
+If evidence is unavailable:
+
+"Evidence for this discovery could not currently be retrieved."
+
+The discovery should be marked:
+
+Evidence Unavailable
+
+The system must not display unsupported claims as if evidence were present.
+
+---
+
+# 357. Discovery Report Accessibility
+
+The report SHALL support:
+
+- Semantic headings
+- Keyboard navigation
+- Accessible evidence controls
+- Accessible graph alternatives
+- Non-color status indicators
+- Screen readers
+- Reduced motion
+- Accessible expandable sections
+
+---
+
+# 358. Discovery Report Performance
+
+The report should:
+
+- Load summary before secondary visualizations
+- Lazy-load graph visualizations
+- Lazy-load large evidence sets
+- Cache citation metadata
+- Avoid loading full source documents unnecessarily
+
+---
+
+# 359. Discovery Report Backend Dependencies
+
+The report depends on:
+
+Discovery Service
+
+Evidence Service
+
+Citation Service
+
+Knowledge Fabric Service
+
+Research Mission Service
+
+Research Asset Service
+
+Workspace Service
+
+Notebook Service
+
+Export Service
+
+The frontend should receive a stable discovery-report representation rather than reconstructing the report from many unrelated endpoints.
+
+---
+
+# 360. Discovery Report Definition of Done
+
+The Discovery Report is complete when:
+
+✓ Discovery statement is visible
+
+✓ Research question is visible
+
+✓ Discovery status is visible
+
+✓ Supporting evidence is visible
+
+✓ Contradictory evidence is visible
+
+✓ Evidence strength is represented
+
+✓ Confidence is represented
+
+✓ Potential novelty is represented responsibly
+
+✓ Knowledge Fabric context works
+
+✓ Reasoning summary works
+
+✓ Limitations are displayed
+
+✓ Recommended next steps work
+
+✓ Researcher decision works
+
+✓ Save works
+
+✓ Accept works
+
+✓ Reject works
+
+✓ Needs Validation works
+
+✓ Researcher notes work
+
+✓ Discovery history works
+
+✓ Export works
+
+✓ Mobile layout works
+
+✓ Accessibility requirements pass
+
+✓ AI-generated content is clearly distinguished
+
+✓ Evidence traceability is preserved
+
 
 
