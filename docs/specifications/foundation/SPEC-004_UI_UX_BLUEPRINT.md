@@ -12375,5 +12375,796 @@ The Research Library is complete when:
 
 ✓ Performance requirements are acceptable
 
+# 442. Settings & System Controls
+
+## 442.1 Purpose
+
+Settings provide centralized control over:
+
+- Account preferences
+- Workspace configuration
+- AI behavior
+- Research preferences
+- Notifications
+- Privacy
+- Security
+- Integrations
+- Data management
+- System configuration
+
+Settings SHALL be organized according to user mental models rather than implementation details.
+
+---
+
+# 443. Settings Structure
+
+Settings may be organized into:
+
+Account
+
+Workspace
+
+AI & Research
+
+Notifications
+
+Privacy & Security
+
+Integrations
+
+Data & Storage
+
+Advanced
+
+Danger Zone
+
+Not every setting needs to be exposed in Version 1.
+
+---
+
+# 444. Settings Layout
+
+Desktop:
+
+┌──────────────────────────────────────────────────────────────────┐
+│ Settings                                                         │
+├───────────────────────┬──────────────────────────────────────────┤
+│                       │                                          │
+│ Account               │ Settings Content                         │
+│ Workspace             │                                          │
+│ AI & Research         │ Selected Setting                         │
+│ Notifications         │                                          │
+│ Privacy & Security    │                                          │
+│ Integrations          │                                          │
+│ Data & Storage        │                                          │
+│ Advanced              │                                          │
+│ Danger Zone           │                                          │
+│                       │                                          │
+└───────────────────────┴──────────────────────────────────────────┘
+
+The settings navigation should remain stable.
+
+---
+
+# 445. Account Settings
+
+Account settings may include:
+
+- Name
+- Email
+- Profile image
+- Time zone
+- Language
+- Appearance
+- Accessibility preferences
+
+Actions:
+
+Save Changes
+
+---
+
+# 446. Appearance
+
+Users may configure:
+
+Theme:
+
+System
+
+Light
+
+Dark
+
+Future:
+
+Custom themes
+
+The system should respect operating-system preferences when System is selected.
+
+---
+
+# 447. Accessibility Preferences
+
+Settings may include:
+
+- Reduced motion
+- High contrast
+- Font scaling
+- Keyboard navigation preferences
+
+Accessibility settings should apply consistently across the application.
+
+---
+
+# 448. Workspace Settings
+
+Workspace settings include:
+
+- Workspace name
+- Description
+- Research objective
+- Research domains
+- Tags
+- Workspace preferences
+
+Example:
+
+Workspace
+
+Graph Learning for Molecular Discovery
+
+Objective:
+
+Explore graph-based approaches to molecular discovery.
+
+Action:
+
+Save Changes
+
+---
+
+# 449. Workspace AI Context
+
+Users may configure AI context preferences.
+
+Possible controls:
+
+Use Current Paper Context
+
+Use Workspace Literature
+
+Use Knowledge Fabric
+
+Use Notebook
+
+Use Saved Discoveries
+
+These controls should not override mandatory system safety or authorization boundaries.
+
+---
+
+# 450. AI & Research Settings
+
+AI settings may include:
+
+- Default analysis depth
+- Preferred model
+- Retrieval preferences
+- Response style
+- Citation preferences
+- Evidence requirements
+
+Example:
+
+Default Analysis
+
+Standard
+
+Options:
+
+Quick
+
+Standard
+
+Deep
+
+---
+
+# 451. Model Configuration
+
+If multiple supported models exist, users may select a preferred model.
+
+Example:
+
+Preferred Research Model
+
+Model A
+
+Model B
+
+Model C
+
+The interface should communicate that model availability may vary by deployment.
+
+---
+
+# 452. AI Cost / Resource Controls
+
+Where relevant, users may configure:
+
+- Maximum analysis depth
+- Maximum retrieved sources
+- Background processing preferences
+- Resource-intensive analysis confirmation
+
+Expensive operations should provide clear feedback before execution.
+
+---
+
+# 453. Evidence Preferences
+
+Users may configure preferred evidence behavior.
+
+Possible settings:
+
+Require Source References
+
+Show Confidence
+
+Show Contradictory Evidence
+
+Show Evidence Coverage
+
+These settings control presentation where possible.
+
+They must not cause the system to hide critical uncertainty or safety information.
+
+---
+
+# 454. Citation Preferences
+
+Users may select a preferred citation style.
+
+Possible options:
+
+IEEE
+
+APA
+
+MLA
+
+Chicago
+
+The selected style should apply to generated reports and exports where supported.
+
+---
+
+# 455. Research Preferences
+
+Possible settings:
+
+Default Research Domain
+
+Preferred Analysis Depth
+
+Default Workspace View
+
+Default Paper Viewer Mode
+
+Notebook Preferences
+
+Discovery Notification Preferences
+
+These preferences should improve workflow without creating excessive configuration.
+
+---
+
+# 456. Notification Settings
+
+Users may configure notifications for:
+
+Research Mission Completed
+
+Research Mission Failed
+
+Discovery Generated
+
+Validation Required
+
+Processing Completed
+
+Processing Failed
+
+Workspace Updates
+
+Notifications may support:
+
+In-App
+
+Email
+
+Future:
+
+Push
+
+---
+
+# 457. Notification Frequency
+
+Where appropriate:
+
+Immediate
+
+Daily Summary
+
+Disabled
+
+Critical system notifications may remain enabled regardless of user preference when necessary.
+
+---
+
+# 458. Privacy Settings
+
+Privacy settings may include:
+
+- Data retention
+- AI processing preferences
+- Conversation retention
+- Workspace visibility
+- Analytics preferences
+
+The interface should explain each setting in understandable language.
+
+---
+
+# 459. Security Settings
+
+Security settings may include:
+
+- Password change
+- Active sessions
+- Login history
+- Two-factor authentication
+- Connected devices
+
+Security-sensitive operations may require re-authentication.
+
+---
+
+# 460. Active Sessions
+
+Users should be able to inspect active sessions.
+
+Example:
+
+Windows Desktop
+
+Current Session
+
+Chrome
+
+Nagpur
+
+Last active:
+
+Now
+
+Actions:
+
+Sign Out
+
+Unknown sessions should be easy to revoke.
+
+---
+
+# 461. Two-Factor Authentication
+
+If supported:
+
+Two-Factor Authentication
+
+Status:
+
+Enabled
+
+Actions:
+
+Manage
+
+Disable
+
+Security changes should require appropriate verification.
+
+---
+
+# 462. Integrations
+
+Future integrations may include:
+
+- GitHub
+- Google Drive
+- Zotero
+- Mendeley
+- Cloud storage
+- Research databases
+
+Version 1 may provide the architecture and placeholder interface without implementing every integration.
+
+---
+
+# 463. Integration State
+
+Each integration should display:
+
+Connected
+
+Not Connected
+
+Connection Expired
+
+Error
+
+Example:
+
+Zotero
+
+Not Connected
+
+Action:
+
+Connect
+
+---
+
+# 464. Integration Permissions
+
+Before connecting an external service, users should understand:
+
+What data will be accessed
+
+Why access is required
+
+What actions SERENDIPITY can perform
+
+Actions:
+
+Connect
+
+Cancel
+
+---
+
+# 465. Data & Storage
+
+Data settings may display:
+
+Storage Usage
+
+Research Assets
+
+Notebook
+
+Knowledge Fabric
+
+Generated Reports
+
+Conversation Data
+
+Users may manage:
+
+Export Data
+
+Archive Data
+
+Delete Data
+
+---
+
+# 466. Data Export
+
+Users should be able to request export of their research data.
+
+Possible export:
+
+Research Papers Metadata
+
+Notebook
+
+Discoveries
+
+Conversations
+
+Workspace Configuration
+
+The export process may run asynchronously.
+
+---
+
+# 467. Data Deletion
+
+Data deletion must be explicit.
+
+Example:
+
+Delete Workspace
+
+"This will permanently remove the workspace and associated research configuration."
+
+Before deletion:
+
+Require confirmation
+
+Require explicit destructive action
+
+Potentially require re-authentication
+
+The interface should clearly explain what will be deleted.
+
+---
+
+# 468. Danger Zone
+
+Danger Zone contains destructive operations:
+
+Delete Workspace
+
+Delete Account
+
+Clear Research Data
+
+Danger Zone should be visually separated from normal settings.
+
+---
+
+# 469. Advanced Settings
+
+Advanced settings may include:
+
+- API configuration
+- Developer options
+- Debug information
+- Experimental features
+- System diagnostics
+
+Advanced settings should not clutter normal user workflows.
+
+---
+
+# 470. Experimental Features
+
+Experimental features should display:
+
+Experimental
+
+"These features may change or be removed."
+
+Users should understand that experimental behavior may not be stable.
+
+---
+
+# 471. API Configuration
+
+For developer-oriented deployments, users may configure:
+
+API keys
+
+External model providers
+
+Endpoint URLs
+
+Integration credentials
+
+Sensitive values should be masked.
+
+Example:
+
+sk-••••••••••••
+
+Never display complete secrets after saving.
+
+---
+
+# 472. Secret Handling
+
+Secrets SHALL:
+
+- Be encrypted at rest
+- Never appear in logs
+- Never be displayed in full after creation
+- Require explicit replacement
+- Be protected by appropriate authorization
+
+The frontend must never embed secret credentials directly in client-side source code.
+
+---
+
+# 473. Settings Save Behavior
+
+Settings may use:
+
+Explicit Save
+
+or
+
+Immediate Save
+
+depending on setting type.
+
+For important configuration changes:
+
+Save
+
+↓
+
+Confirmation
+
+For simple preferences:
+
+Immediate Save
+
+↓
+
+Saved indicator
+
+---
+
+# 474. Unsaved Changes
+
+If explicit-save settings are edited:
+
+Unsaved Changes
+
+Actions:
+
+Save
+
+Discard
+
+Navigation away should warn the user when appropriate.
+
+---
+
+# 475. Settings Validation
+
+Invalid configuration should provide actionable feedback.
+
+Example:
+
+Invalid model endpoint
+
+"Enter a valid HTTPS endpoint."
+
+The system should not simply display:
+
+"Invalid input."
+
+---
+
+# 476. Settings Error Handling
+
+If a setting cannot be saved:
+
+"Unable to save changes."
+
+Actions:
+
+Retry
+
+Keep Editing
+
+The user's unsaved input should remain where possible.
+
+---
+
+# 477. Settings Success
+
+After saving:
+
+Changes saved
+
+The confirmation should be subtle and non-blocking.
+
+---
+
+# 478. Settings Mobile
+
+Mobile settings should use:
+
+Category List
+
+↓
+
+Setting Category
+
+↓
+
+Individual Controls
+
+Danger Zone should remain clearly separated.
+
+---
+
+# 479. Settings Accessibility
+
+Settings SHALL support:
+
+- Keyboard navigation
+- Semantic forms
+- Accessible labels
+- Screen readers
+- Visible focus
+- Error announcements
+- Accessible confirmation dialogs
+- Reduced motion
+
+---
+
+# 480. Settings Backend Dependencies
+
+Settings depend on:
+
+Authentication Service
+
+User Service
+
+Workspace Service
+
+AI Configuration Service
+
+Notification Service
+
+Security Service
+
+Integration Service
+
+Data Management Service
+
+---
+
+# 481. Settings Definition of Done
+
+Settings are complete when:
+
+✓ Account settings work
+
+✓ Workspace settings work
+
+✓ AI settings are represented
+
+✓ Research preferences work
+
+✓ Citation preferences work
+
+✓ Notification preferences work
+
+✓ Privacy settings are represented
+
+✓ Security settings are represented
+
+✓ Active sessions are represented
+
+✓ Integrations are represented
+
+✓ Data management is represented
+
+✓ Export is represented
+
+✓ Destructive actions are protected
+
+✓ API configuration is secure
+
+✓ Settings validation works
+
+✓ Unsaved changes are handled
+
+✓ Error states work
+
+✓ Success states work
+
+✓ Mobile experience works
+
+✓ Accessibility requirements pass
+
 
 
