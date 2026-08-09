@@ -13835,3 +13835,33 @@ Authentication
 
 This validates the core application architecture before
 advanced agentic functionality is introduced.
+---
+
+## Implementation Dependency Map
+
+The Version 1 implementation follows dependency order rather than screen order.
+
+```text
+Foundation
+    ↓
+Authentication + Workspace
+    ↓
+Research Assets
+    ↓
+Document Ingestion
+    ↓
+RAG
+    ↓
+Knowledge Fabric
+    ↓
+Copilot
+    ↓
+Research Missions
+    ↓
+Discovery
+    ↓
+Notebook
+    ↓
+Testing + Hardening
+    ↓
+Deployment
