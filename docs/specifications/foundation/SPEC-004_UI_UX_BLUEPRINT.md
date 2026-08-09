@@ -10470,5 +10470,1162 @@ The Discovery Report is complete when:
 
 ✓ Evidence traceability is preserved
 
+# 361. Research Notebook
+
+## 361.1 Purpose
+
+The Research Notebook is the persistent research-thinking environment within SERENDIPITY.
+
+It allows researchers to collect, organize, connect, and develop:
+
+- Research notes
+- Evidence
+- Concepts
+- Citations
+- Discoveries
+- Hypotheses
+- Research questions
+- AI-generated insights
+- Personal observations
+
+The Notebook SHALL preserve provenance wherever research information originates from another source.
+
+The Notebook is not intended to replace a general-purpose note-taking application.
+
+Its purpose is to connect researcher thinking directly to the research knowledge environment.
+
+---
+
+# 362. Notebook Mental Model
+
+The Notebook follows:
+
+Capture
+
+↓
+
+Connect
+
+↓
+
+Develop
+
+↓
+
+Validate
+
+↓
+
+Produce
+
+A researcher may capture an observation from a paper, connect it to a concept, develop a hypothesis, validate it against evidence, and eventually use it in a research report.
+
+---
+
+# 363. Notebook Entry Points
+
+Users may access the Notebook from:
+
+- Research Workspace
+- Paper Viewer
+- Knowledge Fabric
+- Research Copilot
+- Discovery Report
+- Research Command Center
+
+Quick actions may include:
+
+Create Note
+
+Save Evidence
+
+Save Discovery
+
+Save Copilot Response
+
+Save Concept
+
+---
+
+# 364. Notebook Layout
+
+Desktop:
+
+┌────────────────────────────────────────────────────────────────────┐
+│ Notebook Header                                                    │
+├────────────────┬───────────────────────────────────────────────────┤
+│                │                                                   │
+│ Notebook      │                                                   │
+│ Navigation    │              Editor / Content                     │
+│                │                                                   │
+│ All Notes     │                                                   │
+│ Research      │                                                   │
+│ Evidence      │                                                   │
+│ Discoveries   │                                                   │
+│ Questions     │                                                   │
+│ Drafts        │                                                   │
+│                │                                                   │
+├────────────────┴───────────────────────────────────────────────────┤
+│ Optional Source / Context Panel                                   │
+└────────────────────────────────────────────────────────────────────┘
+
+The editor should remain the primary workspace.
+
+---
+
+# 365. Notebook Header
+
+The header should display:
+
+Research Notebook
+
+Workspace name
+
+Last saved
+
+Search
+
+New Entry
+
+Example:
+
+Research Notebook
+
+Graph Learning for Molecular Discovery
+
+Last saved:
+
+2 minutes ago
+
+Actions:
+
+New Entry
+
+Search
+
+Export
+
+---
+
+# 366. Notebook Navigation
+
+Navigation may include:
+
+All Notes
+
+Evidence
+
+Discoveries
+
+Research Questions
+
+Hypotheses
+
+AI Insights
+
+Drafts
+
+Pinned
+
+The navigation should remain workspace-specific.
+
+---
+
+# 367. Notebook Entry Types
+
+Version 1 SHALL support:
+
+Note
+
+Evidence
+
+Discovery
+
+Research Question
+
+Hypothesis
+
+Citation
+
+AI Insight
+
+Future versions may support richer research artifacts.
+
+---
+
+# 368. Note Entry
+
+A standard note may contain:
+
+Title
+
+Body
+
+Tags
+
+Linked Concepts
+
+Linked Papers
+
+Linked Evidence
+
+Created time
+
+Updated time
+
+Example:
+
+Title:
+
+Graph representations may transfer across domains
+
+Body:
+
+Investigate whether relational graph structures used in protein interaction prediction can be adapted to molecular property prediction.
+
+Tags:
+
+Graph Learning
+
+Molecular Discovery
+
+Research Gap
+
+---
+
+# 369. Evidence Entry
+
+An evidence entry preserves source information.
+
+Example:
+
+Evidence
+
+Source:
+
+Molecular Graph Learning
+
+Page:
+
+7
+
+Section:
+
+Experiments
+
+Excerpt:
+
+"Relevant research passage..."
+
+Researcher Note:
+
+"This supports the possibility that..."
+
+Actions:
+
+Open Source
+
+View in Paper
+
+Add to Discovery
+
+---
+
+# 370. Evidence Provenance
+
+Evidence SHALL preserve provenance.
+
+Minimum metadata:
+
+- Source document
+- Page where available
+- Section where available
+- Original excerpt
+- Source identifier
+- Creation timestamp
+
+The system should prevent source references from becoming detached from their original research assets.
+
+---
+
+# 371. Discovery Entry
+
+A Discovery entry may be created from a Discovery Report.
+
+It should preserve:
+
+- Discovery statement
+- Evidence
+- Confidence
+- Potential novelty
+- Limitations
+- Researcher decision
+- Source Mission
+
+The Notebook should link back to the full Discovery Report.
+
+---
+
+# 372. Research Question Entry
+
+Researchers can store open research questions.
+
+Example:
+
+Research Question
+
+"Can multi-relational graph architectures improve molecular property prediction?"
+
+Status:
+
+Open
+
+Related:
+
+5 Papers
+
+3 Concepts
+
+1 Discovery
+
+Actions:
+
+Investigate
+
+Ask Copilot
+
+Start Research Mission
+
+---
+
+# 373. Hypothesis Entry
+
+A hypothesis should contain:
+
+Statement
+
+Supporting Evidence
+
+Contradictory Evidence
+
+Confidence
+
+Status
+
+Researcher Notes
+
+Example:
+
+Hypothesis:
+
+"Multi-relational graph architectures may improve molecular property prediction."
+
+Status:
+
+Needs Validation
+
+The system should clearly distinguish a hypothesis from a validated conclusion.
+
+---
+
+# 374. AI Insight Entry
+
+An AI-generated insight saved to the Notebook should retain:
+
+AI-generated label
+
+Original response
+
+Supporting evidence
+
+Source papers
+
+Date
+
+Research context
+
+Example:
+
+AI Insight
+
+"Three research clusters appear to use structurally similar graph representations."
+
+Sources:
+
+8 papers
+
+The researcher may add a personal interpretation below it.
+
+---
+
+# 375. Citation Entry
+
+A citation entry should preserve:
+
+Paper
+
+Authors
+
+Publication
+
+Year
+
+DOI
+
+Citation format
+
+Linked evidence
+
+The user should be able to open the original research asset.
+
+---
+
+# 376. Researcher vs AI Content
+
+The Notebook SHALL visually distinguish:
+
+Researcher-authored content
+
+AI-generated content
+
+Imported evidence
+
+Imported citations
+
+Example:
+
+Researcher Note
+
+"This may be worth testing experimentally."
+
+AI Insight
+
+"Related methods appear in three additional papers."
+
+Source Evidence
+
+"Extracted passage..."
+
+These categories must not be visually conflated.
+
+---
+
+# 377. Editor
+
+The Notebook editor should support:
+
+- Rich text
+- Headings
+- Lists
+- Quotes
+- Code blocks where appropriate
+- Links
+- Citations
+- Evidence references
+- Concept links
+- Discovery links
+
+Version 1 should prioritize reliable research writing over excessive formatting features.
+
+---
+
+# 378. Slash Commands
+
+Future or Version 1 editor commands may include:
+
+/note
+
+/evidence
+
+/citation
+
+/concept
+
+/discovery
+
+/question
+
+/hypothesis
+
+These commands should provide quick insertion of structured research objects.
+
+---
+
+# 379. Inline Research References
+
+Users should be able to reference research entities inside notes.
+
+Example:
+
+"GraphSAGE appears relevant to [Molecular Graph Learning]."
+
+The linked concept should open its Knowledge Fabric context.
+
+Similarly:
+
+"[Paper A] reports..."
+
+The linked paper should open the Paper Viewer.
+
+---
+
+# 380. Backlinks
+
+The Notebook should expose backlinks.
+
+Example:
+
+Graph Neural Networks
+
+Referenced by:
+
+5 Notes
+
+2 Discoveries
+
+3 Research Questions
+
+Backlinks help researchers understand how their thinking connects across the workspace.
+
+---
+
+# 381. Notebook Graph
+
+Future versions may visualize Notebook relationships.
+
+Example:
+
+Note
+
+↓
+
+Concept
+
+↓
+
+Paper
+
+↓
+
+Evidence
+
+↓
+
+Discovery
+
+Version 1 should prepare the data model for this capability.
+
+---
+
+# 382. Tags
+
+Users may add tags.
+
+Example:
+
+#graph-learning
+
+#molecular-discovery
+
+#research-gap
+
+#validation
+
+#high-priority
+
+Tags should support filtering and search.
+
+---
+
+# 383. Pinned Entries
+
+Researchers may pin important entries.
+
+Pinned entries appear near the top of Notebook navigation.
+
+Example:
+
+Pinned
+
+"Primary Research Hypothesis"
+
+"Important Contradiction"
+
+"Experiment Idea"
+
+Pinned status does not alter the underlying entry.
+
+---
+
+# 384. Notebook Search
+
+Search should cover:
+
+- Titles
+- Body text
+- Tags
+- Concepts
+- Papers
+- Discoveries
+- Evidence
+
+Search results should display entry type.
+
+Example:
+
+Research Question
+
+"Can graph attention mechanisms..."
+
+---
+
+# 385. Notebook Filters
+
+Users may filter by:
+
+Entry Type
+
+Tag
+
+Source
+
+Date
+
+Status
+
+AI/Researcher Origin
+
+Linked Concept
+
+Linked Paper
+
+Filters should be combinable.
+
+---
+
+# 386. Notebook Organization
+
+Version 1 may support:
+
+Folders
+
+Tags
+
+Pinned entries
+
+Smart filters
+
+The architecture should avoid forcing researchers into a rigid hierarchy.
+
+Research often develops non-linearly.
+
+---
+
+# 387. Autosave
+
+Notebook edits SHOULD be automatically saved.
+
+The interface should communicate state:
+
+Saving...
+
+Saved
+
+Offline Changes
+
+Save Failed
+
+Users should never lose research notes because they forgot to click Save.
+
+---
+
+# 388. Conflict Handling
+
+If the same note is edited in multiple sessions:
+
+The system should detect conflicts.
+
+Possible behavior:
+
+"This note changed elsewhere."
+
+Actions:
+
+Keep Mine
+
+Use Latest
+
+Review Changes
+
+Version history may be introduced in a future release.
+
+---
+
+# 389. Note Version History
+
+Future versions may maintain:
+
+Created
+
+Edited
+
+Previous versions
+
+Restored version
+
+Version history should be considered in the data architecture.
+
+---
+
+# 390. Source Context Panel
+
+When editing a research note, users may open the source context panel.
+
+Example:
+
+Linked Sources
+
+Paper A
+
+Page 4
+
+Paper B
+
+Page 9
+
+Discovery #014
+
+The researcher can inspect sources without leaving the Notebook.
+
+---
+
+# 391. Evidence Insertion
+
+From a Paper Viewer:
+
+Select evidence
+
+↓
+
+Add to Notebook
+
+↓
+
+Evidence block inserted
+
+The block should preserve source information automatically.
+
+---
+
+# 392. Copilot Insertion
+
+From Research Copilot:
+
+Save to Notebook
+
+↓
+
+Choose:
+
+New Entry
+
+Existing Entry
+
+The system should allow the researcher to add a personal interpretation.
+
+Example:
+
+AI Output:
+
+"Three papers suggest..."
+
+Researcher Note:
+
+"I should test whether this holds for..."
+
+This separation is important.
+
+---
+
+# 393. Discovery Insertion
+
+From a Discovery Report:
+
+Save to Notebook
+
+↓
+
+Discovery block
+
+↓
+
+Optional researcher interpretation
+
+This creates a traceable link between AI discovery and researcher thinking.
+
+---
+
+# 394. Notebook Actions
+
+Common actions:
+
+Create
+
+Edit
+
+Duplicate
+
+Archive
+
+Delete
+
+Pin
+
+Tag
+
+Link
+
+Export
+
+Open Source
+
+Ask Copilot
+
+Explore Knowledge Fabric
+
+Actions should be contextual.
+
+---
+
+# 395. Delete Behavior
+
+Deleting an entry should require confirmation.
+
+If an entry contains references to source material:
+
+"Deleting this note will remove the note but will not delete its source papers or evidence."
+
+This prevents accidental deletion of underlying research assets.
+
+---
+
+# 396. Archive
+
+Users may archive entries without deleting them.
+
+Archived entries:
+
+- Remain searchable
+- Do not appear in default views
+- Can be restored
+
+---
+
+# 397. Notebook Empty State
+
+If no entries exist:
+
+Your research notebook is empty.
+
+Start capturing your thinking as you explore.
+
+Actions:
+
+Create Note
+
+Upload Research
+
+Explore Discoveries
+
+Ask Copilot
+
+---
+
+# 398. Notebook Smart Suggestions
+
+The system may suggest saving useful research information.
+
+Example:
+
+"You've highlighted an important finding."
+
+Action:
+
+Save to Notebook
+
+Suggestions should remain optional.
+
+The system should never automatically create large numbers of notes.
+
+---
+
+# 399. Research Question Suggestions
+
+When a discovery reveals an unresolved issue:
+
+Potential Research Question
+
+"Does this relationship hold across different molecular datasets?"
+
+Actions:
+
+Save Question
+
+Investigate
+
+Ask Copilot
+
+---
+
+# 400. Notebook AI Assistance
+
+The Notebook may provide optional AI tools:
+
+Summarize Notes
+
+Find Related Notes
+
+Organize Research Questions
+
+Identify Contradictions
+
+Generate Outline
+
+Find Missing Evidence
+
+These actions should not silently modify researcher-authored content.
+
+---
+
+# 401. AI Editing Rules
+
+When AI modifies or generates notebook content:
+
+The system should clearly indicate:
+
+AI-generated
+
+Suggested
+
+Draft
+
+The researcher must approve generated content before it replaces existing authored content.
+
+---
+
+# 402. Notebook Export
+
+Users may export selected entries or an entire notebook.
+
+Possible formats:
+
+- PDF
+- Markdown
+- DOCX
+- Plain Text
+
+Exports should preserve citations and source references where possible.
+
+---
+
+# 403. Research Draft
+
+The Notebook may contain a Draft area for assembling research output.
+
+Example:
+
+Research Draft
+
+1. Introduction
+
+2. Related Work
+
+3. Observed Gap
+
+4. Candidate Hypothesis
+
+5. Evidence
+
+6. Proposed Experiment
+
+The Draft should remain separate from raw research notes.
+
+---
+
+# 404. Draft Generation
+
+AI may assist in transforming selected notebook material into a draft.
+
+Example:
+
+Selected:
+
+3 Notes
+
+5 Evidence Items
+
+2 Discoveries
+
+Action:
+
+Generate Draft
+
+The generated draft should remain editable and clearly marked as AI-generated until reviewed.
+
+---
+
+# 405. Citation Integrity
+
+When generating drafts:
+
+Every source-backed claim should preserve its source reference.
+
+The system should avoid generating unsupported citations.
+
+Citation references should link back to original research assets.
+
+---
+
+# 406. Notebook Mobile
+
+Mobile should prioritize:
+
+- Reading
+- Quick note creation
+- Evidence capture
+- Search
+- Discovery saving
+
+Recommended structure:
+
+Notebook
+
+↓
+
+Entry List
+
+↓
+
+Entry
+
+↓
+
+Context Drawer
+
+The editor should remain usable on small screens.
+
+---
+
+# 407. Notebook Accessibility
+
+The Notebook SHALL support:
+
+- Keyboard navigation
+- Semantic editor structure
+- Accessible formatting controls
+- Screen readers
+- Visible focus
+- Reduced motion
+- Accessible source links
+
+Rich-text controls should have descriptive labels.
+
+---
+
+# 408. Notebook Performance
+
+The Notebook should:
+
+- Autosave efficiently
+- Avoid saving every keystroke as a separate server operation
+- Load entries progressively
+- Virtualize large entry lists
+- Lazy-load source previews
+- Cache citation metadata
+
+---
+
+# 409. Notebook Backend Dependencies
+
+The Notebook depends on:
+
+Notebook Service
+
+Workspace Service
+
+Research Asset Service
+
+Evidence Service
+
+Citation Service
+
+Knowledge Fabric Service
+
+Discovery Service
+
+Research Copilot
+
+Export Service
+
+The Notebook should store references to research objects rather than duplicating entire source documents.
+
+---
+
+# 410. Notebook Definition of Done
+
+The Research Notebook is complete when:
+
+✓ Notes can be created
+
+✓ Notes can be edited
+
+✓ Notes autosave
+
+✓ Evidence can be saved
+
+✓ Discoveries can be saved
+
+✓ Research questions can be saved
+
+✓ Hypotheses can be saved
+
+✓ AI insights can be saved
+
+✓ Citations can be saved
+
+✓ Researcher and AI content are distinguishable
+
+✓ Source provenance is preserved
+
+✓ Inline references work
+
+✓ Backlinks work
+
+✓ Tags work
+
+✓ Pinning works
+
+✓ Search works
+
+✓ Filtering works
+
+✓ Archive works
+
+✓ Delete confirmation works
+
+✓ Copilot integration works
+
+✓ Paper Viewer integration works
+
+✓ Knowledge Fabric integration works
+
+✓ Discovery integration works
+
+✓ Export works
+
+✓ Mobile experience works
+
+✓ Accessibility requirements pass
+
 
 
