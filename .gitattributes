@@ -1,0 +1,9 @@
+* text=auto
+*.py text
+*.md text
+*.txt text
+*.json text
+*.yaml text
+*.yml text
+*.toml text
+*.env.example text
