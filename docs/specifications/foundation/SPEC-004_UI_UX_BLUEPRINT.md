@@ -11627,5 +11627,753 @@ The Research Notebook is complete when:
 
 ✓ Accessibility requirements pass
 
+# 411. Research Library
+
+## 411.1 Purpose
+
+The Research Library provides a centralized environment for managing research assets within SERENDIPITY.
+
+The Library allows researchers to:
+
+- Browse research assets
+- Search research assets
+- Filter assets
+- Inspect metadata
+- Organize assets
+- View processing status
+- Open papers
+- Inspect citations
+- Explore Knowledge Fabric relationships
+- Launch AI analysis
+- Save assets to research workflows
+
+The Library SHALL act as the researcher's source collection.
+
+---
+
+# 412. Library Asset Types
+
+Version 1 SHALL prioritize:
+
+- Research Papers
+- Technical Reports
+- Research Documents
+
+Future asset types may include:
+
+- Datasets
+- Patents
+- Presentations
+- Web Sources
+- Code Repositories
+
+The architecture should support additional asset types without redesigning the Library.
+
+---
+
+# 413. Library Layout
+
+Desktop:
+
+┌──────────────────────────────────────────────────────────────────┐
+│ Library Header                                                   │
+├───────────────┬──────────────────────────────────────────────────┤
+│               │                                                  │
+│ Filters       │ Search                                           │
+│               │                                                  │
+│ Asset Type    │ Research Asset List                              │
+│ Status        │                                                  │
+│ Date          │ ┌──────────────────────────────────────────────┐ │
+│ Research Area │ │ Paper                                        │ │
+│ Tags          │ │ Title                                        │ │
+│               │ │ Authors · Year · Status                      │ │
+│               │ └──────────────────────────────────────────────┘ │
+│               │                                                  │
+└───────────────┴──────────────────────────────────────────────────┘
+
+---
+
+# 414. Library Header
+
+The header should display:
+
+Research Library
+
+Workspace name
+
+Total assets
+
+Search
+
+Upload Research
+
+Example:
+
+Research Library
+
+24 Papers · 3 Reports
+
+Actions:
+
+Upload Research
+
+Search
+
+Filters
+
+---
+
+# 415. Asset Card
+
+Each asset should display:
+
+- Asset type
+- Title
+- Authors
+- Publication year
+- Processing status
+- Research areas
+- Tags
+- Last updated
+
+Example:
+
+Research Paper
+
+Graph Neural Networks for Molecular Discovery
+
+A. Researcher et al.
+
+2026
+
+Analyzed
+
+Graph Learning · Molecular Discovery
+
+Actions:
+
+Open
+
+Analyze
+
+More
+
+---
+
+# 416. Asset Status
+
+Possible statuses:
+
+Uploaded
+
+Processing
+
+Processed
+
+Analyzed
+
+Processing Failed
+
+Archived
+
+The status should be visible without requiring the user to open the asset.
+
+---
+
+# 417. Asset Search
+
+Search SHALL support:
+
+- Title
+- Author
+- Concept
+- Keyword
+- DOI
+- Research area
+- Tag
+- Extracted entity
+
+Search results should support fuzzy matching where appropriate.
+
+---
+
+# 418. Search Result Context
+
+Example:
+
+Search:
+
+graph attention
+
+Results:
+
+Paper
+
+Graph Attention Networks
+
+Concept
+
+Graph Attention
+
+Method
+
+Graph Attention Mechanism
+
+Discovery
+
+Potential application of graph attention to molecular prediction
+
+The Library search may surface connected research objects where useful.
+
+---
+
+# 419. Filters
+
+Users may filter by:
+
+Asset Type
+
+Processing Status
+
+Research Area
+
+Publication Date
+
+Author
+
+Tag
+
+Source
+
+Analysis Status
+
+Discovery Association
+
+Filters should be combinable.
+
+---
+
+# 420. Sorting
+
+Supported sorting:
+
+Recently Added
+
+Recently Updated
+
+Publication Date
+
+Title
+
+Relevance
+
+Processing Status
+
+The selected sort should persist during the current session.
+
+---
+
+# 421. Asset Details
+
+Selecting an asset opens an asset detail view.
+
+Example:
+
+Graph Neural Networks for Molecular Discovery
+
+Metadata
+
+Processing Information
+
+Concepts
+
+Entities
+
+Citations
+
+Knowledge Fabric Connections
+
+AI Analysis History
+
+Related Discoveries
+
+Actions:
+
+Open Paper
+
+Analyze
+
+Explore Graph
+
+Add to Notebook
+
+---
+
+# 422. Metadata
+
+Asset metadata includes:
+
+Title
+
+Authors
+
+Publication
+
+Year
+
+DOI
+
+Source
+
+Abstract
+
+Keywords
+
+Research Areas
+
+The researcher may edit metadata where appropriate.
+
+---
+
+# 423. Processing Information
+
+The asset detail view should display:
+
+Processing status
+
+Processing date
+
+Extracted text status
+
+Concept count
+
+Entity count
+
+Relationship count
+
+Embedding status
+
+AI analysis status
+
+Example:
+
+Processed
+
+137 Concepts
+
+42 Entities
+
+68 Relationships
+
+Embeddings:
+
+Complete
+
+---
+
+# 424. Related Research
+
+The Library should show related assets.
+
+Possible relationships:
+
+Related by Concept
+
+Related by Citation
+
+Related by Research Area
+
+Related by Knowledge Fabric
+
+Related by AI Analysis
+
+Example:
+
+Related Research
+
+5 papers
+
+3 concepts
+
+2 methods
+
+Action:
+
+Explore Related Research
+
+---
+
+# 425. Citation Network
+
+An asset may display citation information.
+
+Example:
+
+Citations
+
+Cites:
+
+18 Papers
+
+Cited By:
+
+7 Papers
+
+Actions:
+
+Explore Citation Network
+
+Open References
+
+Citation relationships should link to the Knowledge Fabric where appropriate.
+
+---
+
+# 426. Asset Tags
+
+Users may assign tags.
+
+Example:
+
+#priority
+
+#reviewed
+
+#molecular-discovery
+
+#methodology
+
+Tags should support filtering.
+
+---
+
+# 427. Asset Collections
+
+Future versions may support collections.
+
+Example:
+
+Collection:
+
+Molecular Graph Learning
+
+Contains:
+
+18 papers
+
+4 reports
+
+3 saved discoveries
+
+Version 1 may prepare the data model for collections.
+
+---
+
+# 428. Archive
+
+Researchers may archive assets.
+
+Archived assets:
+
+- Remain stored
+- Are excluded from default Library views
+- Remain searchable
+- Can be restored
+
+Archiving does not delete associated Notebook entries or discoveries.
+
+---
+
+# 429. Delete
+
+Deleting a research asset requires confirmation.
+
+The confirmation should explain consequences.
+
+Example:
+
+"Deleting this paper will remove it from the workspace. Saved notes and discoveries referencing it may retain their provenance but will no longer be able to open the original document."
+
+Actions:
+
+Delete
+
+Cancel
+
+---
+
+# 430. Bulk Actions
+
+Users may select multiple assets.
+
+Supported actions:
+
+Archive
+
+Delete
+
+Tag
+
+Analyze
+
+Export Metadata
+
+The system should clearly indicate the number of selected assets.
+
+Example:
+
+5 selected
+
+Actions:
+
+Analyze
+
+Archive
+
+Tag
+
+---
+
+# 431. Bulk Analysis
+
+Users may select multiple papers:
+
+5 Papers
+
+↓
+
+Analyze
+
+↓
+
+Choose Analysis:
+
+Compare
+
+Summarize
+
+Find Connections
+
+Extract Concepts
+
+The analysis should launch as a Research Mission.
+
+---
+
+# 432. Upload Integration
+
+The Library should provide a direct path to Research Ingestion.
+
+Action:
+
+Upload Research
+
+↓
+
+Research Ingestion
+
+↓
+
+Processing
+
+↓
+
+Library Asset
+
+The asset should automatically appear in the Library after upload.
+
+---
+
+# 433. Processing Queue
+
+The Library may display active processing.
+
+Example:
+
+Processing
+
+3 assets
+
+View Processing
+
+The user should be able to continue browsing the Library while processing occurs.
+
+---
+
+# 434. Empty Library
+
+If no assets exist:
+
+Your research library is empty.
+
+Bring your first research materials into SERENDIPITY.
+
+Primary action:
+
+Upload Research
+
+Secondary:
+
+Explore Example Workspace
+
+---
+
+# 435. Library Loading
+
+The Library should load:
+
+1. Shell
+2. Search/filter controls
+3. Asset metadata
+4. Asset list
+5. Secondary metadata
+
+Large collections should use pagination or virtualization.
+
+---
+
+# 436. Library Error
+
+If assets cannot be retrieved:
+
+"Research Library unavailable."
+
+Actions:
+
+Retry
+
+Return to Workspace
+
+The system should not imply that research assets have been deleted.
+
+---
+
+# 437. Library Mobile
+
+Mobile layout:
+
+Library Header
+
+↓
+
+Search
+
+↓
+
+Filter
+
+↓
+
+Asset List
+
+↓
+
+Asset Detail
+
+Filters should appear in a drawer.
+
+Asset cards should remain concise.
+
+---
+
+# 438. Library Accessibility
+
+The Library SHALL support:
+
+- Keyboard navigation
+- Accessible tables/lists
+- Screen readers
+- Semantic headings
+- Accessible filters
+- Accessible bulk-selection controls
+- Visible focus
+- Non-color status indicators
+
+---
+
+# 439. Library Performance
+
+The Library should:
+
+- Paginate or virtualize large collections
+- Lazy-load secondary metadata
+- Cache frequently accessed metadata
+- Avoid loading complete documents into list views
+- Debounce search where appropriate
+
+---
+
+# 440. Library Backend Dependencies
+
+The Library depends on:
+
+Research Asset Service
+
+Document Service
+
+Search Service
+
+Metadata Service
+
+Citation Service
+
+Knowledge Fabric Service
+
+Discovery Service
+
+Research Mission Service
+
+Notebook Service
+
+---
+
+# 441. Library Definition of Done
+
+The Research Library is complete when:
+
+✓ Assets can be browsed
+
+✓ Assets can be searched
+
+✓ Assets can be filtered
+
+✓ Assets can be sorted
+
+✓ Asset details work
+
+✓ Metadata can be viewed
+
+✓ Metadata can be edited where permitted
+
+✓ Processing status is visible
+
+✓ Related research works
+
+✓ Citation relationships work
+
+✓ Tags work
+
+✓ Archive works
+
+✓ Delete confirmation works
+
+✓ Bulk selection works
+
+✓ Bulk analysis works
+
+✓ Upload integration works
+
+✓ Processing queue is visible
+
+✓ Empty state works
+
+✓ Error state works
+
+✓ Mobile experience works
+
+✓ Accessibility requirements pass
+
+✓ Performance requirements are acceptable
+
 
 
