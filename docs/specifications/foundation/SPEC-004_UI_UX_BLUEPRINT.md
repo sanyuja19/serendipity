@@ -13166,5 +13166,672 @@ Settings are complete when:
 
 ✓ Accessibility requirements pass
 
+AUDIT-001
+Area: Navigation
+Issue: Workspace contains "Reports", but no independent
+       report-management experience has been defined.
 
+Decision: Remove Reports from Version 1 Workspace navigation.
 
+Future: Introduce Reports when multiple report types exist.
+
+Research Asset
+      │
+      ├── Paper metadata
+      ├── extracted content
+      ├── concepts
+      ├── evidence
+      └── relationships
+              │
+              ▼
+          Document
+          PDF/file
+
+Research Mission
+      │
+      ├── Planner Agent
+      ├── Retrieval Agent
+      ├── Knowledge Agent
+      ├── Reasoning Agent
+      └── Discovery Agent
+             │
+             ▼
+         AI Analysis
+
+Knowledge + Evidence
+        ↓
+   AI identifies
+   a relationship
+        ↓
+     DISCOVERY
+        ↓
+ Researcher investigates
+        ↓
+    HYPOTHESIS
+        ↓
+ Validation / experiment
+ AUDIT-002
+Area: Terminology
+
+Issue:
+Several terms could overlap:
+Research Asset / Document / Paper
+AI Analysis / Research Mission
+Discovery / Hypothesis
+
+Decision:
+Adopt the canonical terminology defined above.
+
+Requirement:
+Frontend, backend, API schemas, database models,
+documentation, and UI copy should use these meanings consistently.
+
+                    RESEARCH QUESTION
+                           │
+                           ▼
+                    RESEARCH MISSION
+                           │
+                           ▼
+                       PLANNER
+                           │
+              ┌────────────┼────────────┐
+              ▼            ▼            ▼
+         RETRIEVAL      LITERATURE    KNOWLEDGE
+              │            │            │
+              └────────────┼────────────┘
+                           ▼
+                       REASONING
+                           │
+                           ▼
+                       DISCOVERY
+                           │
+                           ▼
+                      VALIDATION
+                           │
+                           ▼
+                    HUMAN DECISION
+ Responsible for interacting with the Knowledge Fabric.
+
+Tasks:
+
+Entity extraction
+Relationship discovery
+Graph traversal
+Cluster analysis
+Relationship scoring
+Context retrieval
+
+AUDIT-003
+Area: AI Architecture
+
+Issue:
+Agent responsibilities and Mission lifecycle are described
+across multiple sections but require one canonical definition.
+
+Decision:
+Standardize the agent roles as:
+
+Planner
+Retrieval
+Literature
+Knowledge
+Reasoning
+Discovery
+Validation
+
+Standardize Research Mission lifecycle as:
+
+Draft
+Configured
+Queued
+Running
+Paused
+Completed
+Partially Completed
+Failed
+Retrying
+Cancelled
+
+Requirement:
+Frontend communicates with the Mission Orchestrator/API,
+not directly with individual agents.
+
+AUDIT-004
+Area: AI Observability
+
+Issue:
+Agent Timeline requires a persistent event model.
+
+Decision:
+Mission execution events should be persisted and exposed
+through the Research Mission API.
+
+Requirement:
+Timeline must survive refresh/reconnect and support historical
+Mission inspection.
+AUDIT-005
+Area: Knowledge Fabric
+
+Issue:
+Evidence, relationships, discoveries, and graph entities
+were referenced across multiple screens without one
+canonical semantic boundary.
+
+Decision:
+
+Entities represent research objects.
+
+Relationships represent connections.
+
+Evidence represents provenance/support for claims
+and relationships.
+
+Discoveries represent higher-level candidate research insights.
+
+Potential Connections represent speculative graph relationships.
+
+Requirement:
+These concepts must remain distinct in API schemas,
+database models, UI components, and AI outputs.
+
+AUDIT-006
+Area: Knowledge Fabric State
+
+Issue:
+Graph interactions require persistent contextual state.
+
+Decision:
+Graph state should include:
+
+Workspace
+Viewport
+Selected Entity
+Selected Relationship
+Focus Entity
+Focus Depth
+Filters
+Layers
+Layout
+Highlighted Discovery
+
+Requirement:
+Graph navigation state should be restorable where practical.
+
+AUDIT-007
+Area: Graph Scalability
+
+Issue:
+Rendering the complete Knowledge Fabric in the browser
+will not scale.
+
+Decision:
+Use progressive graph retrieval:
+
+Global Overview
+→ Clusters
+→ Subgraph
+→ Neighborhood
+→ Expanded Relationships
+
+Requirement:
+Graph APIs must support partial/progressive retrieval.
+
+AUDIT-008
+Area: Frontend ↔ Backend
+
+Issue:
+Frontend screens describe many interactions without
+a unified API responsibility map.
+
+Decision:
+Establish explicit service ownership for every major
+frontend experience.
+
+Requirement:
+Frontend communicates through API/service boundaries
+and must not directly access databases, vector stores,
+graph databases, or model providers.
+
+AUDIT-009
+Area: Ingestion State
+
+Issue:
+Simple UI processing states and detailed backend processing
+states were mixed.
+
+Decision:
+
+Backend maintains detailed processing lifecycle.
+
+Frontend receives both:
+- machine-readable status
+- human-readable progress information
+
+Requirement:
+UI must not infer processing state from arbitrary events.
+
+AUDIT-010
+Area: AI Context
+
+Issue:
+Copilot context could become frontend-controlled.
+
+Decision:
+Frontend sends structured context references.
+
+Backend Context Builder determines actual retrieval context.
+
+Requirement:
+Frontend must never construct authoritative AI prompts
+or directly access model providers.
+AUDIT-011
+Area: API Aggregation
+
+Issue:
+Complex screens such as Discovery Report could require
+many independent frontend requests.
+
+Decision:
+Provide appropriate backend aggregation/read models
+for complex views.
+
+Requirement:
+Frontend should receive cohesive view-oriented data
+where doing so improves reliability and performance.
+AUDIT-012
+Area: Data Model
+
+Issue:
+Research concepts have been described across UI and AI
+specifications without a canonical persistence model.
+
+Decision:
+Establish first-class models for:
+
+User
+Workspace
+Research Asset
+Document
+Processing Job
+Evidence
+Entity
+Relationship
+Research Mission
+Mission Event
+Discovery
+Hypothesis
+Research Question
+Conversation
+Notebook Entry
+Workspace Memory
+
+Requirement:
+Models must use references rather than duplicating complete
+research objects across services.
+AUDIT-013
+Area: Provenance
+
+Issue:
+Evidence was sometimes represented as embedded content
+inside discoveries, relationships, and notebook entries.
+
+Decision:
+Evidence becomes a first-class object.
+
+Other objects reference Evidence.
+
+Requirement:
+Source provenance must remain traceable to the original
+Research Asset and Document.
+AUDIT-014
+Area: Graph/Data Boundary
+
+Issue:
+Paper, Concept, Author, Method, etc. could become duplicated
+between Research Asset models and Knowledge Fabric models.
+
+Decision:
+Research Assets remain source/domain objects.
+
+Knowledge Fabric Entities represent graph-level objects
+and reference their underlying source objects where applicable.
+
+Requirement:
+Do not duplicate source metadata unnecessarily.
+AUDIT-015
+Area: AI Output Persistence
+
+Issue:
+Mission, Discovery, Hypothesis, and Copilot outputs could
+be incorrectly stored as one generic AI result.
+
+Decision:
+Persist them as semantically distinct objects.
+
+Requirement:
+Research Mission ≠ AI Analysis ≠ Discovery ≠ Hypothesis.
+
+AUDIT-016
+Area: Security
+
+Issue:
+Security responsibilities were distributed across UI,
+AI, and backend specifications.
+
+Decision:
+Authentication, authorization, workspace isolation,
+secret handling, and resource permissions are backend
+responsibilities.
+
+Requirement:
+Frontend visibility controls must never be treated as
+security controls.
+AUDIT-017
+Area: AI Security
+
+Issue:
+AI retrieval could potentially access information outside
+the current Workspace.
+
+Decision:
+All retrieval must be scoped by authorized Workspace context.
+
+Requirement:
+Copilot, RAG, Knowledge Fabric retrieval, and AI Missions
+must enforce workspace-level access control.
+AUDIT-018
+Area: Research Document Security
+
+Issue:
+Uploaded research documents are untrusted external input.
+
+Decision:
+Documents must be treated as untrusted content.
+
+Requirement:
+Upload validation, safe storage, content isolation, and
+prompt-injection-aware AI processing are required.
+AUDIT-019
+Area: Secrets
+
+Issue:
+External integrations and model providers may require
+sensitive credentials.
+
+Decision:
+Secrets belong exclusively to secure backend storage.
+
+Requirement:
+Secrets must never be exposed in frontend bundles,
+logs, API responses, or Git repositories.
+AUDIT-020
+Area: Responsive Design
+
+Issue:
+Desktop layouts cannot simply be compressed onto smaller screens.
+
+Decision:
+Use adaptive layouts:
+Desktop → multi-panel
+Tablet → main + drawers
+Mobile → single-column + drawers/sheets
+
+Requirement:
+All core workflows remain usable on mobile.
+AUDIT-021
+Area: Knowledge Fabric Accessibility
+
+Issue:
+A visual graph cannot serve as the only representation
+of research relationships.
+
+Decision:
+Provide an accessible structured relationship representation.
+
+Requirement:
+Every meaningful graph interaction must have an accessible
+alternative where applicable.
+AUDIT-022
+Area: AI Accessibility
+
+Issue:
+Streaming AI output can create excessive screen-reader
+announcements.
+
+Decision:
+Expose generation state changes rather than announcing
+every streamed token.
+
+Requirement:
+Final AI responses remain fully accessible.
+
+AUDIT-023
+Area: Accessibility
+
+Issue:
+Status, confidence, and research states could rely too
+heavily on color.
+
+Decision:
+Use text, icons, and semantic states in addition to color.
+
+Requirement:
+Color must never be the sole indicator of meaning.
+AUDIT-024
+Area: Performance
+
+Issue:
+Several workflows involve potentially expensive processing.
+
+Decision:
+Heavy computation must execute asynchronously through
+workers/queues rather than blocking frontend requests.
+
+Requirement:
+Upload, embedding, graph construction, Missions, and
+large-scale analysis must support asynchronous execution.
+AUDIT-025
+Area: Graph Performance
+
+Issue:
+Knowledge Fabric visualization can become computationally
+expensive at scale.
+
+Decision:
+Use progressive retrieval, clustering, virtualization,
+and level-of-detail rendering.
+
+Requirement:
+The browser must not receive or render the entire graph
+by default.
+AUDIT-026
+Area: AI Performance
+
+Issue:
+Long conversations and large retrieval results can cause
+high latency and excessive token usage.
+
+Decision:
+Use conversation summaries, recent context, bounded retrieval,
+and relevance filtering.
+
+Requirement:
+AI context must be selectively constructed rather than
+blindly forwarding complete histories.
+AUDIT-027
+Area: Resilience
+
+Issue:
+Long-running Missions must survive browser disconnection.
+
+Decision:
+Mission state is server-side and persistent.
+
+Requirement:
+Frontend reconnects to the current Mission state instead of
+assuming the browser session owns execution.
+AUDIT-028
+Area: Failure Handling
+
+Issue:
+Failure behavior was not consistently defined across
+asynchronous workflows.
+
+Decision:
+Standardize loading, partial, failed, cancelled, retryable,
+and unavailable states.
+
+Requirement:
+Every major async workflow must define recovery behavior.
+AUDIT-029
+Area: Partial Results
+
+Issue:
+A failed final stage could cause successful intermediate
+research work to be lost or hidden.
+
+Decision:
+Support PARTIALLY_COMPLETED Mission and processing states.
+
+Requirement:
+Completed intermediate results must remain accessible
+when technically possible.
+AUDIT-030
+Area: Data Preservation
+
+Issue:
+Errors, session expiry, conflicts, and deletion could cause
+loss of researcher-authored work.
+
+Decision:
+Prioritize preservation and recovery of research state.
+
+Requirement:
+Notebook drafts, Mission results, Evidence, and research
+assets must not be silently discarded.
+AUDIT-031
+Area: User Feedback
+
+Issue:
+Technical failures could leak implementation details or
+produce unusable generic errors.
+
+Decision:
+User-facing errors explain:
+What happened
+What remains available
+What the user can do next
+
+Requirement:
+Internal technical details remain in secure diagnostics/logs.
+AUDIT-032
+Area: Version 1 Scope
+
+Issue:
+The complete SERENDIPITY vision exceeds a realistic
+8-week implementation window.
+
+Decision:
+V1 focuses on the complete research-discovery loop:
+
+Ingestion
+→ Paper Intelligence
+→ RAG
+→ Knowledge Fabric
+→ Agentic Mission
+→ Discovery
+→ Evidence
+→ Copilot
+→ Notebook
+
+Requirement:
+Secondary and experimental capabilities remain in ROADMAP.md
+and must not block V1.
+AUDIT-033
+Area: Product Completeness
+
+Issue:
+Reducing scope could accidentally produce disconnected demos.
+
+Decision:
+V1 must preserve one complete end-to-end research workflow.
+
+Requirement:
+Every major V1 component must contribute to:
+
+Research Input
+→ Understanding
+→ Knowledge Construction
+→ Reasoning
+→ Discovery
+→ Researcher Review
+AUDIT-034
+Area: Placement Readiness
+
+Issue:
+The project must demonstrate technical depth within a
+short demonstration window.
+
+Decision:
+Prioritize observable, explainable system behavior.
+
+Required demo evidence:
+
+Document ingestion
+RAG with citations
+Knowledge graph
+Agent orchestration
+Mission timeline
+Discovery generation
+Evidence provenance
+Researcher review
+AUDIT-035
+Area: Implementation Dependencies
+
+Decision:
+
+Implementation SHALL follow dependency order rather than
+screen order.
+
+Core dependency sequence:
+
+Foundation
+→ Identity
+→ Research Assets
+→ Ingestion
+→ RAG
+→ Knowledge Fabric
+→ Copilot
+→ Research Missions
+→ Discovery
+→ Notebook
+→ Hardening
+→ Deployment
+AUDIT-036
+Area: Parallel Development
+
+Decision:
+
+Frontend, backend, and AI development may proceed in parallel
+after the foundational contracts are established.
+
+Frontend may use mocked API contracts while backend services
+are being implemented.
+
+AI pipelines may be tested independently before integration.
+AUDIT-037
+Area: Vertical Slice
+
+Decision:
+
+The first end-to-end milestone SHALL be:
+
+Authentication
+→ Workspace
+→ PDF Upload
+→ Processing
+→ RAG
+→ Cited Answer
+
+This validates the core application architecture before
+advanced agentic functionality is introduced.
