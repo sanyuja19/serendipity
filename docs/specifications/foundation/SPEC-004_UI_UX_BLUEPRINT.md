@@ -8320,5 +8320,1185 @@ The Knowledge Fabric is complete when:
                  ▼               ▼
              DISCOVERY        NOTEBOOK
 
-             
+# 271. Research Copilot
+
+## 271.1 Purpose
+
+Research Copilot is the conversational research interface within SERENDIPITY.
+
+It allows researchers to interact with:
+
+- Research Papers
+- Research Assets
+- Knowledge Fabric
+- Evidence
+- Discoveries
+- Research Missions
+- Research Notebook
+- Workspace Memory
+
+The Copilot SHALL operate within the research context of the current workspace.
+
+It should help users:
+
+- Understand research
+- Compare papers
+- Explain concepts
+- Find evidence
+- Explore relationships
+- Identify gaps
+- Investigate hypotheses
+- Generate research questions
+- Navigate the Knowledge Fabric
+- Save useful findings
+
+The Copilot should function as a research interface rather than a generic conversational assistant.
+
+---
+
+# 272. Copilot Entry Points
+
+Research Copilot may be opened from:
+
+- Global Navigation
+- Research Workspace
+- Paper Viewer
+- Knowledge Fabric
+- Discovery Card
+- Research Mission
+- Command Palette
+- Selected text
+- Selected concept
+- Selected relationship
+
+Context should automatically follow the entry point.
+
+Example:
+
+Paper Viewer
+
+↓
+
+Select paragraph
+
+↓
+
+Ask Copilot
+
+↓
+
+Copilot receives selected passage + paper context.
+
+---
+
+# 273. Copilot Layout
+
+Desktop:
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ Copilot Header                                                      │
+├──────────────────────────────┬──────────────────────────────────────┤
+│                              │                                      │
+│ Conversation                 │ Research Context                     │
+│                              │                                      │
+│ User Message                 │ Current Paper                        │
+│                              │ Selected Concepts                    │
+│ Copilot Response             │ Evidence                             │
+│                              │ Knowledge Fabric                     │
+│ Evidence                     │ Workspace                            │
+│                              │                                      │
+├──────────────────────────────┴──────────────────────────────────────┤
+│ Message Input                                                       │
+└─────────────────────────────────────────────────────────────────────┘
+
+The conversation remains the primary interaction.
+
+The context panel provides supporting research information.
+
+---
+
+# 274. Copilot Header
+
+The header should display:
+
+Research Copilot
+
+Current Workspace
+
+Context indicator
+
+Conversation actions
+
+Example:
+
+Research Copilot
+
+Graph Learning for Molecular Discovery
+
+Using:
+
+Current Workspace
+
+24 Papers
+
+Knowledge Fabric
+
+Actions:
+
+New Conversation
+
+Conversation History
+
+Settings
+
+---
+
+# 275. Conversation Model
+
+A Copilot conversation SHALL belong to a workspace.
+
+Conversation metadata may include:
+
+- Conversation title
+- Workspace
+- Created time
+- Last activity
+- Research context
+- Related papers
+- Related discoveries
+
+Example:
+
+Conversation:
+
+"GraphSAGE methodology comparison"
+
+Workspace:
+
+Graph Learning for Molecular Discovery
+
+Last active:
+
+12 minutes ago
+
+---
+
+# 276. New Conversation
+
+Starting a new conversation should provide context-aware suggestions.
+
+Example:
+
+What would you like to explore?
+
+Suggested prompts:
+
+"Summarize the key methods in my workspace."
+
+"Which papers disagree with this finding?"
+
+"What concepts connect these two papers?"
+
+"What research gaps appear across this literature?"
+
+"Find potentially unexplored connections."
+
+Suggested prompts should adapt to workspace content.
+
+---
+
+# 277. Message Input
+
+The message input SHALL support:
+
+- Text
+- Multi-line input
+- Keyboard submission
+- Context attachments
+- Selected research entities
+- Selected papers
+- Optional files in future versions
+
+Primary action:
+
+Send
+
+The interface should clearly indicate when the Copilot is processing a request.
+
+---
+
+# 278. Context Attachments
+
+Users may explicitly attach research context.
+
+Examples:
+
+Attach Paper
+
+Attach Concept
+
+Attach Discovery
+
+Attach Evidence
+
+Attach Knowledge Fabric Selection
+
+Attached context should be visible above or inside the input area.
+
+Example:
+
+Context:
+
+Graph Neural Networks
+
+MolecularGraphLearning.pdf
+
+3 Evidence Items
+
+---
+
+# 279. Automatic Context
+
+The system may automatically use relevant context according to configured retrieval rules.
+
+Possible context:
+
+Current workspace
+
+Current paper
+
+Current section
+
+Selected concept
+
+Selected graph entity
+
+Relevant evidence
+
+Saved discoveries
+
+Research objective
+
+The interface should indicate important context sources.
+
+---
+
+# 280. Context Transparency
+
+The Copilot should provide a compact context indicator.
+
+Example:
+
+Using:
+
+Current Paper
+
+Workspace Literature
+
+Knowledge Fabric
+
+The user may inspect the context.
+
+The user should be able to remove optional context where appropriate.
+
+---
+
+# 281. Copilot Message Types
+
+Copilot responses may contain:
+
+- Text
+- Summary
+- Evidence
+- Citation
+- Concept
+- Relationship
+- Discovery
+- Recommendation
+- Warning
+- Action
+- Table
+- Comparison
+
+The interface should render each type appropriately.
+
+---
+
+# 282. Evidence-Linked Response
+
+AI-generated claims should connect to evidence.
+
+Example:
+
+Copilot:
+
+"Graph-based molecular representations can capture structural relationships that traditional feature vectors may miss."
+
+Evidence:
+
+[1] Molecular Graph Learning, p. 4
+
+[2] Graph Representation Study, p. 7
+
+Actions:
+
+View Evidence
+
+Open Source
+
+The user should not have to manually search for the supporting material.
+
+---
+
+# 283. Citation Preview
+
+Hovering over a citation may display:
+
+Paper title
+
+Authors
+
+Year
+
+Relevant section
+
+Short excerpt
+
+Actions:
+
+Open Paper
+
+View Evidence
+
+The preview should remain compact.
+
+---
+
+# 284. Citation Navigation
+
+Clicking a citation should open the source in context.
+
+The system should preserve the current Copilot conversation.
+
+Example:
+
+Copilot
+
+↓
+
+Citation clicked
+
+↓
+
+Paper Viewer opens
+
+↓
+
+Relevant passage highlighted
+
+↓
+
+User returns
+
+↓
+
+Conversation preserved
+
+---
+
+# 285. Concept Response
+
+When the Copilot identifies an important concept:
+
+Concept:
+
+GraphSAGE
+
+Definition:
+
+Inductive representation learning approach for graph-structured data.
+
+Workspace connections:
+
+18 papers
+
+7 methods
+
+Actions:
+
+Explore in Knowledge Fabric
+
+View Papers
+
+Ask Follow-up
+
+Add to Notebook
+
+---
+
+# 286. Relationship Response
+
+The Copilot may identify relationships.
+
+Example:
+
+Potential Relationship
+
+Molecular graph representations
+
+↔
+
+Protein interaction prediction
+
+Evidence:
+
+6 papers
+
+Confidence:
+
+Moderate
+
+Action:
+
+Explore Relationship
+
+The relationship should link directly to the Knowledge Fabric.
+
+---
+
+# 287. Discovery Response
+
+If the Copilot identifies a potential discovery:
+
+Potential Discovery
+
+"Methods used for protein interaction prediction may transfer to molecular property prediction."
+
+Evidence:
+
+8 sources
+
+Confidence:
+
+Moderate
+
+Potential Novelty:
+
+High
+
+Actions:
+
+Explore
+
+Save
+
+Validate
+
+Reject
+
+The system SHALL clearly identify this as a candidate discovery.
+
+---
+
+# 288. Suggested Actions
+
+Copilot responses may provide contextual actions.
+
+Examples:
+
+Summarize this paper
+
+Compare these papers
+
+Explore this concept
+
+Open Knowledge Fabric
+
+Save to Notebook
+
+Start Research Mission
+
+Find supporting evidence
+
+Investigate contradiction
+
+Actions should execute directly where possible.
+
+---
+
+# 289. Research Actions
+
+The Copilot should be capable of triggering controlled product actions.
+
+Examples:
+
+"Add this finding to my notebook."
+
+↓
+
+Notebook entry created.
+
+---
+
+"Explore this concept."
+
+↓
+
+Knowledge Fabric opens.
+
+---
+
+"Compare these two papers."
+
+↓
+
+Comparison analysis begins.
+
+---
+
+"Investigate this connection."
+
+↓
+
+Research Mission configuration opens.
+
+Actions must require confirmation when they create expensive, destructive, or consequential operations.
+
+---
+
+# 290. Research Question Generation
+
+The Copilot may suggest follow-up research questions.
+
+Example:
+
+Based on the current literature, you could investigate:
+
+1. Can graph attention mechanisms improve molecular property prediction?
+
+2. How does model performance change with multi-relational molecular graphs?
+
+3. Can transfer learning bridge protein and molecular graph representations?
+
+Actions:
+
+Explore Question
+
+Start Research Mission
+
+Save Question
+
+Generated questions should be clearly labeled as AI-generated suggestions.
+
+---
+
+# 291. Research Gap Identification
+
+The Copilot may summarize potential gaps.
+
+Example:
+
+Potential Research Gap
+
+"Current workspace literature contains extensive work on molecular graph classification but limited evidence for multi-relational graph architectures."
+
+Evidence:
+
+7 papers reviewed
+
+Confidence:
+
+Moderate
+
+Action:
+
+Investigate Gap
+
+The system should distinguish a potential gap from a proven absence of research.
+
+---
+
+# 292. Contradiction Detection
+
+The Copilot should be able to surface contradictory findings.
+
+Example:
+
+Conflicting Evidence
+
+Paper A reports improved performance.
+
+Paper B reports no significant improvement.
+
+Possible explanation:
+
+Different datasets and evaluation metrics.
+
+Actions:
+
+Compare Papers
+
+Inspect Evidence
+
+Start Analysis
+
+Contradiction detection should prioritize transparency over forcing a single conclusion.
+
+---
+
+# 293. Comparison Mode
+
+Users may compare multiple research assets.
+
+Example:
+
+Compare:
+
+Paper A
+
+Paper B
+
+Paper C
+
+The Copilot should structure the result.
+
+Dimensions:
+
+Method
+
+Dataset
+
+Performance
+
+Limitations
+
+Contributions
+
+Research Context
+
+Evidence
+
+The comparison should remain traceable to source material.
+
+---
+
+# 294. Conversation Context
+
+The Copilot may use previous messages within the conversation.
+
+It may also use workspace memory according to configured retrieval rules.
+
+The system SHALL distinguish:
+
+Conversation Context
+
+Workspace Context
+
+Retrieved Evidence
+
+Current UI Context
+
+This distinction should be available when users inspect AI context.
+
+---
+
+# 295. Workspace Memory
+
+Users may save important Copilot findings to workspace memory.
+
+Example:
+
+Save to Workspace Memory
+
+"The researcher is investigating multi-relational graph architectures."
+
+The system should ask for confirmation before storing persistent memory.
+
+Users must be able to inspect and remove stored memory.
+
+---
+
+# 296. Conversation History
+
+Users should be able to access previous conversations.
+
+History may be organized by:
+
+- Workspace
+- Recent
+- Research Topic
+- Paper
+- Discovery
+
+Example:
+
+Recent Conversations
+
+"GraphSAGE comparison"
+
+"Molecular property prediction"
+
+"Protein interaction literature"
+
+---
+
+# 297. Conversation Search
+
+Users should be able to search previous Copilot conversations.
+
+Search may cover:
+
+- Conversation title
+- User messages
+- AI responses
+- Research entities
+- Papers
+- Discoveries
+
+Results should indicate the workspace associated with the conversation.
+
+---
+
+# 298. Streaming Responses
+
+Copilot responses may stream progressively.
+
+The UI should show:
+
+Retrieving evidence...
+
+Analyzing sources...
+
+Preparing response...
+
+The interface should not present incomplete claims as finalized results.
+
+Evidence-linked claims should become available once validated by the retrieval/analysis pipeline.
+
+---
+
+# 299. Copilot Processing State
+
+Possible states:
+
+Idle
+
+Retrieving
+
+Analyzing
+
+Validating
+
+Generating
+
+Complete
+
+Error
+
+The state should be visible but unobtrusive.
+
+---
+
+# 300. Copilot Stop Action
+
+While a response is generating, users may stop generation.
+
+Action:
+
+Stop
+
+Completed content should remain available where appropriate.
+
+The system should not discard already retrieved evidence unnecessarily.
+
+---
+
+# 301. Copilot Error
+
+If a request fails:
+
+"SERENDIPITY couldn't complete this request."
+
+Possible reasons:
+
+- Retrieval service unavailable
+- Model unavailable
+- Workspace context unavailable
+- Request timeout
+
+Actions:
+
+Retry
+
+Modify Question
+
+Continue Without Optional Context
+
+The user should receive enough information to recover.
+
+---
+
+# 302. Unsupported Question
+
+If the system cannot answer reliably:
+
+"I don't have enough evidence in the current research context to answer this confidently."
+
+Possible actions:
+
+Search Workspace
+
+Upload Research
+
+Search External Sources
+
+Start Research Mission
+
+The Copilot should prefer uncertainty over fabricated certainty.
+
+---
+
+# 303. Source Coverage
+
+Responses may display:
+
+Sources Used
+
+8 papers
+
+17 evidence passages
+
+3 Knowledge Fabric relationships
+
+This provides a compact view of answer grounding.
+
+---
+
+# 304. Answer Confidence
+
+Where supported:
+
+Confidence
+
+High
+
+Evidence:
+
+17 supporting passages
+
+The confidence indicator should be contextual and inspectable.
+
+---
+
+# 305. External Search
+
+External research search may be supported in future versions.
+
+When external sources are used, the interface SHALL distinguish:
+
+Workspace Sources
+
+External Sources
+
+The system should never make external information appear as if it originated from the user's workspace.
+
+---
+
+# 306. Copilot + Knowledge Fabric
+
+The Copilot should understand graph context.
+
+Example:
+
+User selects:
+
+Graph Neural Networks
+
+Question:
+
+"What are the strongest connections from this concept?"
+
+Copilot uses:
+
+Selected Entity
+
+Connected Entities
+
+Relationship Types
+
+Evidence
+
+Workspace Context
+
+The response can provide:
+
+Top connections
+
+Supporting papers
+
+Relationship explanation
+
+Actions:
+
+Explore Graph
+
+---
+
+# 307. Copilot + Paper Viewer
+
+When launched from a paper, Copilot should automatically understand:
+
+- Paper identity
+- Selected text
+- Section
+- Page
+- Extracted concepts
+- Citations
+
+The user should not need to paste paper content manually.
+
+---
+
+# 308. Copilot + Discovery Engine
+
+The Copilot may investigate candidate discoveries.
+
+Example:
+
+User:
+
+"Why does SERENDIPITY think these concepts may be connected?"
+
+The response should provide:
+
+Relationship explanation
+
+Supporting evidence
+
+Contradictory evidence
+
+Confidence
+
+Source papers
+
+Actions:
+
+Explore Discovery
+
+Validate
+
+Reject
+
+---
+
+# 309. Copilot + Notebook
+
+Users can convert a Copilot response into a notebook entry.
+
+Actions:
+
+Save Answer
+
+Save Evidence
+
+Save Concept
+
+Save Discovery
+
+The notebook entry should preserve source references.
+
+---
+
+# 310. Copilot Context Panel
+
+The context panel may contain:
+
+Current Workspace
+
+Current Paper
+
+Selected Entity
+
+Retrieved Evidence
+
+Active Research Mission
+
+Saved Discoveries
+
+The panel should collapse when not needed.
+
+---
+
+# 311. Copilot Empty State
+
+When no conversation exists:
+
+Research Copilot
+
+"Ask questions about your research."
+
+Suggested actions:
+
+Summarize my workspace
+
+Find research gaps
+
+Compare recent papers
+
+Explore Knowledge Fabric
+
+Find potential connections
+
+The empty state should demonstrate capability rather than simply saying "No messages."
+
+---
+
+# 312. Copilot Mobile
+
+Mobile layout:
+
+Header
+
+↓
+
+Conversation
+
+↓
+
+Context indicator
+
+↓
+
+Message Input
+
+The context panel becomes a bottom sheet.
+
+Suggested actions become horizontally scrollable or vertically stacked.
+
+The conversation should remain the primary experience.
+
+---
+
+# 313. Copilot Accessibility
+
+The interface SHALL support:
+
+- Keyboard navigation
+- Accessible message structure
+- Screen-reader-compatible streaming status
+- Accessible citations
+- Accessible action buttons
+- Reduced motion
+- Focus preservation
+
+Streaming updates should be announced carefully to avoid excessive screen-reader output.
+
+---
+
+# 314. Copilot Privacy
+
+The system SHALL respect workspace isolation.
+
+The Copilot must not retrieve information from another workspace unless explicitly permitted by the user and system architecture.
+
+Conversation data should follow configured data retention and privacy policies.
+
+---
+
+# 315. Copilot Performance
+
+The interface should:
+
+- Render messages incrementally
+- Virtualize long conversations where appropriate
+- Lazy-load evidence previews
+- Avoid re-rendering the entire conversation on each token
+- Cache citation metadata
+- Handle long-running retrieval gracefully
+
+---
+
+# 316. Copilot Backend Dependencies
+
+The Copilot depends on:
+
+Conversation Service
+
+LLM Service
+
+Retrieval Service
+
+Embedding Service
+
+Evidence Service
+
+Knowledge Fabric Service
+
+Research Mission Service
+
+Workspace Memory Service
+
+Citation Service
+
+Notebook Service
+
+Notification Service
+
+The frontend should communicate with a stable Copilot API rather than directly with model providers.
+
+---
+
+# 317. Copilot Definition of Done
+
+The Research Copilot is complete when:
+
+✓ Conversations work
+
+✓ Workspace context works
+
+✓ Paper context works
+
+✓ Selected-text context works
+
+✓ Knowledge Fabric context works
+
+✓ Evidence-linked responses work
+
+✓ Citation previews work
+
+✓ Citation navigation works
+
+✓ Suggested prompts work
+
+✓ Research actions work
+
+✓ Discovery interaction works
+
+✓ Notebook integration works
+
+✓ Conversation history works
+
+✓ Conversation search works
+
+✓ Streaming works
+
+✓ Stop generation works
+
+✓ Error handling works
+
+✓ Uncertainty is represented
+
+✓ Source coverage is visible
+
+✓ Workspace memory is controllable
+
+✓ Workspace isolation works
+
+✓ Mobile experience works
+
+✓ Accessibility requirements pass
+
+✓ Performance requirements are acceptable
+
+
 
